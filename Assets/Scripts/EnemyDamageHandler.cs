@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
+[RequireComponent(typeof(Health))]
 public class EnemyDamageHandler : MonoBehaviour, IDamageHandler
 {
     [Header("Settings")]
