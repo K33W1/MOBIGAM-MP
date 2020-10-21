@@ -8,9 +8,8 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private new Camera camera = null;
 
     [Header("Settings")]
-    //[SerializeField] private LayerMask shootableMask = new LayerMask();
+    [SerializeField] private Element element = Element.Blue;
     [SerializeField] private float shootDistance = 100.0f;
-    
 
     private PlayerInput input = null;
 
@@ -27,9 +26,9 @@ public class PlayerShooting : MonoBehaviour
 
         if (hitInfo.collider != null)
         {
-            if (hitInfo.collider.TryGetComponent(out Health health))
+            if (hitInfo.collider.TryGetComponent(out IDamageHandler damageable))
             {
-                health.Damage(1);
+                damageable.Damage(new DamageInfo(element, 1));
             }
         }
     }
