@@ -6,12 +6,20 @@
             "id": "f4f1f859-c9a3-4869-9a1a-148799bf8cc5",
             "actions": [
                 {
-                    "name": "Fire",
+                    "name": "StartFire",
                     "type": "Button",
                     "id": "dc011513-4574-40e4-89fa-f91be507c1bb",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
+                },
+                {
+                    "name": "StopFire",
+                    "type": "Button",
+                    "id": "6358cda7-6430-4be8-9723-88d16ec9e353",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
                 },
                 {
                     "name": "Peek",
@@ -36,6 +44,22 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SwitchUp",
+                    "type": "Button",
+                    "id": "760c1288-4717-4cdb-9bcc-883acfe8524f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchDown",
+                    "type": "Button",
+                    "id": "ba93850e-7605-44cd-b18c-11d2073e56af",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -46,7 +70,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Fire",
+                    "action": "StartFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -57,7 +81,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
+                    "action": "StartFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -68,7 +92,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Fire",
+                    "action": "StartFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -79,7 +103,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Fire",
+                    "action": "StartFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -90,7 +114,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Fire",
+                    "action": "StartFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -124,6 +148,83 @@
                     "processors": "",
                     "groups": "",
                     "action": "Cursor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e95a4b39-7a48-4bb9-a584-ec2c548fb5a7",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "03c35db5-6bd0-413b-bd0a-f09dc93bef80",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1717ee10-1dbf-450e-936d-ae45692ce067",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "StopFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1605687-d2c1-4177-964b-2cdbb534810b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "StopFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80da684a-74c2-4da0-8019-40388f82d6f4",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "StopFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a7dff44-3fb2-4d53-9f88-5071f407e685",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "StopFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0384c0a7-1e05-4c32-8194-fc8337dccba9",
+                    "path": "<XRController>/{PrimaryAction}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "StopFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

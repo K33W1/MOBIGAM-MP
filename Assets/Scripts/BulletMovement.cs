@@ -5,7 +5,7 @@
 public class BulletMovement : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float speed = 10f;
+    [SerializeField, Min(0)] private float speed = 10f;
 
     private Rigidbody rb = null;
 

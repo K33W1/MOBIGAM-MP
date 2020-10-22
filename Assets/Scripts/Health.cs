@@ -5,8 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int health = 3;
-    [SerializeField] private int maxHealth = 3;
+    [SerializeField, Min(0)] private int health = 3;
+    [SerializeField, Min(0)] private int maxHealth = 3;
 
     public event Action Died;
 

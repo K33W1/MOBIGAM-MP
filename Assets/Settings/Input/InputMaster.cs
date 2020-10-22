@@ -19,12 +19,20 @@ public class @InputMaster : IInputActionCollection, IDisposable
             ""id"": ""f4f1f859-c9a3-4869-9a1a-148799bf8cc5"",
             ""actions"": [
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""StartFire"",
                     ""type"": ""Button"",
                     ""id"": ""dc011513-4574-40e4-89fa-f91be507c1bb"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""StopFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""6358cda7-6430-4be8-9723-88d16ec9e353"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)""
                 },
                 {
                     ""name"": ""Peek"",
@@ -49,6 +57,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""760c1288-4717-4cdb-9bcc-883acfe8524f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba93850e-7605-44cd-b18c-11d2073e56af"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -59,7 +83,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
+                    ""action"": ""StartFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -70,7 +94,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Fire"",
+                    ""action"": ""StartFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -81,7 +105,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Touch"",
-                    ""action"": ""Fire"",
+                    ""action"": ""StartFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -92,7 +116,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
-                    ""action"": ""Fire"",
+                    ""action"": ""StartFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -103,7 +127,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""Fire"",
+                    ""action"": ""StartFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -137,6 +161,83 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Cursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e95a4b39-7a48-4bb9-a584-ec2c548fb5a7"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03c35db5-6bd0-413b-bd0a-f09dc93bef80"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1717ee10-1dbf-450e-936d-ae45692ce067"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""StopFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1605687-d2c1-4177-964b-2cdbb534810b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""StopFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80da684a-74c2-4da0-8019-40388f82d6f4"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Touch"",
+                    ""action"": ""StopFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a7dff44-3fb2-4d53-9f88-5071f407e685"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""StopFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0384c0a7-1e05-4c32-8194-fc8337dccba9"",
+                    ""path"": ""<XRController>/{PrimaryAction}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""StopFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -714,10 +815,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_StartFire = m_Player.FindAction("StartFire", throwIfNotFound: true);
+        m_Player_StopFire = m_Player.FindAction("StopFire", throwIfNotFound: true);
         m_Player_Peek = m_Player.FindAction("Peek", throwIfNotFound: true);
         m_Player_Cover = m_Player.FindAction("Cover", throwIfNotFound: true);
         m_Player_Cursor = m_Player.FindAction("Cursor", throwIfNotFound: true);
+        m_Player_SwitchUp = m_Player.FindAction("SwitchUp", throwIfNotFound: true);
+        m_Player_SwitchDown = m_Player.FindAction("SwitchDown", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -779,18 +883,24 @@ public class @InputMaster : IInputActionCollection, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_StartFire;
+    private readonly InputAction m_Player_StopFire;
     private readonly InputAction m_Player_Peek;
     private readonly InputAction m_Player_Cover;
     private readonly InputAction m_Player_Cursor;
+    private readonly InputAction m_Player_SwitchUp;
+    private readonly InputAction m_Player_SwitchDown;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
         public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @StartFire => m_Wrapper.m_Player_StartFire;
+        public InputAction @StopFire => m_Wrapper.m_Player_StopFire;
         public InputAction @Peek => m_Wrapper.m_Player_Peek;
         public InputAction @Cover => m_Wrapper.m_Player_Cover;
         public InputAction @Cursor => m_Wrapper.m_Player_Cursor;
+        public InputAction @SwitchUp => m_Wrapper.m_Player_SwitchUp;
+        public InputAction @SwitchDown => m_Wrapper.m_Player_SwitchDown;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -800,9 +910,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @StartFire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFire;
+                @StartFire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFire;
+                @StartFire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFire;
+                @StopFire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStopFire;
+                @StopFire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStopFire;
+                @StopFire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStopFire;
                 @Peek.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPeek;
                 @Peek.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPeek;
                 @Peek.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPeek;
@@ -812,13 +925,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Cursor.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCursor;
                 @Cursor.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCursor;
                 @Cursor.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCursor;
+                @SwitchUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchUp;
+                @SwitchUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchUp;
+                @SwitchUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchUp;
+                @SwitchDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchDown;
+                @SwitchDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchDown;
+                @SwitchDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchDown;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
+                @StartFire.started += instance.OnStartFire;
+                @StartFire.performed += instance.OnStartFire;
+                @StartFire.canceled += instance.OnStartFire;
+                @StopFire.started += instance.OnStopFire;
+                @StopFire.performed += instance.OnStopFire;
+                @StopFire.canceled += instance.OnStopFire;
                 @Peek.started += instance.OnPeek;
                 @Peek.performed += instance.OnPeek;
                 @Peek.canceled += instance.OnPeek;
@@ -828,6 +950,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Cursor.started += instance.OnCursor;
                 @Cursor.performed += instance.OnCursor;
                 @Cursor.canceled += instance.OnCursor;
+                @SwitchUp.started += instance.OnSwitchUp;
+                @SwitchUp.performed += instance.OnSwitchUp;
+                @SwitchUp.canceled += instance.OnSwitchUp;
+                @SwitchDown.started += instance.OnSwitchDown;
+                @SwitchDown.performed += instance.OnSwitchDown;
+                @SwitchDown.canceled += instance.OnSwitchDown;
             }
         }
     }
@@ -984,10 +1112,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
     }
     public interface IPlayerActions
     {
-        void OnFire(InputAction.CallbackContext context);
+        void OnStartFire(InputAction.CallbackContext context);
+        void OnStopFire(InputAction.CallbackContext context);
         void OnPeek(InputAction.CallbackContext context);
         void OnCover(InputAction.CallbackContext context);
         void OnCursor(InputAction.CallbackContext context);
+        void OnSwitchUp(InputAction.CallbackContext context);
+        void OnSwitchDown(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

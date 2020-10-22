@@ -4,7 +4,7 @@
 public class BulletDamageDealer : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int damage = 1;
+    [SerializeField, Min(0)] private int damage = 1;
 
     private void OnCollisionEnter(Collision collision)
     {
