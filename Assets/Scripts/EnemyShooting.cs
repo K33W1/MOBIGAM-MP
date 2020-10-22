@@ -10,7 +10,8 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform target = null;
 
     [Header("Settings")]
-    [SerializeField] private Vector2 cooldownRange = new Vector2(0f, 1f);
+    [SerializeField] private Vector2 cooldownRange = new Vector2(1f, 2f);
+    [SerializeField, Range(0, 1)] private float hitChance = 0.5f;
 
     private void OnEnable()
     {
@@ -22,10 +23,16 @@ public class EnemyShooting : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(cooldownRange.x, cooldownRange.y));
-            Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            Vector3 direction = (target.position - bulletSpawnPoint.position).normalized;
-            bullet.Launch(direction, gameObject.layer);
+            if (Random.value < hitChance)
+                ShootBullet();
         }
+    }
+
+    private void ShootBullet()
+    {
+        Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        Vector3 direction = (target.position - bulletSpawnPoint.position).normalized;
+        bullet.Launch(direction, gameObject.layer);
     }
 
     private void OnDisable()
