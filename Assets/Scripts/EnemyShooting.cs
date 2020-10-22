@@ -24,7 +24,7 @@ public class EnemyShooting : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(cooldownRange.x, cooldownRange.y));
             Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             Vector3 direction = (target.position - bulletSpawnPoint.position).normalized;
-            bullet.Launch(direction);
+            bullet.Launch(direction, gameObject.layer);
         }
     }
 
