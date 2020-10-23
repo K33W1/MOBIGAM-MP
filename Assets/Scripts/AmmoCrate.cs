@@ -12,6 +12,7 @@ public struct AmmoCrateDrop
     }
 }
 
+[DisallowMultipleComponent]
 public class AmmoCrate : MonoBehaviour, IDamageHandler
 {
     [Header("Settings")]

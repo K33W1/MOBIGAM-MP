@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Kiwi.Common;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -7,15 +6,21 @@ public class EnemyShooting : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] private Transform bulletSpawnPoint = null;
-    [SerializeField] private Transform target = null;
 
     [Header("Settings")]
     [SerializeField] private Vector2 cooldownRange = new Vector2(1f, 2f);
     [SerializeField, Range(0, 1)] private float hitChance = 0.5f;
 
+    private Transform target = null;
+
     private void OnEnable()
     {
         StartCoroutine(ShootingLoop());
+    }
+
+    public void Initialize(Transform target)
+    {
+        this.target = target;
     }
 
     private IEnumerator ShootingLoop()
