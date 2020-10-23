@@ -16,6 +16,8 @@ namespace Kiwi.Common
         
         private readonly Queue<T> pool = new Queue<T>();
 
+        protected abstract void InitializeObject(T obj);
+
         private void Awake()
         {
             Instance = this;
@@ -27,12 +29,14 @@ namespace Kiwi.Common
 
             foreach (T obj in startingObjects)
             {
+                InitializeObject(obj);
                 pool.Enqueue(obj);
             }
 
             for (int i = pool.Count; i < amountToPool; i++)
             {
-                pool.Enqueue(CreateObject());
+                T obj = CreateObject();
+                pool.Enqueue(obj);
             }
         }
 
@@ -63,6 +67,7 @@ namespace Kiwi.Common
         private T CreateObject()
         {
             T obj = Instantiate(objToPoolPrefab);
+            InitializeObject(obj);
             obj.transform.parent = transform;
             obj.gameObject.SetActive(false);
             return obj;

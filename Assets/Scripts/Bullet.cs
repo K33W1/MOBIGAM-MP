@@ -11,10 +11,9 @@ public class Bullet : MonoBehaviour
         movement = GetComponent<BulletMovement>();
     }
 
-    public void Launch(Vector3 direction, int layer)
+    public void Launch(Vector3 direction)
     {
         movement.Launch(direction);
-        gameObject.layer = layer;
     }
 
     private void OnDisable()
