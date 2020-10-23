@@ -1,7 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public interface IWeapon
 {
-    void StartFire(Ray ray);
+    void StartFire(Func<Ray> aimGetterFunc);
     void StopFire();
+
+    Element Element { get; set; }
+
+    void TakeBonusAmmo(float bonusAmmoMult);
 }

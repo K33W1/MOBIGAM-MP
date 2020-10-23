@@ -4,7 +4,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class PlayerInput : MonoBehaviour
 {
-    public event Action<Vector2> StartFire;
+    public event Action StartFire;
     public event Action StopFire;
     public event Action Peek;
     public event Action Cover;
@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         input = new InputMaster();
-        input.Player.StartFire.performed += _ => StartFire.Invoke(input.Player.Cursor.ReadValue<Vector2>());
+        input.Player.StartFire.performed += _ => StartFire.Invoke();
         input.Player.StopFire.performed += _ => StopFire.Invoke();
         input.Player.Peek.performed += _ => Peek.Invoke();
         input.Player.Cover.performed += _ => Cover.Invoke();
@@ -25,6 +25,8 @@ public class PlayerInput : MonoBehaviour
     }
 
     private void OnEnable() => input.Enable();
+
+    public Vector2 CursorPos => input.Player.Cursor.ReadValue<Vector2>();
 
     private void OnDisable() => input.Disable();
 }

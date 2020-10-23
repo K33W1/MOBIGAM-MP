@@ -37,10 +37,20 @@ public class PlayerShooting : MonoBehaviour
         currentWeapon = weaponObject.GetComponent<IWeapon>();
     }
 
-    private void OnStartFire(Vector2 screenPos)
+    public void TakeAmmoCrateDrop(AmmoCrateDrop drop)
     {
-        Ray ray = camera.ScreenPointToRay(new Vector3(screenPos.x, screenPos.y, 1));
-        currentWeapon.StartFire(ray);
+        currentWeapon.Element = drop.Element;
+        currentWeapon.TakeBonusAmmo(drop.BonusAmmoMult);
+    }
+
+    private void OnStartFire()
+    {
+        currentWeapon.StartFire(ShootRayFinder);
+    }
+
+    private Ray ShootRayFinder()
+    {
+        return camera.ScreenPointToRay(new Vector3(input.CursorPos.x, input.CursorPos.y));
     }
 
     private void OnStopFire()
