@@ -16,4 +16,9 @@ public class Bullet : MonoBehaviour
         movement.Launch(direction);
         gameObject.layer = layer;
     }
+
+    private void OnDisable()
+    {
+        BulletPooler.Instance.ReturnToPool(this);
+    }
 }

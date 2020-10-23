@@ -1,11 +1,11 @@
 ﻿using System.Collections;
+using Kiwi.Common;
 using UnityEngine;
 
 [DisallowMultipleComponent]
 public class EnemyShooting : MonoBehaviour
 {
     [Header("Reference")]
-    [SerializeField] private Bullet bulletPrefab = null;
     [SerializeField] private Transform bulletSpawnPoint = null;
     [SerializeField] private Transform target = null;
 
@@ -30,7 +30,8 @@ public class EnemyShooting : MonoBehaviour
 
     private void ShootBullet()
     {
-        Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        Bullet bullet = BulletPooler.Instance.GetPooledObject();
+        bullet.transform.position = bulletSpawnPoint.position;
         Vector3 direction = (target.position - bulletSpawnPoint.position).normalized;
         bullet.Launch(direction, gameObject.layer);
     }

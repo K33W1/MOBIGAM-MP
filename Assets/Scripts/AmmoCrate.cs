@@ -15,12 +15,16 @@ public struct AmmoCrateDrop
 
 public class AmmoCrate : MonoBehaviour, IDamageHandler
 {
-    [Header("References")]
-    [SerializeField] private PlayerShooting playerShooting = null;
-
     [Header("Settings")]
     [SerializeField] private Element element = Element.Blue;
     [SerializeField] private Vector2 bonusAmmoMult = new Vector2(1, 2);
+    
+    private PlayerShooting playerShooting = null;
+
+    public void Initialize(PlayerShooting playerShooting)
+    {
+        this.playerShooting = playerShooting;
+    }
 
     public void Damage(DamageInfo _)
     {
