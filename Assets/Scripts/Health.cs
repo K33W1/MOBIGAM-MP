@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField, Min(0)] private int maxHealth = 3;
 
     public event Action Died;
+    public event Action<int> ValueChanged;
 
 #if DEBUG
     private void Start()
@@ -17,11 +18,14 @@ public class Health : MonoBehaviour
     }
 #endif
 
+    public int Value => health;
+
     public void Damage(int damage)
     {
         Debug.Assert(damage > 0);
-        
+
         health -= damage;
+        ValueChanged?.Invoke(health);
         
         if (health <= 0)
             Died?.Invoke();
@@ -32,5 +36,6 @@ public class Health : MonoBehaviour
         Debug.Assert(heal > 0);
 
         health = Mathf.Min(health + heal, maxHealth);
+        ValueChanged?.Invoke(health);
     }
 }
