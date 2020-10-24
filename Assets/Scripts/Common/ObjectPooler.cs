@@ -73,5 +73,10 @@ namespace Kiwi.Common
             obj.gameObject.SetActive(false);
             return obj;
         }
+
+        private void OnDestroy()
+        {
+            Instance = null;
+        }
     }
 }

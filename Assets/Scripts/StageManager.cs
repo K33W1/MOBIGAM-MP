@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 public class StageManager : MonoBehaviour
 {
     [Header("References")]
@@ -10,16 +11,22 @@ public class StageManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Assert(levelScore != null);
+        Debug.Assert(stageScore != null);
+
         Instance = this;
     }
 
     private void Start()
     {
+        levelScore.Value = 0;
         stageScore.Value = 0;
     }
 
     private void OnDestroy()
     {
+        levelScore.Value = 0;
         stageScore.Value = 0;
+        Instance = null;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class ScoreText : MonoBehaviour
 {
     [Header("References")]

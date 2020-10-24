@@ -1,17 +1,5 @@
 ﻿using UnityEngine;
 
-public struct AmmoCrateDrop
-{
-    public Element Element;
-    public float BonusAmmoMult;
-
-    public AmmoCrateDrop(Element element, float bonusAmmoMult)
-    {
-        Element = element;
-        BonusAmmoMult = bonusAmmoMult;
-    }
-}
-
 [DisallowMultipleComponent]
 public class AmmoCrate : MonoBehaviour, IDamageHandler
 {
