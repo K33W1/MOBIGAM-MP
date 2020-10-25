@@ -7,14 +7,10 @@ public class StageManager : MonoBehaviour
     [SerializeField] private IntValue levelScore = null;
     [SerializeField] private IntValue stageScore = null;
 
-    public static StageManager Instance { get; private set; }
-
     private void Awake()
     {
         Debug.Assert(levelScore != null);
         Debug.Assert(stageScore != null);
-
-        Instance = this;
     }
 
     private void Start()
@@ -27,6 +23,5 @@ public class StageManager : MonoBehaviour
     {
         levelScore.Value = 0;
         stageScore.Value = 0;
-        Instance = null;
     }
 }

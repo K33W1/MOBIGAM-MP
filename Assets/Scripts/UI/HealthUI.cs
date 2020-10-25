@@ -22,7 +22,7 @@ public class HealthUI : MonoBehaviour
 
     private void OnHealthChanged(int value)
     {
-        Debug.Assert(value >= 0 && value <= healthImages.Length);
+        Debug.Assert(value <= healthImages.Length);
 
         for (int i = 0; i < healthImages.Length; i++)
         {

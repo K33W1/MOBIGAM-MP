@@ -50,7 +50,12 @@ public class PlayerShooting : MonoBehaviour
 
     private Ray ShootRayFinder()
     {
-        return camera.ScreenPointToRay(new Vector3(input.CursorPos.x, input.CursorPos.y));
+        Vector3 viewportCursorPos = new Vector3
+        (
+            input.CursorPos.x / Screen.width,
+            input.CursorPos.y / Screen.height
+        );
+        return camera.ViewportPointToRay(viewportCursorPos);
     }
 
     private void OnStopFire()

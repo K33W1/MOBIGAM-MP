@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfbaac433620c94a96fa3541117d0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
   maxHealth: 3
+  health: 3
 --- !u!114 &2536062512490330762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 26cd87aab56fb9b47882a712c0d15caf, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a0f650c16c2d747946bc630113b5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 3
+  startingElement: 3
   damage: 1
   shootDistance: 100
 --- !u!1 &5759480273061311430
@@ -306,9 +306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9037305afa20d42af400c04f6f9fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 3
+  startingElement: 3
   damage: 1
   ammo: 60
+  baseAmmoDrop: 20
   fireRate: 0.2
   shootDistance: 100
 --- !u!1 &8664352104788846689

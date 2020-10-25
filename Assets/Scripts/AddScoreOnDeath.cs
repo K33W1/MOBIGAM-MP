@@ -8,13 +8,13 @@ public class AddScoreOnDeath : MonoBehaviour
     [SerializeField] private IntValue stageScore = null;
 
     [Header("Settings")]
-    [SerializeField] private int scoreToAdd = 100;
-
-    private Health health = null;
+    [SerializeField, Min(0)] private int scoreToAdd = 100;
 
     private void Awake()
     {
-        health = GetComponent<Health>();
+        Debug.Assert(stageScore != null);
+
+        Health health = GetComponent<Health>();
         health.Died += () => stageScore.Value += scoreToAdd;
     }
 }

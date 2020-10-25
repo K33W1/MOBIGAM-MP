@@ -20,6 +20,9 @@ public class Pistol : MonoBehaviour, IWeapon
     {
         Physics.Raycast(aimGetterFunc(), out RaycastHit hitInfo, shootDistance);
 
+        Ray ray = aimGetterFunc();
+        Debug.DrawRay(ray.origin, ray.direction, Color.white, 1.0f);
+
         if (hitInfo.collider != null)
         {
             if (hitInfo.collider.TryGetComponent(out IDamageHandler damageable))
