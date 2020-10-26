@@ -33,7 +33,7 @@ public class PlayerShooting : MonoBehaviour
         while (true)
         {
             Bullet bullet = BulletPooler.Instance.GetPooledObject();
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 direction = bulletSpawnPoint.forward;
 
             bullet.transform.position = bulletSpawnPoint.transform.position;
             bullet.Launch(gameObject.layer, direction, currentElement);
