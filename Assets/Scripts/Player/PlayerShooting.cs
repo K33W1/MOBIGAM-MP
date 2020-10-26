@@ -1,11 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerShooting : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private Transform bulletSpawnPoint = null;
     [SerializeField] private Transform target = null;
+
+    [Header("Settings")]
+    [SerializeField, Min(0)] private float fireRate = 0.25f;
 
     private PlayerInput input = null;
 
@@ -18,11 +23,23 @@ public class PlayerShooting : MonoBehaviour
 
     private void StartFire()
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(FiringLoop());
+    }
+
+    private IEnumerator FiringLoop()
+    {
+        while (true)
+        {
+            Bullet bullet = BulletPooler.Instance.GetPooledObject();
+            bullet.Launch((target.position - transform.position).normalized);
+            bullet.transform.position = bulletSpawnPoint.transform.position;
+
+            yield return new WaitForSeconds(fireRate);
+        }
     }
 
     private void StopFire()
     {
-        throw new System.NotImplementedException();
+        StopAllCoroutines();
     }
 }
