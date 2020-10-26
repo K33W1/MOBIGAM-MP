@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7958434827658191047}
   - component: {fileID: 3232813380924628810}
   - component: {fileID: 5357701670773138745}
+  - component: {fileID: 1182863856942235705}
   - component: {fileID: 6904205891451914675}
   m_Layer: 10
   m_Name: Bullet
@@ -198,6 +199,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 8
+--- !u!114 &1182863856942235705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958434827658191045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e32d81919506bd4cb4a4ec9eae460eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 7958434826850367992}
+  noneMaterial: {fileID: 2100000, guid: 09bd4657bcab3ba4b85781a17fe1fd85, type: 2}
+  redMaterial: {fileID: 2100000, guid: ffc6f8d3bb71cca4084990c7aa0ce231, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 9fdd017dd6f70d44b8e4d664be37e17b, type: 2}
+  blueMaterial: {fileID: 2100000, guid: ccbceb29c021204488495d624c42b761, type: 2}
 --- !u!114 &6904205891451914675
 MonoBehaviour:
   m_ObjectHideFlags: 0
