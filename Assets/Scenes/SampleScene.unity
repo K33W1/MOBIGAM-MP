@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba428da6708c704f9590c34c7a7ac04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 670720487}
+  health: {fileID: 1690946738}
 --- !u!1001 &339406917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &653260036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,30 +767,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &670720485 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2536062512490330765, guid: d6c68159b16557044b91f7476e304f08,
-    type: 3}
-  m_PrefabInstance: {fileID: 2536062512082261230}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9f3b7d9a6842a8469d0cdcfbcfc2faf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &670720487 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2536062512490330763, guid: d6c68159b16557044b91f7476e304f08,
-    type: 3}
-  m_PrefabInstance: {fileID: 2536062512082261230}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abfbaac433620c94a96fa3541117d0ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &703770210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2536062512490330764, guid: d6c68159b16557044b91f7476e304f08,
@@ -5768,6 +5744,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632495655}
   m_CullTransparentMesh: 0
+--- !u!114 &1690946738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 744947126487024252, guid: d6c68159b16557044b91f7476e304f08,
+    type: 3}
+  m_PrefabInstance: {fileID: 2536062512082261230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfbaac433620c94a96fa3541117d0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1735396301
 GameObject:
   m_ObjectHideFlags: 0
@@ -6263,7 +6251,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerShooting
       value: 
-      objectReference: {fileID: 670720485}
+      objectReference: {fileID: 0}
     - target: {fileID: 6491548905217322298, guid: 5fb3ba9bc7d80ab4f91aeb1a2ae1a1be,
         type: 3}
       propertyPath: m_LocalPosition.x

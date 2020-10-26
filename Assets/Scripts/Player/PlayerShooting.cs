@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(PlayerInput))]
@@ -45,17 +46,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void OnStartFire()
     {
-        currentWeapon.StartFire(ShootRayFinder);
-    }
-
-    private Ray ShootRayFinder()
-    {
-        Vector3 viewportCursorPos = new Vector3
-        (
-            input.CursorPos.x / Screen.width,
-            input.CursorPos.y / Screen.height
-        );
-        return camera.ViewportPointToRay(viewportCursorPos);
+        throw new NotImplementedException();
     }
 
     private void OnStopFire()

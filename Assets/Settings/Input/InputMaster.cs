@@ -19,6 +19,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
             ""id"": ""f4f1f859-c9a3-4869-9a1a-148799bf8cc5"",
             ""actions"": [
                 {
+                    ""name"": ""KeyboardMove"",
+                    ""type"": ""Value"",
+                    ""id"": ""abd80558-a666-4abe-9caa-244090e2b1bd"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""JoystickMove"",
+                    ""type"": ""Value"",
+                    ""id"": ""a141d4d9-455f-4849-99d2-ffcf066c5a23"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""StartFire"",
                     ""type"": ""Button"",
                     ""id"": ""dc011513-4574-40e4-89fa-f91be507c1bb"",
@@ -33,30 +49,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=1)""
-                },
-                {
-                    ""name"": ""Peek"",
-                    ""type"": ""Button"",
-                    ""id"": ""4aa65c2d-5322-4b75-b2bc-7fa0c5fb550a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Cover"",
-                    ""type"": ""Button"",
-                    ""id"": ""773d5784-a0cf-418a-bfcd-15c5ea2a7b0a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Cursor"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""a1cb5ae0-2eb9-4296-9143-0e3ed44fef30"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 },
                 {
                     ""name"": ""SwitchUp"",
@@ -128,39 +120,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""StartFire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cb47f5f5-2a58-4452-9c03-a78592a13b16"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Peek"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""34691992-e425-4a27-8b56-14a0d184ea48"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": ""Press(behavior=1)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Cover"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7f4a7d2f-42cd-472b-bada-54d6d90474fd"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Cursor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -238,6 +197,138 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""StopFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""e652108a-6fbe-4c00-8892-528b78e32769"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""29d6c1ee-8210-4e7e-8c00-25a0d79c6d6d"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""61c4b199-d9de-4e5a-afd1-1a5bdf5a8bb5"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""2c82a07b-5e9c-4553-b343-47dc353fa9ba"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""414acbce-df24-4ebb-9a67-3db047dc9c97"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""aeec51e8-898e-4c14-935a-55ae5aa01101"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d00c3188-4ce1-4469-b8d2-251c7e3353b4"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ec1094c7-c8c2-4381-b3ce-b30d9ef61306"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a4acf936-cf0f-48b1-b401-d6143062d233"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""KeyboardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9056f759-b5f4-45d6-b472-ebdf64fe41e8"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""JoystickMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""27f49d8c-d0f1-4fa6-87cf-2dca0d8858c9"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""JoystickMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e6bc6b0-bf6e-479c-94c2-e6f1b1b9831f"",
+                    ""path"": ""<XRController>/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""JoystickMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -815,11 +906,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_KeyboardMove = m_Player.FindAction("KeyboardMove", throwIfNotFound: true);
+        m_Player_JoystickMove = m_Player.FindAction("JoystickMove", throwIfNotFound: true);
         m_Player_StartFire = m_Player.FindAction("StartFire", throwIfNotFound: true);
         m_Player_StopFire = m_Player.FindAction("StopFire", throwIfNotFound: true);
-        m_Player_Peek = m_Player.FindAction("Peek", throwIfNotFound: true);
-        m_Player_Cover = m_Player.FindAction("Cover", throwIfNotFound: true);
-        m_Player_Cursor = m_Player.FindAction("Cursor", throwIfNotFound: true);
         m_Player_SwitchUp = m_Player.FindAction("SwitchUp", throwIfNotFound: true);
         m_Player_SwitchDown = m_Player.FindAction("SwitchDown", throwIfNotFound: true);
         // UI
@@ -883,22 +973,20 @@ public class @InputMaster : IInputActionCollection, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_KeyboardMove;
+    private readonly InputAction m_Player_JoystickMove;
     private readonly InputAction m_Player_StartFire;
     private readonly InputAction m_Player_StopFire;
-    private readonly InputAction m_Player_Peek;
-    private readonly InputAction m_Player_Cover;
-    private readonly InputAction m_Player_Cursor;
     private readonly InputAction m_Player_SwitchUp;
     private readonly InputAction m_Player_SwitchDown;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
         public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @KeyboardMove => m_Wrapper.m_Player_KeyboardMove;
+        public InputAction @JoystickMove => m_Wrapper.m_Player_JoystickMove;
         public InputAction @StartFire => m_Wrapper.m_Player_StartFire;
         public InputAction @StopFire => m_Wrapper.m_Player_StopFire;
-        public InputAction @Peek => m_Wrapper.m_Player_Peek;
-        public InputAction @Cover => m_Wrapper.m_Player_Cover;
-        public InputAction @Cursor => m_Wrapper.m_Player_Cursor;
         public InputAction @SwitchUp => m_Wrapper.m_Player_SwitchUp;
         public InputAction @SwitchDown => m_Wrapper.m_Player_SwitchDown;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -910,21 +998,18 @@ public class @InputMaster : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
+                @KeyboardMove.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyboardMove;
+                @KeyboardMove.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyboardMove;
+                @KeyboardMove.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyboardMove;
+                @JoystickMove.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoystickMove;
+                @JoystickMove.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoystickMove;
+                @JoystickMove.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoystickMove;
                 @StartFire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFire;
                 @StartFire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFire;
                 @StartFire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartFire;
                 @StopFire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStopFire;
                 @StopFire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStopFire;
                 @StopFire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStopFire;
-                @Peek.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPeek;
-                @Peek.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPeek;
-                @Peek.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPeek;
-                @Cover.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCover;
-                @Cover.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCover;
-                @Cover.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCover;
-                @Cursor.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCursor;
-                @Cursor.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCursor;
-                @Cursor.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCursor;
                 @SwitchUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchUp;
                 @SwitchUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchUp;
                 @SwitchUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchUp;
@@ -935,21 +1020,18 @@ public class @InputMaster : IInputActionCollection, IDisposable
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @KeyboardMove.started += instance.OnKeyboardMove;
+                @KeyboardMove.performed += instance.OnKeyboardMove;
+                @KeyboardMove.canceled += instance.OnKeyboardMove;
+                @JoystickMove.started += instance.OnJoystickMove;
+                @JoystickMove.performed += instance.OnJoystickMove;
+                @JoystickMove.canceled += instance.OnJoystickMove;
                 @StartFire.started += instance.OnStartFire;
                 @StartFire.performed += instance.OnStartFire;
                 @StartFire.canceled += instance.OnStartFire;
                 @StopFire.started += instance.OnStopFire;
                 @StopFire.performed += instance.OnStopFire;
                 @StopFire.canceled += instance.OnStopFire;
-                @Peek.started += instance.OnPeek;
-                @Peek.performed += instance.OnPeek;
-                @Peek.canceled += instance.OnPeek;
-                @Cover.started += instance.OnCover;
-                @Cover.performed += instance.OnCover;
-                @Cover.canceled += instance.OnCover;
-                @Cursor.started += instance.OnCursor;
-                @Cursor.performed += instance.OnCursor;
-                @Cursor.canceled += instance.OnCursor;
                 @SwitchUp.started += instance.OnSwitchUp;
                 @SwitchUp.performed += instance.OnSwitchUp;
                 @SwitchUp.canceled += instance.OnSwitchUp;
@@ -1112,11 +1194,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
     }
     public interface IPlayerActions
     {
+        void OnKeyboardMove(InputAction.CallbackContext context);
+        void OnJoystickMove(InputAction.CallbackContext context);
         void OnStartFire(InputAction.CallbackContext context);
         void OnStopFire(InputAction.CallbackContext context);
-        void OnPeek(InputAction.CallbackContext context);
-        void OnCover(InputAction.CallbackContext context);
-        void OnCursor(InputAction.CallbackContext context);
         void OnSwitchUp(InputAction.CallbackContext context);
         void OnSwitchDown(InputAction.CallbackContext context);
     }
