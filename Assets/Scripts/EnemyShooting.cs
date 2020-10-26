@@ -36,9 +36,10 @@ public class EnemyShooting : MonoBehaviour
     private void ShootBullet()
     {
         Bullet bullet = BulletPooler.Instance.GetPooledObject();
-        bullet.transform.position = bulletSpawnPoint.position;
         Vector3 direction = (target.position - bulletSpawnPoint.position).normalized;
-        bullet.Launch(direction);
+
+        bullet.transform.position = bulletSpawnPoint.position;
+        bullet.Launch(gameObject.layer, direction, Element.None);
     }
 
     private void OnDisable()

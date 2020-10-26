@@ -14,6 +14,8 @@ public class PlayerShooting : MonoBehaviour
 
     private PlayerInput input = null;
 
+    private Element currentElement = Element.Blue;
+
     private void Awake()
     {
         input = GetComponent<PlayerInput>();
@@ -31,8 +33,10 @@ public class PlayerShooting : MonoBehaviour
         while (true)
         {
             Bullet bullet = BulletPooler.Instance.GetPooledObject();
-            bullet.Launch((target.position - transform.position).normalized);
+            Vector3 direction = (target.position - transform.position).normalized;
+
             bullet.transform.position = bulletSpawnPoint.transform.position;
+            bullet.Launch(gameObject.layer, direction, currentElement);
 
             yield return new WaitForSeconds(fireRate);
         }

@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToPoolPrefab: {fileID: 7958434827658191064, guid: 6b5e00d0dc0365b4c80a8e21e0cbb8ac,
     type: 3}
-  amountToPool: 4
+  amountToPool: 16
   isExpandable: 1
