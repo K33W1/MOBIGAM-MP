@@ -7,11 +7,11 @@ public class AmmoCrate : MonoBehaviour, IDamageHandler
     [SerializeField] private Element element = Element.Blue;
     [SerializeField] private Vector2 bonusAmmoMult = new Vector2(1, 2);
     
-    private PlayerShooting playerShooting = null;
+    private PlayerShootingOld playerShooting = null;
 
-    public void Initialize(PlayerShooting playerShooting)
+    public void Initialize(PlayerShootingOld playerShootingOld)
     {
-        this.playerShooting = playerShooting;
+        this.playerShooting = playerShootingOld;
     }
 
     public void Damage(DamageInfo _)
