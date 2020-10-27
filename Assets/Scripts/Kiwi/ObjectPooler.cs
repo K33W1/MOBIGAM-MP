@@ -26,15 +26,15 @@ namespace Kiwi.Common
 
         private void Start()
         {
-            T[] startingObjects = GetComponentsInChildren<T>();
+            int objCount = 0;
 
-            foreach (T obj in startingObjects)
+            foreach (T obj in GetComponentsInChildren<T>())
             {
                 InitializeObject(obj);
-                pool.Enqueue(obj);
+                objCount++;
             }
 
-            for (int i = pool.Count; i < amountToPool; i++)
+            for (int i = objCount; i < amountToPool; i++)
             {
                 T obj = CreateObject();
                 pool.Enqueue(obj);

@@ -10,7 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ec1043386b7e8642b91c79be82ad06a, type: 3}
-  m_Name: StageScore
+  m_Name: EnemyCount
   m_EditorClassIdentifier: 
-  value: 400
-  resetOnEnable: 1
+  value: 0

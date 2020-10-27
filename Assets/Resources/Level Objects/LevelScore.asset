@@ -13,4 +13,3 @@ MonoBehaviour:
   m_Name: LevelScore
   m_EditorClassIdentifier: 
   value: 0
-  resetOnAwake: 1

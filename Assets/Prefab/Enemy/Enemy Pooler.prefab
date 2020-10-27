@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 183198599985945432}
   - component: {fileID: 183198599985945433}
+  - component: {fileID: 7326598808974414554}
   m_Layer: 0
   m_Name: Enemy Pooler
   m_TagString: Untagged
@@ -48,3 +49,27 @@ MonoBehaviour:
   amountToPool: 4
   isExpandable: 0
   player: {fileID: 0}
+--- !u!114 &7326598808974414554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183198599985945434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42740094c28038241ade462f34b8bb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPooler: {fileID: 183198599985945433}
+  spawnLocations:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyCountObject: {fileID: 0}
+  maxSpawnCount: 8
+  maxEnemyCount: 4
+  startDelay: 2
+  spawnRate: 1
