@@ -854,8 +854,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 649498869}
+  - component: {fileID: 649498870}
   m_Layer: 0
-  m_Name: Enemy Camp Points
+  m_Name: Enemy Waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,6 +880,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649498870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649498868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff08ea1be448f2047b750733867fa5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &650483083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2406129333376017715, guid: d6c68159b16557044b91f7476e304f08,
@@ -1859,9 +1872,9 @@ PrefabInstance:
       objectReference: {fileID: 1476837614}
     - target: {fileID: 183198599985945433, guid: db56b1ad1fcb71447b1aa5b360003b12,
         type: 3}
-      propertyPath: isExpandable
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: enemyWaypointProvider
+      value: 
+      objectReference: {fileID: 649498870}
     - target: {fileID: 183198599985945434, guid: db56b1ad1fcb71447b1aa5b360003b12,
         type: 3}
       propertyPath: m_Name

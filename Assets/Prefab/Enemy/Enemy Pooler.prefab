@@ -47,7 +47,8 @@ MonoBehaviour:
   objToPoolPrefab: {fileID: 1268708042022163113, guid: ebf99f47c23eda54eb9e1c24754b4a98,
     type: 3}
   amountToPool: 4
-  isExpandable: 0
+  isExpandable: 1
+  enemyWaypointProvider: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &7326598808974414554
 MonoBehaviour:
