@@ -17,8 +17,6 @@ namespace Kiwi.Common
         
         private readonly Queue<T> pool = new Queue<T>();
 
-        protected abstract void InitializeObject(T obj);
-
         private void Awake()
         {
             Instance = this;
@@ -26,15 +24,7 @@ namespace Kiwi.Common
 
         private void Start()
         {
-            int objCount = 0;
-
-            foreach (T obj in GetComponentsInChildren<T>())
-            {
-                InitializeObject(obj);
-                objCount++;
-            }
-
-            for (int i = objCount; i < amountToPool; i++)
+            for (int i = GetComponentsInChildren<T>().Length; i < amountToPool; i++)
             {
                 T obj = CreateObject();
                 pool.Enqueue(obj);
@@ -68,7 +58,6 @@ namespace Kiwi.Common
         private T CreateObject()
         {
             T obj = Instantiate(objToPoolPrefab);
-            InitializeObject(obj);
             obj.transform.parent = transform;
             obj.gameObject.SetActive(false);
             return obj;

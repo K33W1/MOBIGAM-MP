@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -15,16 +16,11 @@ public class EnemyWaypoints : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    private void Start()
-    {
-        RefreshWaypoints();
-    }
-
     private void Update()
     {
-        RefreshWaypoints();
+        if (!EditorApplication.isPlaying)
+            RefreshWaypoints();
     }
-#endif
 
     [ContextMenu("Refresh Waypoints")]
     private void RefreshWaypoints()
@@ -36,8 +32,9 @@ public class EnemyWaypoints : MonoBehaviour
             waypoints.Add(child);
         }
     }
+#endif
 
-    public Transform GetPosition()
+    public Transform GetWaypoint()
     {
         if (waypoints.Count == 0)
         {
@@ -51,13 +48,13 @@ public class EnemyWaypoints : MonoBehaviour
         return randomPos;
     }
 
-    public void ReturnPosition(Transform transform)
+    public void ReturnWaypoint(Transform transform)
     {
         waypoints.Add(transform);
     }
 
     private void OnDestroy()
     {
-        Instance = null;
+        Instance = this;
     }
 }

@@ -6,23 +6,27 @@ public class EnemyWaypointFollower : MonoBehaviour
     [Header("Settings")]
     [SerializeField, Min(0)] private float speed = 0.1f;
 
-    private Transform pointToFollow = null;
+    public Transform waypoint = null;
 
     private void OnEnable()
     {
-        pointToFollow = EnemyWaypoints.Instance.GetPosition();
+        waypoint = EnemyWaypoints.Instance.GetWaypoint();
     }
 
     private void Update()
     {
-        if (pointToFollow != null)
+        if (waypoint != null)
         {
-            transform.position = Vector3.Lerp(transform.position, pointToFollow.position, speed);
+            transform.position = Vector3.Lerp(transform.position, waypoint.position, speed);
         }
     }
 
     private void OnDisable()
     {
-        EnemyWaypoints.Instance?.ReturnPosition(pointToFollow);
+        if (waypoint != null)
+        {
+            EnemyWaypoints.Instance.ReturnWaypoint(waypoint);
+            waypoint = null;
+        }
     }
 }

@@ -7,7 +7,6 @@ public class PlayerShooting : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform bulletSpawnPoint = null;
-    [SerializeField] private Transform target = null;
 
     [Header("Settings")]
     [SerializeField, Min(0)] private float fireRate = 0.25f;

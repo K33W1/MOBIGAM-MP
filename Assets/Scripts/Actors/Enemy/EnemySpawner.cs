@@ -9,6 +9,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform[] spawnLocations = null;
     [SerializeField] private IntValue enemyCountObject = null;
 
+    [Header("Enemy Dependencies")]
+    [SerializeField] private Transform player = null;
+
     [Header("Settings")]
     [SerializeField] private int maxSpawnCount = 8;
     [SerializeField] private int maxEnemyCount = 4;
@@ -25,6 +28,8 @@ public class EnemySpawner : MonoBehaviour
             {
                 enemyCountObject.Value++;
             }
+
+            enemy.Initialize(player);
         }
 
         StartCoroutine(SpawningLoop());
@@ -44,8 +49,12 @@ public class EnemySpawner : MonoBehaviour
             while (enemyCountObject.Value >= maxEnemyCount)
                 yield return 0;
 
+            Element randomElement = ElementExtensions.GetRandomValidElement();
             Enemy enemy = enemyPooler.GetPooledObject();
+
             enemy.transform.position = spawnPos;
+            enemy.Initialize(player);
+            enemy.InitializeOnSpawn(randomElement);
 
             enemyCountObject.Value++;
 

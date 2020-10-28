@@ -48,8 +48,6 @@ MonoBehaviour:
     type: 3}
   amountToPool: 4
   isExpandable: 1
-  enemyWaypointProvider: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &7326598808974414554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +67,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  enemyCountObject: {fileID: 0}
+  enemyCountObject: {fileID: 11400000, guid: a9b35c74873d3d74f906480467c1dec0, type: 2}
+  player: {fileID: 0}
   maxSpawnCount: 8
   maxEnemyCount: 4
   startDelay: 2
