@@ -12,8 +12,6 @@ public class AddMoneyOnDeath : MonoBehaviour
     
     private void Awake()
     {
-        Debug.Assert(money != null);
-
         Health health = GetComponent<Health>();
         health.Died += () => money.Value += moneyToAdd;
     }

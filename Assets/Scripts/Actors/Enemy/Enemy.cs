@@ -9,22 +9,32 @@ public class Enemy : MonoBehaviour
 
     public event Action Spawned;
 
-    public Element Element
-    {
-        get => element;
-        private set => element = value;
-    }
+    public Element Element { get => element; private set => element = value; }
     public Transform Target { get; private set; }
+    public Transform Waypoint { get; private set; }
 
-    public void InitializeOnSpawn(Element element)
+    private EnemyWaypoints waypointProvider = null;
+
+    public void Initialize(EnemyWaypoints waypointProvider, Transform target)
+    {
+        this.waypointProvider = waypointProvider;
+        Target = target;
+    }
+
+    public void Spawn(Element element)
     {
         Element = element;
+        Waypoint = waypointProvider.GetWaypoint();
 
         Spawned?.Invoke();
     }
 
-    public void Initialize(Transform target)
+    private void OnDisable()
     {
-        Target = target;
+        if (Waypoint != null)
+        {
+            waypointProvider.ReturnWaypoint(Waypoint);
+            Waypoint = null;
+        }
     }
 }

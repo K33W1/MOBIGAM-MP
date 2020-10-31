@@ -24,12 +24,22 @@ namespace Kiwi.Common
 
         private void Start()
         {
-            for (int i = GetComponentsInChildren<T>().Length; i < amountToPool; i++)
+            T[] children = GetComponentsInChildren<T>();
+
+            foreach (T child in children)
+            {
+                InitializeObject(child);
+            }
+
+            for (int i = children.Length; i < amountToPool; i++)
             {
                 T obj = CreateObject();
+                InitializeObject(obj);
                 pool.Enqueue(obj);
             }
         }
+
+        protected abstract void InitializeObject(T obj);
 
         public T GetPooledObject()
         {

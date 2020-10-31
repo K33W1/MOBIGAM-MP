@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-public class LifetimeTimer : MonoBehaviour
+public class Lifetimer : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField, Min(0)] private float duration = 8.0f;

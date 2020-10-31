@@ -8,18 +8,13 @@ public class EnemyWaypoints : MonoBehaviour
 {
     [SerializeField] private List<Transform> waypoints = new List<Transform>();
 
-    public static EnemyWaypoints Instance = null;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-
 #if UNITY_EDITOR
     private void Update()
     {
         if (!EditorApplication.isPlaying)
+        {
             RefreshWaypoints();
+        }
     }
 
     [ContextMenu("Refresh Waypoints")]
@@ -51,10 +46,5 @@ public class EnemyWaypoints : MonoBehaviour
     public void ReturnWaypoint(Transform transform)
     {
         waypoints.Add(transform);
-    }
-
-    private void OnDestroy()
-    {
-        Instance = this;
     }
 }

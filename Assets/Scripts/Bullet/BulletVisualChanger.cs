@@ -12,11 +12,6 @@ public class BulletVisualChanger : MonoBehaviour
     [SerializeField] private Material greenMaterial = null;
     [SerializeField] private Material blueMaterial = null;
 
-    private void Awake()
-    {
-
-    }
-
     public void OnElementChanged(Element element)
     {
         switch (element)

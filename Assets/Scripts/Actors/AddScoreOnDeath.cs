@@ -12,8 +12,6 @@ public class AddScoreOnDeath : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Assert(stageScore != null);
-
         Health health = GetComponent<Health>();
         health.Died += () => stageScore.Value += scoreToAdd;
     }

@@ -1,32 +1,26 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(Enemy))]
 public class EnemyWaypointFollower : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField, Min(0)] private float speed = 0.1f;
 
-    public Transform waypoint = null;
+    private Enemy enemy = null;
 
-    private void OnEnable()
+    private void Awake()
     {
-        waypoint = EnemyWaypoints.Instance.GetWaypoint();
+        enemy = GetComponent<Enemy>();
     }
 
     private void Update()
     {
+        Transform waypoint = enemy.Waypoint;
+
         if (waypoint != null)
         {
             transform.position = Vector3.Lerp(transform.position, waypoint.position, speed);
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (waypoint != null)
-        {
-            EnemyWaypoints.Instance.ReturnWaypoint(waypoint);
-            waypoint = null;
         }
     }
 }
