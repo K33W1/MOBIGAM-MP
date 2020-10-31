@@ -3,8 +3,8 @@ using Random = UnityEngine.Random;
 
 public static class ElementExtensions
 {
-    private static readonly Element[] AllElements = Enum.GetValues(typeof(Element)) as Element[];
-    private static readonly Element[] ValidElements = GetAllValidElements();
+    public static readonly Element[] AllElements = Enum.GetValues(typeof(Element)) as Element[];
+    public static readonly Element[] ValidElements = GetAllValidElements();
 
     public static Element GetRandomValidElement()
     {

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -20,6 +21,22 @@ public class PlayerShooting : MonoBehaviour
         input = GetComponent<PlayerInput>();
         input.StartFire += StartFire;
         input.StopFire += StopFire;
+        input.SwitchWeaponUp += OnSwitchWeaponUp;
+        input.SwitchWeaponDown += OnSwitchWeaponDown;
+    }
+
+    private void OnSwitchWeaponUp()
+    {
+        int validElementsCount = ElementExtensions.ValidElements.Length;
+        int newElementIndex = (int) currentElement % validElementsCount;
+        currentElement = ElementExtensions.ValidElements[newElementIndex];
+    }
+
+    private void OnSwitchWeaponDown()
+    {
+        int validElementsCount = ElementExtensions.ValidElements.Length;
+        int newElementIndex = (int)(validElementsCount + currentElement - 2) % validElementsCount;
+        currentElement = ElementExtensions.ValidElements[newElementIndex];
     }
 
     private void StartFire()

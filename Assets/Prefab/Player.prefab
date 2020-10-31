@@ -478,7 +478,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 7410945534346448802}
-  target: {fileID: 9001915486623173858}
   fireRate: 0.25
 --- !u!114 &6477446241364740391
 MonoBehaviour:
