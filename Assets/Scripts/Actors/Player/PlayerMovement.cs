@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(Health))]
 [RequireComponent(typeof(PlayerInput))]
+[RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
@@ -16,26 +18,41 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Min(0)] private float leanSmoothing = 0.1f;
     [SerializeField, Min(0)] private float lookSpeed = 100f;
 
+    private Health health = null;
     private PlayerInput input = null;
+    private Animator animator = null;
+
+    private bool canControl = true;
 
     private void Awake()
     {
+        health = GetComponent<Health>();
         input = GetComponent<PlayerInput>();
+
+        health.Died += OnDeath;
+    }
+
+    private void Start()
+    {
+        canControl = true;
     }
 
     private void Update()
     {
-        Vector2 rawMove = input.Move;
-        Vector3 move = new Vector3
-        (
-            rawMove.x * speedX * Time.deltaTime,
-            rawMove.y * speedY * Time.deltaTime
-        );
+        if (canControl)
+        {
+            Vector2 rawMove = input.Move;
+            Vector3 move = new Vector3
+            (
+                rawMove.x * speedX * Time.deltaTime,
+                rawMove.y * speedY * Time.deltaTime
+            );
 
-        transform.localPosition += move;
-        ClampPosition();
-        AimRotation(rawMove);
-        HorizontalLean(rawMove.x);
+            transform.localPosition += move;
+            ClampPosition();
+            AimRotation(rawMove);
+            HorizontalLean(rawMove.x);
+        }
     }
 
     private void ClampPosition()
@@ -66,5 +83,10 @@ public class PlayerMovement : MonoBehaviour
             Mathf.LerpAngle(currentAngle.z, -moveX * leanLimit, leanSmoothing)
         );
         playerVisual.localEulerAngles = targetAngle;
+    }
+
+    private void OnDeath()
+    {
+        canControl = false;
     }
 }
