@@ -29,13 +29,17 @@ namespace Kiwi.Common
             foreach (T child in children)
             {
                 InitializeObject(child);
+
+                if (!child.gameObject.activeSelf)
+                {
+                    pool.Enqueue(child);
+                }
             }
 
             for (int i = children.Length; i < amountToPool; i++)
             {
                 T obj = CreateObject();
-                InitializeObject(obj);
-                pool.Enqueue(obj);
+                obj.gameObject.SetActive(false);
             }
         }
 
@@ -62,14 +66,15 @@ namespace Kiwi.Common
 
         public void ReturnToPool(T obj)
         {
+            obj.gameObject.SetActive(false);
             pool.Enqueue(obj);
         }
 
         private T CreateObject()
         {
             T obj = Instantiate(objToPoolPrefab);
+            InitializeObject(obj);
             obj.transform.parent = transform;
-            obj.gameObject.SetActive(false);
             return obj;
         }
 

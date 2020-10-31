@@ -36,5 +36,7 @@ public class Enemy : MonoBehaviour
             waypointProvider.ReturnWaypoint(Waypoint);
             Waypoint = null;
         }
+
+        EnemyPooler.Instance.ReturnToPool(this);
     }
 }

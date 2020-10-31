@@ -1896,6 +1896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 183198599985945434, guid: db56b1ad1fcb71447b1aa5b360003b12,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7326598808974414554, guid: db56b1ad1fcb71447b1aa5b360003b12,
         type: 3}
       propertyPath: spawnLocations.Array.data[0]

@@ -93,9 +93,8 @@ GameObject:
   - component: {fileID: 7958434827658191064}
   - component: {fileID: 7958434827658191047}
   - component: {fileID: 3232813380924628810}
-  - component: {fileID: 5357701670773138745}
   - component: {fileID: 1182863856942235705}
-  - component: {fileID: 6904205891451914675}
+  - component: {fileID: 5357701670773138745}
   m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
@@ -186,19 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!114 &5357701670773138745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7958434827658191045}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26d8a149199c334b94c411c960a9bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 8
 --- !u!114 &1182863856942235705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +202,7 @@ MonoBehaviour:
   redMaterial: {fileID: 2100000, guid: ffc6f8d3bb71cca4084990c7aa0ce231, type: 2}
   greenMaterial: {fileID: 2100000, guid: 9fdd017dd6f70d44b8e4d664be37e17b, type: 2}
   blueMaterial: {fileID: 2100000, guid: ccbceb29c021204488495d624c42b761, type: 2}
---- !u!114 &6904205891451914675
+--- !u!114 &5357701670773138745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,6 +211,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7958434827658191045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 351f160887760f046a5a15e0157b88cd, type: 3}
+  m_Script: {fileID: 11500000, guid: d26d8a149199c334b94c411c960a9bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 8
