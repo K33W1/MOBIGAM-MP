@@ -1,29 +1,62 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(ObstacleMovement))]
 public class Obstacle : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private MeshFilter meshFilter = null;
+    [SerializeField] private MeshRenderer meshRenderer = null;
+    [SerializeField] private new SphereCollider collider = null;
+
     [Header("Settings")]
     [SerializeField] private int damage = 1;
 
     private ObstacleMovement movement = null;
+    private ObstacleSettings settings = null;
 
     private void Awake()
     {
         movement = GetComponent<ObstacleMovement>();
     }
 
-    public void Spawn(Vector3 direction)
+#if UNITY_EDITOR
+    private void Update()
     {
+        if (!EditorApplication.isPlaying)
+        {
+            if (settings != null)
+            {
+                UpdateSettings();;
+            }
+        }
+    }
+#endif
+
+    public void Spawn(ObstacleSettings settings, Vector3 direction)
+    {
+        this.settings = settings;
+        UpdateSettings();
         movement.Launch(direction);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void UpdateSettings()
     {
-        if (collision.gameObject.TryGetComponent(out IDamageHandler damageHandler))
+        meshFilter.mesh = settings.Mesh;
+        meshRenderer.material = settings.Material;
+        collider.radius = settings.Radius;
+    }
+
+    private void OnDisable()
+    {
+#if UNITY_EDITOR
+        if (EditorApplication.isPlaying)
         {
-            damageHandler.Damage(new DamageInfo(Element.None, damage));
+            ObstaclePooler.Instance.ReturnToPool(this);
         }
+#else
+        ObstaclePooler.Instance.ReturnToPool(this);
+#endif
     }
 }

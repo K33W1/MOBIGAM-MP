@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-public class BulletDamageDealer : MonoBehaviour
+public class DamageOtherOnCollision : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField, Min(0)] private int damage = 1;
+    [SerializeField] private Element element = Element.None;
 
-    public Element Element { get; set; } = Element.None;
+    public Element Element
+    {
+        get => element;
+        set => element = value;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -2,18 +2,18 @@
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(BulletMovement))]
-[RequireComponent(typeof(BulletDamageDealer))]
+[RequireComponent(typeof(DamageOtherOnCollision))]
 [RequireComponent(typeof(BulletVisualChanger))]
 public class Bullet : MonoBehaviour
 {
     private BulletMovement movement = null;
-    private BulletDamageDealer damageDealer = null;
+    private DamageOtherOnCollision damageOtherOnCollision = null;
     private BulletVisualChanger visualChanger = null;
 
     private void Awake()
     {
         movement = GetComponent<BulletMovement>();
-        damageDealer = GetComponent<BulletDamageDealer>();
+        damageOtherOnCollision = GetComponent<DamageOtherOnCollision>();
         visualChanger = GetComponent<BulletVisualChanger>();
     }
 
@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
     {
         gameObject.layer = layer;
         movement.Launch(direction);
-        damageDealer.Element = element;
+        damageOtherOnCollision.Element = element;
         visualChanger.OnElementChanged(element);
     }
 

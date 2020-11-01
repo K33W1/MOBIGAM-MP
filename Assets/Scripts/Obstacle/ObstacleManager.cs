@@ -5,6 +5,7 @@ public class ObstacleManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Cube cube = null;
+    [SerializeField] private ObstacleSettings[] allSettings = null;
 
     [Header("Settings")]
     [SerializeField, Min(0)] private float spawnRate = 4f;
@@ -28,6 +29,6 @@ public class ObstacleManager : MonoBehaviour
         Vector3 randomSpawnPoint = cube.GetRandomPointInside();
 
         obstacle.transform.position = randomSpawnPoint;
-        obstacle.Spawn(Vector3.back);
+        obstacle.Spawn(allSettings.GetRandom(), Vector3.back);
     }
 }

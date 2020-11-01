@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Health health = null;
     private PlayerInput input = null;
-    private Animator animator = null;
 
     private bool canControl = true;
 
