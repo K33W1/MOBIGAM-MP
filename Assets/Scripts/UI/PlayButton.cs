@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayAgainButton : MonoBehaviour
+public class PlayButton : MonoBehaviour
 {
     public void OnClick()
     {
