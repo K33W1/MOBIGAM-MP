@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Image))]
-public class UIProjectToScreen : MonoBehaviour
+public class ProjectImageToScreen : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private new Camera camera = null;

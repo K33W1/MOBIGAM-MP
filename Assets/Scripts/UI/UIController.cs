@@ -4,7 +4,7 @@
 public class UIController : MonoBehaviour
 {
     [Header("Views")]
-    [SerializeField] private UIPlayerDeathView playerDeathView = null;
+    [SerializeField] private PlayerDeathView playerDeathView = null;
 
     public static UIController Instance = null;
 

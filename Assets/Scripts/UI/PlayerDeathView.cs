@@ -1,4 +1,4 @@
-﻿public class UIPlayerDeathView : View
+﻿public class PlayerDeathView : View
 {
     protected override void OnShow()
     {
