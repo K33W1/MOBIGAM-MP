@@ -1,7 +1,8 @@
 ﻿using Kiwi.Common;
 using UnityEngine;
 
-public class EnemyPooler : ObjectPooler<Enemy>
+[DisallowMultipleComponent]
+public class EnemyRedPooler : ObjectPooler<Enemy>
 {
     [Header("Enemy Dependencies")]
     [SerializeField] private EnemyWaypoints waypoints = null;

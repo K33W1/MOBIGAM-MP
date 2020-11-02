@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private EnemyPooler enemyPooler = null;
+    [SerializeField] private EnemyRedPooler enemyRedPooler = null;
+    [SerializeField] private EnemyGreenPooler enemyGreenPooler = null;
+    [SerializeField] private EnemyBluePooler enemyBluePooler = null;
     [SerializeField] private Transform[] spawnLocations = null;
     [SerializeField] private IntValue enemyCountObject = null;
 
@@ -44,11 +46,24 @@ public class EnemySpawner : MonoBehaviour
             while (enemyCountObject.Value >= maxEnemyCount)
                 yield return 0;
 
-            Element randomElement = ElementExtensions.GetRandomValidElement();
-            Enemy enemy = enemyPooler.GetPooledObject();
+            Enemy enemy = null;
+            int random = Random.Range(0, 2);
+
+            if (random == 0)
+            {
+                enemy = enemyRedPooler.GetPooledObject();
+            }
+            else if (random == 1)
+            {
+                enemy = enemyGreenPooler.GetPooledObject();
+            }
+            else
+            {
+                enemy = enemyBluePooler.GetPooledObject();
+            }
 
             enemy.transform.position = spawnPos;
-            enemy.Spawn(randomElement);
+            enemy.Spawn();
 
             enemyCountObject.Value++;
 

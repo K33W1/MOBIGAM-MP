@@ -5,16 +5,17 @@
 public class EnemyUpdateColorOnSpawn : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private MeshRenderer meshRenderer = null;
+
+    [Header("Materials")]
     [SerializeField] private Material redMaterial = null;
     [SerializeField] private Material greenMaterial = null;
     [SerializeField] private Material blueMaterial = null;
 
-    private MeshRenderer meshRenderer = null;
     private Enemy enemy = null;
 
     private void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
         enemy = GetComponent<Enemy>();
         enemy.Spawned += OnSpawn;
     }

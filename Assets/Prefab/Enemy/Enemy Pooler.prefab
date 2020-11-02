@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 183198599985945432}
   - component: {fileID: 183198599985945433}
+  - component: {fileID: 4303105815783140031}
+  - component: {fileID: 1504525339530346196}
   - component: {fileID: 7326598808974414554}
   m_Layer: 0
   m_Name: Enemy Pooler
@@ -44,7 +46,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a55612d9a8f32f4181b622a9c07ae8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objToPoolPrefab: {fileID: 1268708042022163113, guid: ebf99f47c23eda54eb9e1c24754b4a98,
+  objToPoolPrefab: {fileID: 5764473097442371848, guid: c7bb5abfd33c04d4495e9f5a2e041fa5,
+    type: 3}
+  amountToPool: 4
+  isExpandable: 1
+  waypoints: {fileID: 0}
+  player: {fileID: 0}
+--- !u!114 &4303105815783140031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183198599985945434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0014f4b36aa2f4540a09753b44ab1048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToPoolPrefab: {fileID: 2623913822178330785, guid: fdb97820d2f96b54f89bb9e805ee4c10,
+    type: 3}
+  amountToPool: 4
+  isExpandable: 1
+  waypoints: {fileID: 0}
+  player: {fileID: 0}
+--- !u!114 &1504525339530346196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183198599985945434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c90b2ff38c7124fa2358ac4c6e2db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToPoolPrefab: {fileID: 8119508673294188448, guid: 8972d63b4c1f933419caa1879b3b61e2,
     type: 3}
   amountToPool: 4
   isExpandable: 1
@@ -62,13 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42740094c28038241ade462f34b8bb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPooler: {fileID: 183198599985945433}
-  spawnLocations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  enemyRedPooler: {fileID: 183198599985945433}
+  enemyGreenPooler: {fileID: 4303105815783140031}
+  enemyBluePooler: {fileID: 1504525339530346196}
+  spawnLocations: []
   enemyCountObject: {fileID: 11400000, guid: a9b35c74873d3d74f906480467c1dec0, type: 2}
   maxSpawnCount: 8
   maxEnemyCount: 4

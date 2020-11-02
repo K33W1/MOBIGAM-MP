@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     public event Action Spawned;
 
-    public Element Element { get => element; private set => element = value; }
+    public Element Element => element;
     public Transform Target { get; private set; }
     public Transform Waypoint { get; private set; }
 
@@ -21,9 +21,8 @@ public class Enemy : MonoBehaviour
         Target = target;
     }
 
-    public void Spawn(Element element)
+    public void Spawn()
     {
-        Element = element;
         Waypoint = waypointProvider.GetWaypoint();
 
         Spawned?.Invoke();
@@ -37,6 +36,6 @@ public class Enemy : MonoBehaviour
             Waypoint = null;
         }
 
-        EnemyPooler.Instance.ReturnToPool(this);
+        EnemyRedPooler.Instance.ReturnToPool(this);
     }
 }

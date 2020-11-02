@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  element: 0
 --- !u!114 &1182863856942235705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,9 +201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 7958434826850367992}
   noneMaterial: {fileID: 2100000, guid: 09bd4657bcab3ba4b85781a17fe1fd85, type: 2}
-  redMaterial: {fileID: 2100000, guid: ffc6f8d3bb71cca4084990c7aa0ce231, type: 2}
-  greenMaterial: {fileID: 2100000, guid: 9fdd017dd6f70d44b8e4d664be37e17b, type: 2}
-  blueMaterial: {fileID: 2100000, guid: ccbceb29c021204488495d624c42b761, type: 2}
+  redMaterial: {fileID: 2100000, guid: 06759df4363d78a4dbfb85158635f547, type: 2}
+  greenMaterial: {fileID: 2100000, guid: a5a692787755ba84ba1ec395f2fed2e4, type: 2}
+  blueMaterial: {fileID: 2100000, guid: 49beccc6ee6464d4292f092fab1765e3, type: 2}
 --- !u!114 &7844354050008176812
 MonoBehaviour:
   m_ObjectHideFlags: 0

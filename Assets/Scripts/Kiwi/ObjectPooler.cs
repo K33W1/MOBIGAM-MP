@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Kiwi.Common
 {
-    [DisallowMultipleComponent]
     public abstract class ObjectPooler<T> : MonoBehaviour where T : Component
     {
         [Header("References")]
