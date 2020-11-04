@@ -10,9 +10,6 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private MeshRenderer meshRenderer = null;
     [SerializeField] private new SphereCollider collider = null;
 
-    [Header("Settings")]
-    [SerializeField] private int damage = 1;
-
     private ObstacleMovement movement = null;
     private ObstacleSettings settings = null;
 

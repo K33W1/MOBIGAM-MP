@@ -2,6 +2,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(Health))]
 public class PlayerInput : MonoBehaviour
 {
     [Header("Settings")]
@@ -14,8 +15,18 @@ public class PlayerInput : MonoBehaviour
 
     public Vector2 Move { get; private set; }
 
+    private Health health = null;
+
+    private void Awake()
+    {
+        health = GetComponent<Health>();
+    }
+
     private void Update()
     {
+        if (!health.IsAlive)
+            return;
+
         FireCheck();
         SwitchWeaponCheck();
         MoveCheck();

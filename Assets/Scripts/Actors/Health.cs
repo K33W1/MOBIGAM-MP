@@ -11,14 +11,13 @@ public class Health : MonoBehaviour
     public event Action Died;
     public event Action<int> ValueChanged;
 
-#if DEBUG
+    public int Value => health;
+    public bool IsAlive => health > 0;
+
     private void Start()
     {
         Debug.Assert(health <= maxHealth && health >= 0);
     }
-#endif
-
-    public int Value => health;
 
     public void Damage(int damage)
     {

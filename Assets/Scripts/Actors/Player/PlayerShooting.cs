@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(Health))]
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerShooting : MonoBehaviour
 {
@@ -12,13 +12,16 @@ public class PlayerShooting : MonoBehaviour
     [Header("Settings")]
     [SerializeField, Min(0)] private float fireRate = 0.25f;
 
+    private Health health = null;
     private PlayerInput input = null;
 
     private Element currentElement = Element.Blue;
 
     private void Awake()
     {
+        health = GetComponent<Health>();
         input = GetComponent<PlayerInput>();
+
         input.StartFire += StartFire;
         input.StopFire += StopFire;
         input.SwitchWeaponUp += OnSwitchWeaponUp;
@@ -46,7 +49,7 @@ public class PlayerShooting : MonoBehaviour
 
     private IEnumerator FiringLoop()
     {
-        while (true)
+        while (health.IsAlive)
         {
             Bullet bullet = BulletPooler.Instance.GetPooledObject();
             Vector3 direction = bulletSpawnPoint.forward;
