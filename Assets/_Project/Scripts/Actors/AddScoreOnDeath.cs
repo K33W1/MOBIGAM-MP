@@ -5,7 +5,7 @@
 public class AddScoreOnDeath : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private IntValue stageScore = null;
+    [SerializeField] private IntValue levelScore = null;
 
     [Header("Settings")]
     [SerializeField, Min(0)] private int scoreToAdd = 100;
@@ -13,6 +13,6 @@ public class AddScoreOnDeath : MonoBehaviour
     private void Awake()
     {
         Health health = GetComponent<Health>();
-        health.Died += () => stageScore.Value += scoreToAdd;
+        health.Died += () => levelScore.Value += scoreToAdd;
     }
 }

@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d219f9190980c40b9e104201274f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageScore: {fileID: 11400000, guid: 8d96695a7f15451488e0af882e8125a2, type: 2}
+  levelScore: {fileID: 11400000, guid: 7e7a58886b8cecc4ea9ff3e46d9a102e, type: 2}
 --- !u!4 &285987452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2532174920364355927, guid: 668766ca900d23b439200c5b55beea34,
@@ -1765,7 +1765,7 @@ GameObject:
   - component: {fileID: 1266880210}
   - component: {fileID: 1266880209}
   m_Layer: 0
-  m_Name: Stage Manager
+  m_Name: Level Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1784,7 +1784,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelScore: {fileID: 11400000, guid: 7e7a58886b8cecc4ea9ff3e46d9a102e, type: 2}
-  stageScore: {fileID: 11400000, guid: 8d96695a7f15451488e0af882e8125a2, type: 2}
 --- !u!4 &1266880210
 Transform:
   m_ObjectHideFlags: 0

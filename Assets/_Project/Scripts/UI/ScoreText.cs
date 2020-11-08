@@ -5,13 +5,13 @@ using UnityEngine;
 public class ScoreText : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private IntValue stageScore = null;
+    [SerializeField] private IntValue levelScore = null;
 
     private TextMeshProUGUI text = null;
 
     private void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
-        stageScore.ValueChanged += i => text.text = i.ToString().PadLeft(6, '0');
+        levelScore.ValueChanged += i => text.text = i.ToString().PadLeft(6, '0');
     }
 }

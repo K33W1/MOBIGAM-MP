@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d151cfb47b5c940b2d5caf648ae244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageScore: {fileID: 11400000, guid: 8d96695a7f15451488e0af882e8125a2, type: 2}
+  levelScore: {fileID: 11400000, guid: 7e7a58886b8cecc4ea9ff3e46d9a102e, type: 2}
   scoreToAdd: 100
 --- !u!114 &8089319573824594183
 MonoBehaviour:
