@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
                 yield return 0;
 
             Enemy enemy = null;
-            int random = Random.Range(0, 2);
+            int random = Random.Range(0, 3);
 
             if (random == 0)
             {

@@ -2518,7 +2518,7 @@ MonoBehaviour:
   allSettings:
   - {fileID: 11400000, guid: adfd899439971be43b19862498f06b28, type: 2}
   - {fileID: 11400000, guid: ec54ea9c2b778b348be892472e54fd39, type: 2}
-  spawnRate: 1
+  spawnRate: 3
 --- !u!4 &1968063098
 Transform:
   m_ObjectHideFlags: 0

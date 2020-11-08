@@ -19,6 +19,6 @@ public class ObstacleInPlaceRotation : MonoBehaviour
     private void Update()
     {
         float angle = torque * Time.deltaTime;
-        transform.rotation *= Quaternion.AngleAxis(angle, axisOfRotation);
+        objectToRotate.rotation *= Quaternion.AngleAxis(angle, axisOfRotation);
     }
 }
