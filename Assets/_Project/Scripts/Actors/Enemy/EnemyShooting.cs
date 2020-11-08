@@ -11,6 +11,7 @@ public class EnemyShooting : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private Vector2 cooldownRange = new Vector2(1f, 2f);
     [SerializeField, Range(0, 1)] private float hitChance = 0.5f;
+    [SerializeField, Min(0)] private float bulletSpeed = 10f;
 
     private Enemy enemy = null;
 
@@ -40,7 +41,7 @@ public class EnemyShooting : MonoBehaviour
         Vector3 direction = (enemy.Target.position - bulletSpawnPoint.position).normalized;
 
         bullet.transform.position = bulletSpawnPoint.position;
-        bullet.Launch(gameObject.layer, direction, Element.None);
+        bullet.Launch(gameObject.layer, direction, bulletSpeed, Element.None);
     }
 
     private void OnDisable()

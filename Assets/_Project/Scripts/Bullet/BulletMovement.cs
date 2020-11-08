@@ -4,9 +4,6 @@
 [RequireComponent(typeof(Rigidbody))]
 public class BulletMovement : MonoBehaviour
 {
-    [Header("Settings")]
-    [SerializeField, Min(0)] private float speed = 10f;
-
     private Rigidbody rb = null;
 
     private void Awake()
@@ -19,7 +16,7 @@ public class BulletMovement : MonoBehaviour
         LookAtVelocity();
     }
 
-    public void Launch(Vector3 direction)
+    public void Launch(Vector3 direction, float speed)
     {
         rb.velocity = direction * speed;
         LookAtVelocity();

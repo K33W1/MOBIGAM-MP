@@ -17,10 +17,10 @@ public class Bullet : MonoBehaviour
         visualChanger = GetComponent<BulletVisualChanger>();
     }
 
-    public void Launch(int layer, Vector3 direction, Element element)
+    public void Launch(int layer, Vector3 direction, float speed, Element element)
     {
         gameObject.layer = layer;
-        movement.Launch(direction);
+        movement.Launch(direction, speed);
         damageOtherOnCollision.Element = element;
         visualChanger.OnElementChanged(element);
     }
