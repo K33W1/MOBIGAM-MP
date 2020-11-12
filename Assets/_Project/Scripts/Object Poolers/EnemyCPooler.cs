@@ -1,15 +1,7 @@
-﻿using Kiwi.Common;
-using UnityEngine;
+﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-public class EnemyCPooler : ObjectPooler<Enemy>
+public class EnemyCPooler : EnemyPooler
 {
-    [Header("Enemy Dependencies")]
-    [SerializeField] private EnemyWaypoints waypoints = null;
-    [SerializeField] private Transform player = null;
 
-    protected override void InitializeObject(Enemy enemy)
-    {
-        enemy.Initialize(waypoints, player);
-    }
 }

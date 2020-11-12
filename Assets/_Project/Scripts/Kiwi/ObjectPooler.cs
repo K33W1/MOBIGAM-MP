@@ -19,10 +19,7 @@ namespace Kiwi.Common
         private void Awake()
         {
             Instance = this;
-        }
 
-        private void Start()
-        {
             T[] children = GetComponentsInChildren<T>();
 
             foreach (T child in children)

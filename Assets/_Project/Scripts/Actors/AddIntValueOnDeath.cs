@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[DisallowMultipleComponent]
 [RequireComponent(typeof(Health))]
 public class AddIntValueOnDeath : MonoBehaviour
 {

@@ -4,32 +4,54 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Enemy References")]
     [SerializeField] private EnemyAPooler enemyAPooler = null;
     [SerializeField] private EnemyBPooler enemyBPooler = null;
     [SerializeField] private EnemyCPooler enemyCPooler = null;
+    [SerializeField] private Boss boss = null;
+
+    [Header("References")]
     [SerializeField] private Transform[] spawnLocations = null;
-    [SerializeField] private IntValue enemyCountObject = null;
 
     [Header("Settings")]
-    [SerializeField] private int maxSpawnCount = 8;
-    [SerializeField] private int maxEnemyCount = 4;
-    [SerializeField] private float startDelay = 2f;
-    [SerializeField] private float spawnRate = 1f;
+    [SerializeField, Min(0)] private int maxEnemiesAlive = 4;
+    [SerializeField, Min(0)] private int enemiesUntilBoss = 10;
+    [SerializeField, Min(0)] private float startDelay = 2f;
+    [SerializeField, Min(0)] private float spawnRate = 1f;
+
+    private bool hasBossSpawned = false;
+    private int totalEnemiesSpawned = 0;
+    private int totalEnemiesDied = 0;
+    private int enemiesAlive = 0;
 
     private void Start()
     {
-        enemyCountObject.Value = 0;
+        boss.Despawn();
 
-        foreach (Enemy enemy in transform.GetComponentsInChildren<Enemy>())
+        foreach (Enemy enemy in transform.GetComponentsInChildren<Enemy>(true))
         {
             if (enemy.gameObject.activeSelf)
             {
-                enemyCountObject.Value++;
+                enemiesAlive++;
             }
+
+            Health health = enemy.GetComponent<Health>();
+            health.Died += OnEnemyDeath;
         }
 
         StartCoroutine(SpawningLoop());
+    }
+
+    private void OnEnemyDeath()
+    {
+        enemiesAlive--;
+        totalEnemiesDied++;
+
+        if (!hasBossSpawned && totalEnemiesDied >= enemiesUntilBoss)
+        {
+            boss.Spawn();
+            hasBossSpawned = true;
+        }
     }
 
     private IEnumerator SpawningLoop()
@@ -38,36 +60,43 @@ public class EnemySpawner : MonoBehaviour
 
         WaitForSeconds spawnWait = new WaitForSeconds(spawnRate);
 
-        while (true)
+        while (totalEnemiesSpawned < enemiesUntilBoss)
         {
-            Transform randomLocation = spawnLocations[Random.Range(0, spawnLocations.Length)];
-            Vector3 spawnPos = randomLocation.position;
-
-            while (enemyCountObject.Value >= maxEnemyCount)
+            while (enemiesAlive >= maxEnemiesAlive)
+            {
                 yield return 0;
-
-            Enemy enemy = null;
-            int random = Random.Range(0, 3);
-
-            if (random == 0)
-            {
-                enemy = enemyAPooler.GetPooledObject();
-            }
-            else if (random == 1)
-            {
-                enemy = enemyBPooler.GetPooledObject();
-            }
-            else
-            {
-                enemy = enemyCPooler.GetPooledObject();
             }
 
-            enemy.transform.position = spawnPos;
-            enemy.Spawn();
+            SpawnEnemy();
 
-            enemyCountObject.Value++;
+            enemiesAlive++;
+            totalEnemiesSpawned++;
 
             yield return spawnWait;
         }
+    }
+
+    private void SpawnEnemy()
+    {
+        Transform randomLocation = spawnLocations[Random.Range(0, spawnLocations.Length)];
+        Vector3 spawnPos = randomLocation.position;
+        int random = Random.Range(0, 3);
+        Enemy enemy = null;
+
+        if (random == 0)
+        {
+            enemy = enemyAPooler.GetPooledObject();
+        }
+        else if (random == 1)
+        {
+            enemy = enemyBPooler.GetPooledObject();
+        }
+        else
+        {
+            enemy = enemyCPooler.GetPooledObject();
+        }
+
+        enemy.transform.position = spawnPos;
+        enemy.Spawn();
     }
 }

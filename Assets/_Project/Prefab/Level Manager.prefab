@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelScore: {fileID: 11400000, guid: 7e7a58886b8cecc4ea9ff3e46d9a102e, type: 2}
+  enemiesDiedCounter: {fileID: 11400000, guid: 1acf09520c73ce9489698372d3d88ef3, type: 2}
+  enemiesUntilBoss: 10

@@ -6,11 +6,6 @@ public class LevelManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private IntValue levelScore = null;
 
-    private void Awake()
-    {
-        Debug.Assert(levelScore != null);
-    }
-
     private void Start()
     {
         levelScore.Value = 0;

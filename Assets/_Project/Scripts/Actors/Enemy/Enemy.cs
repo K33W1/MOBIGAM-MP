@@ -13,10 +13,12 @@ public class Enemy : MonoBehaviour
     public Transform Target { get; private set; }
     public Transform Waypoint { get; private set; }
 
+    private EnemyPooler enemyPooler = null;
     private EnemyWaypoints waypointProvider = null;
 
-    public void Initialize(EnemyWaypoints waypointProvider, Transform target)
+    public void Initialize(EnemyPooler enemyPooler, EnemyWaypoints waypointProvider, Transform target)
     {
+        this.enemyPooler = enemyPooler;
         this.waypointProvider = waypointProvider;
         Target = target;
     }
@@ -36,6 +38,6 @@ public class Enemy : MonoBehaviour
             Waypoint = null;
         }
 
-        EnemyAPooler.Instance.ReturnToPool(this);
+        enemyPooler.ReturnToPool(this);
     }
 }

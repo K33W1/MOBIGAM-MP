@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float speedX = 1.0f;
     [SerializeField] private float speedY = 1.0f;
-    [SerializeField] private float speedZ = 1.0f;
     [SerializeField, Range(0, 90)] private float leanLimit = 75f;
     [SerializeField, Min(0)] private float leanSmoothing = 0.1f;
     [SerializeField, Min(0)] private float lookSpeed = 100f;
