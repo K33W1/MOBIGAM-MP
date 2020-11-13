@@ -48,9 +48,10 @@ public class HomingProjectile : MonoBehaviour
             Vector3 dir = diff.normalized;
 
             // Acceleration
+            float maxRadiansDelta = rotationSpeed * Time.fixedDeltaTime;
             rb.velocity += transform.forward * force * Time.fixedDeltaTime;
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-            rb.velocity = Vector3.RotateTowards(rb.velocity, dir, rotationSpeed * Time.fixedDeltaTime, 0f);
+            rb.velocity = Vector3.RotateTowards(rb.velocity, dir, maxRadiansDelta, 0f);
         }
 
         rb.rotation = Quaternion.LookRotation(rb.velocity);

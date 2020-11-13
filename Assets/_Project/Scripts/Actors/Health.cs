@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     public event Action Died;
     public event Action<int> ValueChanged;
 
+    public int MaxValue => maxHealth;
     public int Value => health;
     public bool IsAlive => health > 0;
 
