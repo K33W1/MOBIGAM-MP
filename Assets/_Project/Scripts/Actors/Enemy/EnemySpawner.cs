@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Enemy References")]
-    [SerializeField] private EnemyAPooler enemyAPooler = null;
-    [SerializeField] private EnemyBPooler enemyBPooler = null;
-    [SerializeField] private EnemyCPooler enemyCPooler = null;
+    [SerializeField] private EnemyPooler enemyAPooler = null;
+    [SerializeField] private EnemyPooler enemyBPooler = null;
+    [SerializeField] private EnemyPooler enemyCPooler = null;
     [SerializeField] private Boss boss = null;
 
     [Header("References")]
