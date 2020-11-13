@@ -9,9 +9,11 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint = null;
 
     [Header("Settings")]
-    [SerializeField] private Vector2 cooldownRange = new Vector2(1f, 2f);
-    [SerializeField, Range(0, 1)] private float hitChance = 0.5f;
+    [SerializeField, Range(0, 1)] private float shootChance = 0.5f;
+    [SerializeField, Min(0)] private float shootCooldown = 2f;
+    [SerializeField, Min(0)] private float attemptShootRate = 1f;
     [SerializeField, Min(0)] private float bulletSpeed = 10f;
+    [SerializeField, Min(0)] private float startShootingDelay = 1f;
 
     private Enemy enemy = null;
 
@@ -27,11 +29,16 @@ public class EnemyShooting : MonoBehaviour
 
     private IEnumerator ShootingLoop()
     {
+        yield return new WaitForSeconds(startShootingDelay);
+
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(cooldownRange.x, cooldownRange.y));
-            if (Random.value < hitChance)
+            yield return new WaitForSeconds(attemptShootRate);
+            if (Random.value < shootChance)
+            {
                 ShootBullet();
+                yield return new WaitForSeconds(shootCooldown);
+            }
         }
     }
 

@@ -3305,11 +3305,6 @@ PrefabInstance:
       propertyPath: spawnLocations.Array.data[4]
       value: 
       objectReference: {fileID: 1138641649}
-    - target: {fileID: 7326598808974414554, guid: db56b1ad1fcb71447b1aa5b360003b12,
-        type: 3}
-      propertyPath: enemiesUntilBoss
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9198503581906727313, guid: db56b1ad1fcb71447b1aa5b360003b12,
         type: 3}
       propertyPath: m_Layer

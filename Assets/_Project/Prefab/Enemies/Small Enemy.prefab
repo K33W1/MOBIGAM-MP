@@ -139,11 +139,11 @@ GameObject:
   - component: {fileID: 975398710}
   - component: {fileID: 7765349244346640936}
   - component: {fileID: 4085156775962265816}
+  - component: {fileID: 4065224531166292659}
   - component: {fileID: 4576209392787429189}
   - component: {fileID: 7821908802102947014}
   - component: {fileID: 3833701116575709831}
   - component: {fileID: 84210448873762309}
-  - component: {fileID: 4065224531166292659}
   m_Layer: 9
   m_Name: Small Enemy
   m_TagString: Untagged
@@ -234,9 +234,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 895636897}
-  cooldownRange: {x: 0, y: 1}
-  hitChance: 0.2
+  shootChance: 0.2
+  shootCooldown: 4
+  attemptShootRate: 1
   bulletSpeed: 10
+  startShootingDelay: 2
 --- !u!114 &4085156775962265816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +252,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.01
+--- !u!114 &4065224531166292659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061802438948180959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966ce8cbc8808594b89cf6497d90cb26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorObject: {fileID: 2278969733227513930}
+  xLength: 0.5
+  yLength: 0.5
+  xSpeed: 2
+  ySpeed: 4
 --- !u!114 &4576209392787429189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,20 +321,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intValue: {fileID: 11400000, guid: 0e677dee375d2f64eaebc4d15e920967, type: 2}
   toAdd: 10
---- !u!114 &4065224531166292659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7061802438948180959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966ce8cbc8808594b89cf6497d90cb26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anchorObject: {fileID: 2278969733227513930}
-  xLength: 0.5
-  yLength: 0.5
-  xSpeed: 2
-  ySpeed: 4
