@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 7821908802102947014}
   - component: {fileID: 3833701116575709831}
   - component: {fileID: 84210448873762309}
+  - component: {fileID: 2509329283767175498}
   m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
@@ -145,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3682b33d28451324da146d221d3986cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
 --- !u!114 &192546084196770531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +244,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intValue: {fileID: 11400000, guid: 0e677dee375d2f64eaebc4d15e920967, type: 2}
   toAdd: 200
+--- !u!114 &2509329283767175498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061802438948180959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966ce8cbc8808594b89cf6497d90cb26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorObject: {fileID: 9016569175808615436}
+  xLength: 1
+  yLength: 2
+  xSpeed: 0.5
+  ySpeed: 1
 --- !u!1001 &9020364572439732556
 PrefabInstance:
   m_ObjectHideFlags: 0

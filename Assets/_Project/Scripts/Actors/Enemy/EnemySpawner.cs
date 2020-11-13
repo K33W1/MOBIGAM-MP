@@ -39,7 +39,15 @@ public class EnemySpawner : MonoBehaviour
             health.Died += OnEnemyDeath;
         }
 
-        StartCoroutine(SpawningLoop());
+        if (enemiesUntilBoss > 0)
+        {
+            StartCoroutine(SpawningLoop());
+        }
+        else
+        {
+            boss.Spawn();
+            hasBossSpawned = true;
+        }
     }
 
     private void OnEnemyDeath()

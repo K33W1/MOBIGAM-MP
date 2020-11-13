@@ -112,7 +112,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   maxEnemiesAlive: 4
-  enemiesUntilBoss: 1
+  enemiesUntilBoss: 10
   startDelay: 2
   spawnRate: 1
 --- !u!1001 &183198598591059765
