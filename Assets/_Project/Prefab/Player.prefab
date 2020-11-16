@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 6477446241364740391}
   - component: {fileID: 6297792074621539591}
   - component: {fileID: 961671344669451138}
+  - component: {fileID: 3691392031185534505}
   m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
@@ -422,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 7410945534346448802}
   fireRate: 0.15
-  bulletSpeed: 30
+  bulletSpeed: 60
 --- !u!114 &6477446241364740391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +460,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f5a0b1a3d660f459ef7ec49369d41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3691392031185534505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6132104667898375998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f1e3564bb09b34383180dc9518850b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthUI: {fileID: 0}
 --- !u!1001 &4232373462268713765
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -38,4 +38,12 @@ public class Health : MonoBehaviour
         health = Mathf.Min(health + heal, maxHealth);
         ValueChanged?.Invoke(health);
     }
+
+    [ContextMenu("Force Death")]
+    private void ForceDeath()
+    {
+        health = 0;
+        ValueChanged?.Invoke(health);
+        Died?.Invoke();
+    }
 }

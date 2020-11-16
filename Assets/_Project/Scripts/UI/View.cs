@@ -1,11 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public abstract class View : MonoBehaviour
+[DisallowMultipleComponent]
+public class View : MonoBehaviour
 {
+    public event Action<View> Showed;
+
     public void Show()
     {
         gameObject.SetActive(true);
         OnShow();
+        Showed?.Invoke(this);
     }
 
     public void Hide()
@@ -14,6 +19,13 @@ public abstract class View : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    protected abstract void OnShow();
-    protected abstract void OnHide();
+    protected virtual void OnShow()
+    {
+
+    }
+
+    protected virtual void OnHide()
+    {
+
+    }
 }

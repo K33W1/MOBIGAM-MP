@@ -1,34 +1,21 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 public class Boss : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Slider slider = null;
-
-    private Health health = null;
-
-    private void Awake()
-    {
-        health = GetComponent<Health>();
-        health.ValueChanged += OnHealthChanged;
-    }
-
-    private void OnHealthChanged(int value)
-    {
-        slider.value = (float)value / health.MaxValue;
-    }
+    public event Action Spawned;
+    public event Action Despawned;
 
     public void Spawn()
     {
         gameObject.SetActive(true);
-        slider.gameObject.SetActive(true);
+        Spawned?.Invoke();
     }
 
     public void Despawn()
     {
         gameObject.SetActive(false);
-        slider.gameObject.SetActive(false);
+        Despawned?.Invoke();
     }
 }

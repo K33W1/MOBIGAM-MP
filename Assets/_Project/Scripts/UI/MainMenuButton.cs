@@ -6,6 +6,6 @@ public class MainMenuButton : MonoBehaviour
 {
     public void OnClick()
     {
-        SceneManager.LoadSceneAsync("MainMenu");
+        SceneManager.LoadSceneAsync("TitleScreen");
     }
 }

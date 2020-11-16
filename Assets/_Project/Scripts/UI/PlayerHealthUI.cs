@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 [DisallowMultipleComponent]
-public class HealthUI : MonoBehaviour
+public class PlayerHealthUI : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Health health = null;
@@ -22,8 +22,6 @@ public class HealthUI : MonoBehaviour
 
     private void OnHealthChanged(int value)
     {
-        //Debug.Assert(value <= healthImages.Length);
-
         for (int i = 0; i < healthImages.Length; i++)
         {
             Color color = healthImages[i].color;

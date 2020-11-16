@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class EnemySpawner : MonoBehaviour
+public class EnemyManager : MonoBehaviour
 {
     [Header("Enemy References")]
     [SerializeField] private EnemyPooler enemyAPooler = null;
@@ -27,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         boss.Despawn();
+        boss.GetComponent<Health>().Died += OnBossDeath;
 
         foreach (Enemy enemy in transform.GetComponentsInChildren<Enemy>(true))
         {
@@ -48,6 +49,11 @@ public class EnemySpawner : MonoBehaviour
             boss.Spawn();
             hasBossSpawned = true;
         }
+    }
+
+    private void OnBossDeath()
+    {
+        
     }
 
     private void OnEnemyDeath()

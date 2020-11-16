@@ -1,21 +1,23 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Health))]
-public class PlayerAnimator : MonoBehaviour
+public class BossAnimator : MonoBehaviour
 {
-    private static readonly int DeathID = Animator.StringToHash("Death");
-
     private Animator animator = null;
     private Health health = null;
 
     private void Awake()
     {
-        health = GetComponent<Health>();
         animator = GetComponent<Animator>();
+        health = GetComponent<Health>();
 
-        health.Died += () => animator.SetTrigger(DeathID);
+        health.Died += OnBossDeath;
+    }
+
+    private void OnBossDeath()
+    {
+        animator.SetTrigger("Died");
     }
 }
