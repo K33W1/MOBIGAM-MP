@@ -38,6 +38,7 @@ public class Shop : MonoBehaviour
     {
         if (money.Value >= settings.Price)
         {
+            Debug.Log("Buying " + settings.ItemName);
             settings.ObjectToUpgrade.Value += settings.UpgradeAmount;
             money.Value -= settings.Price;
         }

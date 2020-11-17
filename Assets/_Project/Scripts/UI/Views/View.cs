@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class View : MonoBehaviour
+public abstract class View : MonoBehaviour
 {
     public event Action<View> Showed;
 
@@ -19,13 +19,7 @@ public class View : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    protected virtual void OnShow()
-    {
+    protected abstract void OnShow();
 
-    }
-
-    protected virtual void OnHide()
-    {
-
-    }
+    protected abstract void OnHide();
 }
