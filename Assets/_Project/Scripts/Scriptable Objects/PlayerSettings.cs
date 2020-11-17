@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[DisallowMultipleComponent]
 [CreateAssetMenu(fileName = "New Player Settings", menuName = "PlayerSettings")]
 public class PlayerSettings : ScriptableObject
 {

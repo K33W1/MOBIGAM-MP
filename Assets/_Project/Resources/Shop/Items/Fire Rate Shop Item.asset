@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9db6d4b4a38d6a4190c609905f28811, type: 3}
-  m_Name: Fire Rate
+  m_Name: Fire Rate Shop Item
   m_EditorClassIdentifier: 
-  objectToUpgrade: {fileID: 11400000, guid: 1d4636e31bd8da64ea8f2c622994e41b, type: 2}
-  upgradeAmount: -0.01
+  shopUpgrade: {fileID: 11400000, guid: 60c7c40c561e5a94ebf888b631f250aa, type: 2}
   itemName: Fire Rate
   price: 10

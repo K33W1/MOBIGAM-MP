@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cc08752fbd7baf4e8573e6dcf17b38f, type: 3}
-  m_Name: BulletSpeed
+  m_Name: Bullet Speed
   m_EditorClassIdentifier: 
   value: 30

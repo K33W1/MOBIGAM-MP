@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9db6d4b4a38d6a4190c609905f28811, type: 3}
-  m_Name: Move Speed
+  m_Script: {fileID: 11500000, guid: 45f49a1e9260c0d4db3a02a043a81914, type: 3}
+  m_Name: Fire Rate Upgrade
   m_EditorClassIdentifier: 
-  objectToUpgrade: {fileID: 11400000, guid: 7305cee8beab9eb4e8fb3052f6dfefbd, type: 2}
-  upgradeAmount: 2
-  itemName: Move Speed
-  price: 10
+  floatValueToUpgrade: {fileID: 11400000, guid: 1d4636e31bd8da64ea8f2c622994e41b,
+    type: 2}
+  upgradeAmount: 1
