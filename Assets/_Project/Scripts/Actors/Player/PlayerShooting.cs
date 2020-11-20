@@ -10,8 +10,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint = null;
 
     [Header("Settings")]
-    [SerializeField, Min(0)] private float fireRate = 0.25f;
-    [SerializeField, Min(0)] private float bulletSpeed = 30f;
+    [SerializeField] private PlayerSettings playerSettings = null;
 
     private Health health = null;
     private PlayerInput input = null;
@@ -56,9 +55,9 @@ public class PlayerShooting : MonoBehaviour
             Vector3 direction = bulletSpawnPoint.forward;
 
             bullet.transform.position = bulletSpawnPoint.transform.position;
-            bullet.Launch(gameObject.layer, direction, bulletSpeed, currentElement);
+            bullet.Launch(gameObject.layer, direction, playerSettings.BulletSpeed, currentElement);
 
-            yield return new WaitForSeconds(fireRate);
+            yield return new WaitForSeconds(playerSettings.FireRate);
         }
     }
 

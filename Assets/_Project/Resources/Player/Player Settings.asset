@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea4193ccc6e8274787b9d24083c20f2, type: 3}
   m_Name: Player Settings
   m_EditorClassIdentifier: 
-  fireRateValue: {fileID: 11400000, guid: 1d4636e31bd8da64ea8f2c622994e41b, type: 2}
+  fireRate: {fileID: 11400000, guid: 1d4636e31bd8da64ea8f2c622994e41b, type: 2}
   moveSpeed: {fileID: 11400000, guid: 7305cee8beab9eb4e8fb3052f6dfefbd, type: 2}
   bulletSpeed: {fileID: 11400000, guid: 6761ac76dcc25a942921bf82693a8e06, type: 2}

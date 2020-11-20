@@ -718,7 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba428da6708c704f9590c34c7a7ac04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1690946738}
+  health: {fileID: 955402467}
 --- !u!114 &297399256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2260,6 +2260,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955402467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6506514987539874241, guid: d6c68159b16557044b91f7476e304f08,
+    type: 3}
+  m_PrefabInstance: {fileID: 2536062512082261230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfbaac433620c94a96fa3541117d0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &971108129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,18 +3346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 225409599}
   target: {fileID: 650483083}
---- !u!114 &1690946738 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 744947126487024252, guid: d6c68159b16557044b91f7476e304f08,
-    type: 3}
-  m_PrefabInstance: {fileID: 2536062512082261230}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abfbaac433620c94a96fa3541117d0ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1735396301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,7 +4256,7 @@ PrefabInstance:
     - target: {fileID: 7326598808974414554, guid: db56b1ad1fcb71447b1aa5b360003b12,
         type: 3}
       propertyPath: enemiesUntilBoss
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8464952159587784734, guid: db56b1ad1fcb71447b1aa5b360003b12,
         type: 3}
@@ -4520,6 +4520,21 @@ PrefabInstance:
       propertyPath: deathView
       value: 
       objectReference: {fileID: 1112317668}
+    - target: {fileID: 4189179984612728980, guid: d6c68159b16557044b91f7476e304f08,
+        type: 3}
+      propertyPath: deathView
+      value: 
+      objectReference: {fileID: 1112317668}
+    - target: {fileID: 4189179984612728980, guid: d6c68159b16557044b91f7476e304f08,
+        type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 297399255}
+    - target: {fileID: 4189179984612728980, guid: d6c68159b16557044b91f7476e304f08,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 261511062}
     - target: {fileID: 4231689084597988673, guid: d6c68159b16557044b91f7476e304f08,
         type: 3}
       propertyPath: m_Layer
