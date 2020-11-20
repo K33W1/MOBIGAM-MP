@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using TreeEditor;
+using UnityEditor;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -45,15 +46,14 @@ public class Obstacle : MonoBehaviour
         collider.radius = settings.Radius;
     }
 
+    private void OnCollisionEnter(Collision _)
+    {
+        Debris debris = DebrisPooler.Instance.GetPooledObject();
+        debris.transform.position = transform.position;
+    }
+
     private void OnDisable()
     {
-#if UNITY_EDITOR
-        if (EditorApplication.isPlaying)
-        {
-            ObstaclePooler.Instance.ReturnToPool(this);
-        }
-#else
         ObstaclePooler.Instance.ReturnToPool(this);
-#endif
     }
 }

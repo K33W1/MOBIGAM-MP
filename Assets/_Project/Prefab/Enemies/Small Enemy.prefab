@@ -240,7 +240,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.25
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -432,5 +432,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: -6226409886024565848}
-  onDeathAudio: {fileID: 11400000, guid: 03186f074c39a754aa9a41bcdc6b32bf, type: 2}
   onShotFiredAudio: {fileID: 11400000, guid: c09e9a700cfbfa9479feb9ac84f9fe6c, type: 2}
