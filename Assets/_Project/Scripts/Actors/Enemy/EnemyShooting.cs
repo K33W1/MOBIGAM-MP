@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Enemy))]
@@ -14,6 +16,8 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField, Min(0)] private float attemptShootRate = 1f;
     [SerializeField, Min(0)] private float bulletSpeed = 10f;
     [SerializeField, Min(0)] private float startShootingDelay = 1f;
+
+    public event Action ShotFired;
 
     private Enemy enemy = null;
 
@@ -49,6 +53,8 @@ public class EnemyShooting : MonoBehaviour
 
         bullet.transform.position = bulletSpawnPoint.position;
         bullet.Launch(gameObject.layer, direction, bulletSpeed, Element.None);
+
+        ShotFired?.Invoke();
     }
 
     private void OnDisable()

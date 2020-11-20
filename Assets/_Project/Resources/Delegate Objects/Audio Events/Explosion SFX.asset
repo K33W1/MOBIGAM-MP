@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1fb29c20cef6d4faf12d8be1284816, type: 3}
+  m_Name: Explosion SFX
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 98763ca9f9dbf5f4bae1947c9c822657, type: 3}
+  - {fileID: 8300000, guid: 23426831909d90e4c8fd9dc91d09c287, type: 3}
+  - {fileID: 8300000, guid: 73f1e91d560fe584da2b9283daf62bfb, type: 3}
+  - {fileID: 8300000, guid: 6fd114ff3c2c58f47ac29d4ce3b3b221, type: 3}
+  - {fileID: 8300000, guid: 09cbfa5e06f17664692be2e7466d0f5f, type: 3}
+  volume: 1

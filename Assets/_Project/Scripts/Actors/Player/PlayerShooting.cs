@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -11,6 +12,8 @@ public class PlayerShooting : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private PlayerSettings playerSettings = null;
+
+    public event Action ShotFired;
 
     private Health health = null;
     private PlayerInput input = null;
@@ -56,6 +59,7 @@ public class PlayerShooting : MonoBehaviour
 
             bullet.transform.position = bulletSpawnPoint.transform.position;
             bullet.Launch(gameObject.layer, direction, playerSettings.BulletSpeed, currentElement);
+            ShotFired?.Invoke();
 
             yield return new WaitForSeconds(playerSettings.FireRate);
         }
