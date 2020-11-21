@@ -1,9 +1,13 @@
 ﻿using System.Collections;
+using Kiwi.Events;
 using UnityEngine;
 
 [DisallowMultipleComponent]
 public class EnemyManager : MonoBehaviour
 {
+    [Header("Game Events")]
+    [SerializeField] private GameEvent bossSpawned = null;
+
     [Header("Enemy References")]
     [SerializeField] private EnemyPooler enemyAPooler = null;
     [SerializeField] private EnemyPooler enemyBPooler = null;
@@ -27,7 +31,6 @@ public class EnemyManager : MonoBehaviour
     private void Start()
     {
         boss.Despawn();
-        boss.GetComponent<Health>().Died += OnBossDeath;
 
         foreach (Enemy enemy in transform.GetComponentsInChildren<Enemy>(true))
         {
@@ -48,12 +51,8 @@ public class EnemyManager : MonoBehaviour
         {
             boss.Spawn();
             hasBossSpawned = true;
+            bossSpawned.Raise();
         }
-    }
-
-    private void OnBossDeath()
-    {
-        
     }
 
     private void OnEnemyDeath()
@@ -65,6 +64,7 @@ public class EnemyManager : MonoBehaviour
         {
             boss.Spawn();
             hasBossSpawned = true;
+            bossSpawned.Raise();
         }
     }
 

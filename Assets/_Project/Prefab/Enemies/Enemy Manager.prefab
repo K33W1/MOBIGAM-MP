@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42740094c28038241ade462f34b8bb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossSpawned: {fileID: 11400000, guid: 54d0891e7999b2a40b481ba997703461, type: 2}
   enemyAPooler: {fileID: 4437442716826502780}
   enemyBPooler: {fileID: 6365562530293539873}
   enemyCPooler: {fileID: 4581620806658550577}
