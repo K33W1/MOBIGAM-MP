@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Int Value", menuName = "Common/IntValue")]
+[CreateAssetMenu(fileName = "New Int Value", menuName = "Runtime Data Objects/Int Value")]
 public class IntValue : ScriptableObject
 {
     [SerializeField] private int value = 0;

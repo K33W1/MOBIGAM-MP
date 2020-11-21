@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Float Value", menuName = "Common/FloatValue")]
+[CreateAssetMenu(fileName = "New Float Value", menuName = "Runtime Data Objects/Float Value")]
 public class FloatValue : ScriptableObject
 {
     [SerializeField] private float value = 0;
