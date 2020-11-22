@@ -271,10 +271,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31875341557108738, guid: 6a2a451dc660efd41afccb1766ef886d,
+        type: 3}
+      propertyPath: isTestBuild
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4900135033325619070, guid: 6a2a451dc660efd41afccb1766ef886d,
         type: 3}
       propertyPath: m_Name
-      value: Game Manager
+      value: Universal Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6967166861513329794, guid: 6a2a451dc660efd41afccb1766ef886d,
         type: 3}
@@ -708,6 +713,63 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c32f311d88578f4dbfb519b1ab474bd, type: 2}
   - {fileID: 11400000, guid: 27ef65fe766a1604eabd11091006990d, type: 2}
   - {fileID: 11400000, guid: c27f197b3f99f824b8d7e78f15f473c1, type: 2}
+--- !u!1 &879632615
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 879632618}
+  - component: {fileID: 879632617}
+  - component: {fileID: 879632616}
+  m_Layer: 0
+  m_Name: UnityEngine_UnityAds_CoroutineExecutor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &879632616
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879632615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ed043c6593d4fea8d9c4b4724a7ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &879632617
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879632615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3273f2bf6664147b7bd18552005e4c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceCount: 4
+--- !u!4 &879632618
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879632615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &923956324
 PrefabInstance:
   m_ObjectHideFlags: 0

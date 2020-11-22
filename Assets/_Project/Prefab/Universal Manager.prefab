@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6967166861513329794}
   - component: {fileID: 978457292999570050}
+  - component: {fileID: 31875341557108738}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: Universal Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,5 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358a6e9f60dd8884fa07f7f288381407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: {fileID: 11400000, guid: 0e677dee375d2f64eaebc4d15e920967, type: 2}
   saveSystem: {fileID: 11400000, guid: e6bdd366ff03c264a8ed4e16138e1e38, type: 2}
+--- !u!114 &31875341557108738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900135033325619070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be17fe96eac79048980b0929f58eca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playInterstitialAdEvent: {fileID: 0}
+  playRewardedVideoAdEvent: {fileID: 0}
+  isTestBuild: 0

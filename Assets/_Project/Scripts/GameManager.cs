@@ -1,33 +1,21 @@
-﻿using UnityEngine;
+﻿using Kiwi.Common;
+using UnityEngine;
 
 [DisallowMultipleComponent]
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourSingleton<GameManager>
 {
-    [Header("References")]
+    [Header("Managers")]
     [SerializeField] private SaveSystem saveSystem = null;
 
-    private static GameManager Instance = null;
-
-    private void Awake()
+    protected override void SingletonAwake()
     {
-        if (InitializeSingleton())
-            return;
-
         saveSystem.Load();
+
     }
 
-    private bool InitializeSingleton()
+    protected override void SingletonOnDestroy()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return true;
-        }
 
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        return false;
     }
 
     private void OnApplicationQuit()

@@ -3,7 +3,10 @@ guid: 358a6e9f60dd8884fa07f7f288381407
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - saveSystem: {fileID: 11400000, guid: e6bdd366ff03c264a8ed4e16138e1e38, type: 2}
+  - advertisementManager: {fileID: 11400000, guid: a128e78957ba8ef47a427dacb8023507,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -4335,7 +4335,7 @@ PrefabInstance:
     - target: {fileID: 4900135033325619070, guid: 6a2a451dc660efd41afccb1766ef886d,
         type: 3}
       propertyPath: m_Name
-      value: Game Manager
+      value: Universal Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6967166861513329794, guid: 6a2a451dc660efd41afccb1766ef886d,
         type: 3}
