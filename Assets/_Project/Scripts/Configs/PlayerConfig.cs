@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Kiwi.DataObject;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Player Settings", menuName = "PlayerSettings")]
-public class PlayerSettings : ScriptableObject
+public class PlayerConfig : ScriptableObject
 {
     [Header("References")]
     [SerializeField] private FloatValue fireRate = null;

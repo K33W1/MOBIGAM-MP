@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Kiwi.DataObject;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 public class LevelManager : MonoBehaviour

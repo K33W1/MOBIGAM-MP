@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Obstacle Settings", menuName = "Obstacle Settings")]
-public class ObstacleSettings : ScriptableObject
+public class ObstacleConfig : ScriptableObject
 {
     [SerializeField] private Mesh mesh = null;
     [SerializeField] private Material material = null;

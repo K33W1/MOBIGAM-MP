@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Kiwi.DataObject;
+using TMPro;
 using UnityEngine;
 
 [DisallowMultipleComponent]

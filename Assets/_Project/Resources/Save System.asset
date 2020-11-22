@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828294f30196e5468fee0fc61cd991a, type: 3}
   m_Name: Save System
   m_EditorClassIdentifier: 
-  scriptableObjectsToSave:
+  defaultObjects:
+  - {fileID: 11400000, guid: 4879958176cdcc04283029323bb40e92, type: 2}
+  - {fileID: 11400000, guid: 9cb03464d72f62742881503838349e34, type: 2}
+  - {fileID: 11400000, guid: 62e6de1586ec5f542819263c293d8c30, type: 2}
+  - {fileID: 11400000, guid: 924b8ae4cec6c2e4a89aa21c8f9ebb6c, type: 2}
+  runtimeObjects:
   - {fileID: 11400000, guid: 0e677dee375d2f64eaebc4d15e920967, type: 2}
   - {fileID: 11400000, guid: 6761ac76dcc25a942921bf82693a8e06, type: 2}
   - {fileID: 11400000, guid: 1d4636e31bd8da64ea8f2c622994e41b, type: 2}

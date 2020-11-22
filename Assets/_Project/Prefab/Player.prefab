@@ -211,7 +211,7 @@ MonoBehaviour:
   camera: {fileID: 2536062513750511926}
   playerTransform: {fileID: 1923863677911590746}
   playerVisual: {fileID: 4228309974600390073}
-  playerSettings: {fileID: 11400000, guid: 4602f5ef72203024ba8d10909a095ebd, type: 2}
+  _playerConfig: {fileID: 11400000, guid: 4602f5ef72203024ba8d10909a095ebd, type: 2}
   leanLimit: 45
   leanSmoothing: 0.1
   lookSpeed: 200
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 7410945534346448802}
-  playerSettings: {fileID: 11400000, guid: 4602f5ef72203024ba8d10909a095ebd, type: 2}
+  _playerConfig: {fileID: 11400000, guid: 4602f5ef72203024ba8d10909a095ebd, type: 2}
 --- !u!114 &740751620836880983
 MonoBehaviour:
   m_ObjectHideFlags: 0

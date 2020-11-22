@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform playerVisual = null;
 
     [Header("Settings")]
-    [SerializeField] private PlayerSettings playerSettings = null;
+    [SerializeField] private PlayerConfig _playerConfig = null;
     [SerializeField, Range(0, 90)] private float leanLimit = 75f;
     [SerializeField, Min(0)] private float leanSmoothing = 0.1f;
     [SerializeField, Min(0)] private float lookSpeed = 100f;
@@ -42,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
             Vector2 rawMove = input.Move;
             Vector3 move = new Vector3
             (
-                rawMove.x * playerSettings.MoveSpeed * Time.deltaTime,
-                rawMove.y * playerSettings.MoveSpeed * Time.deltaTime
+                rawMove.x * _playerConfig.MoveSpeed * Time.deltaTime,
+                rawMove.y * _playerConfig.MoveSpeed * Time.deltaTime
             );
 
             playerTransform.localPosition += move;

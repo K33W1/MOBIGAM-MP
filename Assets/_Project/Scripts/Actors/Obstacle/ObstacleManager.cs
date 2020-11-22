@@ -9,7 +9,7 @@ public class ObstacleManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Cube cube = null;
-    [SerializeField] private ObstacleSettings[] allSettings = null;
+    [SerializeField] private ObstacleConfig[] allSettings = null;
 
     [Header("Settings")]
     [SerializeField, Min(0)] private float spawnRate = 4f;
@@ -17,7 +17,7 @@ public class ObstacleManager : MonoBehaviour
     private bool isSpawning = true;
     private float timer = 0f;
 
-    private void Awake()
+    private void OnEnable()
     {
         bossSpawned.RegisterListener(StopSpawning);
     }
@@ -53,5 +53,10 @@ public class ObstacleManager : MonoBehaviour
     public void StopSpawning()
     {
         isSpawning = false;
+    }
+
+    private void OnDisable()
+    {
+        bossSpawned.UnregisterListener(StopSpawning);
     }
 }

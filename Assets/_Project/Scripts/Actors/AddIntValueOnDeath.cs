@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Kiwi.DataObject;
+using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 public class AddIntValueOnDeath : MonoBehaviour

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc08752fbd7baf4e8573e6dcf17b38f, type: 3}
   m_Name: Fire Rate
   m_EditorClassIdentifier: 
-  value: 0.25
+  defaultValue: 0
+  runtimeValue: 0

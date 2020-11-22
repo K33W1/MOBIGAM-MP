@@ -12,7 +12,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private new SphereCollider collider = null;
 
     private ObstacleMovement movement = null;
-    private ObstacleSettings settings = null;
+    private ObstacleConfig config = null;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class Obstacle : MonoBehaviour
     {
         if (!EditorApplication.isPlaying)
         {
-            if (settings != null)
+            if (config != null)
             {
                 UpdateSettings();;
             }
@@ -32,18 +32,18 @@ public class Obstacle : MonoBehaviour
     }
 #endif
 
-    public void Spawn(ObstacleSettings settings, Vector3 direction)
+    public void Spawn(ObstacleConfig config, Vector3 direction)
     {
-        this.settings = settings;
+        this.config = config;
         UpdateSettings();
         movement.Launch(direction);
     }
 
     private void UpdateSettings()
     {
-        meshFilter.mesh = settings.Mesh;
-        meshRenderer.material = settings.Material;
-        collider.radius = settings.Radius;
+        meshFilter.mesh = config.Mesh;
+        meshRenderer.material = config.Material;
+        collider.radius = config.Radius;
     }
 
     private void OnCollisionEnter(Collision _)

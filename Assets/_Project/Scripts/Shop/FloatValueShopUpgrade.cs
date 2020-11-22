@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Kiwi.DataObject;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "New FloatValue Shop Upgrade", menuName = "Shop/FloatValue Upgrade")]
 public class FloatValueShopUpgrade : ShopUpgrade
