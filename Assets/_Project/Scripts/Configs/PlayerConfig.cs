@@ -1,7 +1,7 @@
 ﻿using Kiwi.DataObject;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Player Settings", menuName = "PlayerSettings")]
+[CreateAssetMenu(fileName = "New Player Config", menuName = "Configs/Player")]
 public class PlayerConfig : ScriptableObject
 {
     [Header("References")]

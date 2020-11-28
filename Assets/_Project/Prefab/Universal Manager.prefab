@@ -57,6 +57,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be17fe96eac79048980b0929f58eca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playInterstitialAdEvent: {fileID: 0}
-  playRewardedVideoAdEvent: {fileID: 0}
-  isTestBuild: 0
+  isTestBuild: 1
