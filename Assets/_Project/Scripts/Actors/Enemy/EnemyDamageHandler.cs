@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(Enemy))]
 public class EnemyDamageHandler : MonoBehaviour, IDamageHandler
 {
+    public event Action UndamagedHit;
+    public event Action Damaged;
+
     private Health health = null;
     private Enemy enemy = null;
 
@@ -18,7 +22,19 @@ public class EnemyDamageHandler : MonoBehaviour, IDamageHandler
     {
         if (enemy.Element == damage.Element)
         {
-            health.Damage(damage.Damage);
+            if (damage.Damage > 0)
+            {
+                health.Damage(damage.Damage);
+                Damaged?.Invoke();
+            }
+            else
+            {
+                UndamagedHit?.Invoke();
+            }
+        }
+        else
+        {
+            UndamagedHit?.Invoke();
         }
     }
 }

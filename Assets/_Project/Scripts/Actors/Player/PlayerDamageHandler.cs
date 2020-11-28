@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Health))]
 public class PlayerDamageHandler : MonoBehaviour, IDamageHandler
 {
+    public event Action UndamagedHit;
+    public event Action Damaged;
+
     private Health health = null;
 
     private void Awake()
@@ -13,6 +17,14 @@ public class PlayerDamageHandler : MonoBehaviour, IDamageHandler
 
     public void Damage(DamageInfo damage)
     {
-        health.Damage(damage.Damage);
+        if (damage.Damage > 0)
+        {
+            health.Damage(damage.Damage);
+            Damaged?.Invoke();
+        }
+        else
+        {
+            UndamagedHit?.Invoke();
+        }
     }
 }
