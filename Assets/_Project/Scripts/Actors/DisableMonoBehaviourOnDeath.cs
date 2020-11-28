@@ -1,25 +1,25 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Health))]
-public class PlayerAnimator : MonoBehaviour
+public class DisableMonoBehaviourOnDeath : MonoBehaviour
 {
-    private static readonly int DeathID = Animator.StringToHash("Death");
+    [SerializeField] private MonoBehaviour[] monoBehaviours = null;
 
-    private Animator animator = null;
     private Health health = null;
 
     private void Awake()
     {
         health = GetComponent<Health>();
-        animator = GetComponent<Animator>();
 
         health.Died += OnDeath;
     }
 
     private void OnDeath()
     {
-        animator.SetTrigger(DeathID);
+        foreach (MonoBehaviour monoBehaviour in monoBehaviours)
+        {
+            monoBehaviour.enabled = false;
+        }
     }
 }
