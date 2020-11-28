@@ -11,11 +11,7 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint = null;
 
     [Header("Settings")]
-    [SerializeField, Range(0, 1)] private float shootChance = 0.5f;
-    [SerializeField, Min(0)] private float shootCooldown = 2f;
-    [SerializeField, Min(0)] private float attemptShootRate = 1f;
-    [SerializeField, Min(0)] private float bulletSpeed = 10f;
-    [SerializeField, Min(0)] private float startShootingDelay = 1f;
+    [SerializeField] private EnemyShootingConfig config = null;
 
     public event Action ShotFired;
 
@@ -33,15 +29,15 @@ public class EnemyShooting : MonoBehaviour
 
     private IEnumerator ShootingLoop()
     {
-        yield return new WaitForSeconds(startShootingDelay);
+        yield return new WaitForSeconds(config.StartShootingDelay);
 
         while (true)
         {
-            yield return new WaitForSeconds(attemptShootRate);
-            if (Random.value < shootChance)
+            yield return new WaitForSeconds(config.AttemptShootRate);
+            if (Random.value < config.ShootChance)
             {
                 ShootBullet();
-                yield return new WaitForSeconds(shootCooldown);
+                yield return new WaitForSeconds(config.ShootCooldown);
             }
         }
     }
@@ -52,7 +48,7 @@ public class EnemyShooting : MonoBehaviour
         Vector3 direction = (enemy.Target.position - bulletSpawnPoint.position).normalized;
 
         bullet.transform.position = bulletSpawnPoint.position;
-        bullet.Launch(gameObject.layer, direction, bulletSpeed, Element.None);
+        bullet.Launch(gameObject.layer, direction, config.BulletSpeed, Element.None);
 
         ShotFired?.Invoke();
     }

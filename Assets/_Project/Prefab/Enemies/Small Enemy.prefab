@@ -334,11 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 895636897}
-  shootChance: 0.2
-  shootCooldown: 4
-  attemptShootRate: 1
-  bulletSpeed: 10
-  startShootingDelay: 2
+  config: {fileID: 11400000, guid: 96b810f138e08c14b90ab02d72518571, type: 2}
 --- !u!114 &4085156775962265816
 MonoBehaviour:
   m_ObjectHideFlags: 0
