@@ -9,11 +9,11 @@ public class PlayerDeathView : View
     [SerializeField] private IntValue scoreValue = null;
 
     [Header("UI Elements")]
-    [SerializeField] private TextMeshProUGUI text = null;
+    [SerializeField] private TextMeshProUGUI scoreText = null;
 
     protected override void OnShow()
     {
-        text.text = scoreValue.Value.ToString().PadLeft(6, '0');
+        scoreText.text = scoreValue.Value.ToString().PadLeft(6, '0');
     }
 
     protected override void OnHide()

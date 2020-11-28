@@ -28,6 +28,7 @@ public class UIController : MonoBehaviour
     {
         foreach (View view in views)
         {
+            view.Initialize();
             view.Hide();
         }
 
