@@ -28,6 +28,19 @@ CapsuleCollider:
   m_Height: 4.04
   m_Direction: 2
   m_Center: {x: 1.9, y: 0, z: 8.71}
+--- !u!65 &6456420040854989540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374584372723969206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2.93, z: 4.55}
+  m_Center: {x: 0, y: 0.3, z: -1.63}
 --- !u!136 &6904668472811276154
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42,19 +55,6 @@ CapsuleCollider:
   m_Height: 4.04
   m_Direction: 2
   m_Center: {x: -1.9, y: 0, z: 8.71}
---- !u!65 &6456420040854989540
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8374584372723969206}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 2.93, z: 4.55}
-  m_Center: {x: 0, y: 0.3, z: -1.63}
 --- !u!1001 &654706946822375954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81,6 +81,11 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038298206575892779, guid: 0d0b903119b566a4cbbdd4887ccb4817,
+        type: 3}
+      propertyPath: projectileLayer.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 3893804589783403891, guid: 0d0b903119b566a4cbbdd4887ccb4817,
         type: 3}
@@ -145,7 +150,7 @@ PrefabInstance:
     - target: {fileID: 7061802438948180959, guid: 0d0b903119b566a4cbbdd4887ccb4817,
         type: 3}
       propertyPath: m_Name
-      value: Boss Red
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 9032934961259515422, guid: 0d0b903119b566a4cbbdd4887ccb4817,
         type: 3}

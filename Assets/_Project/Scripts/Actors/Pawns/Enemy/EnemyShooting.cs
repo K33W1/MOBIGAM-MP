@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Kiwi.Extensions;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,6 +10,7 @@ public class EnemyShooting : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] private Transform bulletSpawnPoint = null;
+    [SerializeField] private LayerMask projectileLayer = new LayerMask();
 
     [Header("Settings")]
     [SerializeField] private EnemyShootingConfig config = null;
@@ -48,7 +50,7 @@ public class EnemyShooting : MonoBehaviour
         Vector3 direction = (enemy.Target.position - bulletSpawnPoint.position).normalized;
 
         bullet.transform.position = bulletSpawnPoint.position;
-        bullet.Launch(gameObject.layer, direction, config.BulletSpeed, Element.None);
+        bullet.Launch(projectileLayer.MaskToLayer(), direction, config.BulletSpeed, Element.None);
 
         ShotFired?.Invoke();
     }

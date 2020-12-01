@@ -334,6 +334,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 895636897}
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 4096
   config: {fileID: 11400000, guid: 96b810f138e08c14b90ab02d72518571, type: 2}
 --- !u!114 &4085156775962265816
 MonoBehaviour:

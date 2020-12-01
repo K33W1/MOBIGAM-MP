@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Kiwi.Extensions;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -9,6 +10,7 @@ public class PlayerShooting : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform bulletSpawnPoint = null;
+    [SerializeField] private LayerMask projectileLayer = new LayerMask();
 
     [Header("Settings")]
     [SerializeField] private PlayerConfig _playerConfig = null;
@@ -58,7 +60,7 @@ public class PlayerShooting : MonoBehaviour
             Vector3 direction = bulletSpawnPoint.forward;
 
             bullet.transform.position = bulletSpawnPoint.transform.position;
-            bullet.Launch(gameObject.layer, direction, _playerConfig.BulletSpeed, currentElement);
+            bullet.Launch(projectileLayer.MaskToLayer(), direction, _playerConfig.BulletSpeed, currentElement);
             ShotFired?.Invoke();
 
             yield return new WaitForSeconds(_playerConfig.FireRate);

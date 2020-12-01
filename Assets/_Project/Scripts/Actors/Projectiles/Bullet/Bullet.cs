@@ -19,7 +19,11 @@ public class Bullet : MonoBehaviour
 
     public void Launch(int layer, Vector3 direction, float speed, Element element)
     {
-        gameObject.layer = layer;
+        foreach (Transform child in GetComponentsInChildren<Transform>())
+        {
+            child.gameObject.layer = layer;
+        }
+
         movement.Launch(direction, speed);
         damageOtherOnCollision.Element = element;
         visualChanger.OnElementChanged(element);

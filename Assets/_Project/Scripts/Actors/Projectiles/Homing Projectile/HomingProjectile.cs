@@ -22,8 +22,13 @@ public class HomingProjectile : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void Launch(Transform origin, Transform target)
+    public void Launch(int layer, Transform origin, Transform target)
     {
+        foreach (Transform child in GetComponentsInChildren<Transform>())
+        {
+            child.gameObject.layer = layer;
+        }
+
         transform.position = origin.position;
         transform.rotation = origin.rotation;
 
