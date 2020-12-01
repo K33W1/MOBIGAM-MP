@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     public event Action Died;
     public event Action<int> ValueChanged;
 
+    public bool IsVulnerable { get; set; } = true;
+
     public int MaxValue => maxHealth;
     public int Value => health;
     public bool IsAlive => health > 0;
@@ -23,6 +25,9 @@ public class Health : MonoBehaviour
     public void Damage(int damage)
     {
         Debug.Assert(damage > 0);
+
+        if (!IsVulnerable)
+            return;
 
         health -= damage;
         ValueChanged?.Invoke(health);

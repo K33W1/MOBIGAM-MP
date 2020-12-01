@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 9146086577493317016}
   - component: {fileID: 8219767499853313528}
   - component: {fileID: 2131991395584547988}
+  - component: {fileID: 7927780319726526771}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -329,6 +330,19 @@ MonoBehaviour:
   yLength: 0.2
   xSpeed: 2
   ySpeed: 4
+--- !u!114 &7927780319726526771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2536062512490330767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3e3743d54319241b9d44c2bcc37bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossDied: {fileID: 11400000, guid: bf7a4e78dfd24e243ac468bec9eb7acf, type: 2}
 --- !u!1 &2536062513750511931
 GameObject:
   m_ObjectHideFlags: 0
