@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class PlayerInput : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private Joystick joystick = null;
+
     [Header("Settings")]
     [SerializeField] private float moveSmoothing = 1.0f;
 
@@ -30,6 +33,16 @@ public class PlayerInput : MonoBehaviour
         FireCheck();
         SwitchWeaponCheck();
         MoveCheck();
+    }
+
+    public void StartFiring()
+    {
+        StartFire?.Invoke();
+    }
+
+    public void StopFiring()
+    {
+        StopFire?.Invoke();
     }
 
     private void FireCheck()
@@ -58,8 +71,8 @@ public class PlayerInput : MonoBehaviour
 
     private void MoveCheck()
     {
-        float rawX = Input.GetAxisRaw("Horizontal");
-        float rawY = Input.GetAxisRaw("Vertical");
+        float rawX = Input.GetAxisRaw("Horizontal") + joystick.Horizontal;
+        float rawY = Input.GetAxisRaw("Vertical") + joystick.Vertical;
 
         Vector2 rawMove = new Vector2(rawX, rawY);
         Vector2 normalizedMove = rawMove.sqrMagnitude > 1f ? rawMove.normalized : rawMove;

@@ -8,7 +8,7 @@ public class ForcefieldBehaviour : MonoBehaviour
     [SerializeField] private MeshRenderer forcefieldRenderer = null;
 
     [Header("Settings")]
-    [SerializeField] private AnimationCurveConfig animation = null;
+    [SerializeField] private new AnimationCurveConfig animation = null;
 
     private static readonly int ForcefieldAlpha = Shader.PropertyToID("Vector1_A293667E");
 

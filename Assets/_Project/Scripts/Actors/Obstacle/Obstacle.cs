@@ -1,5 +1,4 @@
-﻿using TreeEditor;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 [DisallowMultipleComponent]
