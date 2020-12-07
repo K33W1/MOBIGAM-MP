@@ -198,7 +198,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
+  swipeButton: {fileID: 0}
   moveSmoothing: 10
+  xMinMoveAngle: 5
+  yMinMoveAngle: 5
+  xMaxMoveAngle: 45
+  yMaxMoveAngle: 45
 --- !u!114 &2896057287672012748
 MonoBehaviour:
   m_ObjectHideFlags: 0

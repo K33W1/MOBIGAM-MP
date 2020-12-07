@@ -2,6 +2,7 @@
 using Kiwi.Extensions;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1000)]
 [DisallowMultipleComponent]
 public class GestureManager : MonoBehaviour
 {

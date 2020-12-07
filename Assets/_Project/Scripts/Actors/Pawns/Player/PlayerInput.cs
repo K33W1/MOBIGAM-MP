@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.iOS;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Health))]
@@ -11,6 +12,10 @@ public class PlayerInput : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float moveSmoothing = 1.0f;
+    [SerializeField] private float xMinMoveAngle = 10f;
+    [SerializeField] private float yMinMoveAngle = 10f;
+    [SerializeField] private float xMaxMoveAngle = 45f;
+    [SerializeField] private float yMaxMoveAngle = 45f;
 
     public event Action StartFire;
     public event Action StopFire;
@@ -78,8 +83,29 @@ public class PlayerInput : MonoBehaviour
 
     private void MoveCheck()
     {
-        float rawX = Input.GetAxisRaw("Horizontal") + joystick.Horizontal;
-        float rawY = Input.GetAxisRaw("Vertical") + joystick.Vertical;
+        float xAngle = Vector3.SignedAngle(DeviceRotation.ReferenceAcceleration, DeviceRotation.GetAcceleration(), Vector3.forward);
+        float yAngle = -Vector3.SignedAngle(DeviceRotation.ReferenceAcceleration, DeviceRotation.GetAcceleration(), Vector3.right);
+
+        if (Mathf.Abs(xAngle) > xMinMoveAngle)
+        {
+            xAngle /= xMaxMoveAngle;
+        }
+        else
+        {
+            xAngle = 0f;
+        }
+
+        if (Mathf.Abs(yAngle) > yMinMoveAngle)
+        {
+            yAngle /= yMaxMoveAngle;
+        }
+        else
+        {
+            yAngle = 0f;
+        }
+
+        float rawX = Input.GetAxisRaw("Horizontal") + joystick.Horizontal + xAngle;
+        float rawY = Input.GetAxisRaw("Vertical") + joystick.Vertical + yAngle;
 
         Vector2 rawMove = new Vector2(rawX, rawY);
         Vector2 normalizedMove = rawMove.sqrMagnitude > 1f ? rawMove.normalized : rawMove;
