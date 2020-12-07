@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccf99ed2d904ea40b87a1b1e65dbaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
   moveSmoothing: 10
 --- !u!114 &2896057287672012748
 MonoBehaviour:
@@ -233,6 +234,7 @@ MonoBehaviour:
   projectileLayer:
     serializedVersion: 2
     m_Bits: 2048
+  elementDataObject: {fileID: 11400000, guid: 0e525b1d46bf7924a859f37256d261cc, type: 2}
   _playerConfig: {fileID: 11400000, guid: 4602f5ef72203024ba8d10909a095ebd, type: 2}
 --- !u!114 &1052704782450621090
 MonoBehaviour:

@@ -8,19 +8,20 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerShooting : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Transform bulletSpawnPoint = null;
+    [Header("References")] [SerializeField]
+    private Transform bulletSpawnPoint = null;
+
     [SerializeField] private LayerMask projectileLayer = new LayerMask();
 
-    [Header("Settings")]
-    [SerializeField] private PlayerConfig _playerConfig = null;
+    [Header("Data Objects")] 
+    [SerializeField] private ElementDataObject elementDataObject = null;
+
+    [Header("Settings")] [SerializeField] private PlayerConfig _playerConfig = null;
 
     public event Action ShotFired;
 
     private Health health = null;
     private PlayerInput input = null;
-
-    private Element currentElement = Element.C;
 
     private void Awake()
     {
@@ -33,18 +34,23 @@ public class PlayerShooting : MonoBehaviour
         input.SwitchWeaponDown += OnSwitchWeaponDown;
     }
 
+    private void Start()
+    {
+        elementDataObject.Value = Element.C;
+    }
+
     private void OnSwitchWeaponUp()
     {
         int validElementsCount = ElementExtensions.ValidElements.Length;
-        int newElementIndex = (int) currentElement % validElementsCount;
-        currentElement = ElementExtensions.ValidElements[newElementIndex];
+        int newElementIndex = (int) elementDataObject.Value % validElementsCount;
+        elementDataObject.Value = ElementExtensions.ValidElements[newElementIndex];
     }
 
     private void OnSwitchWeaponDown()
     {
         int validElementsCount = ElementExtensions.ValidElements.Length;
-        int newElementIndex = (int)(validElementsCount + currentElement - 2) % validElementsCount;
-        currentElement = ElementExtensions.ValidElements[newElementIndex];
+        int newElementIndex = (int)(validElementsCount + elementDataObject.Value - 2) % validElementsCount;
+        elementDataObject.Value = ElementExtensions.ValidElements[newElementIndex];
     }
 
     private void StartFire()
@@ -60,7 +66,7 @@ public class PlayerShooting : MonoBehaviour
             Vector3 direction = bulletSpawnPoint.forward;
 
             bullet.transform.position = bulletSpawnPoint.transform.position;
-            bullet.Launch(projectileLayer.MaskToLayer(), direction, _playerConfig.BulletSpeed, currentElement);
+            bullet.Launch(projectileLayer.MaskToLayer(), direction, _playerConfig.BulletSpeed, elementDataObject.Value);
             ShotFired?.Invoke();
 
             yield return new WaitForSeconds(_playerConfig.FireRate);
@@ -70,5 +76,10 @@ public class PlayerShooting : MonoBehaviour
     private void StopFire()
     {
         StopAllCoroutines();
+    }
+
+    private void OnDestroy()
+    {
+        elementDataObject.Value = Element.C;
     }
 }
