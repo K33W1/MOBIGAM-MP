@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6967166861513329794}
   - component: {fileID: 978457292999570050}
   - component: {fileID: 31875341557108738}
+  - component: {fileID: 8702514437399674459}
   m_Layer: 0
   m_Name: Universal Manager
   m_TagString: Untagged
@@ -58,3 +59,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTestBuild: 1
+--- !u!114 &8702514437399674459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900135033325619070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874a663b7d6a8d742aa60c2ff3f9af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapGestureConfig:
+    minTapDuration: 0.7
+    maxTapDistance: 0.1
+  dragGestureSettings:
+    minDuration: 0.5
+  swipeGestureConfig:
+    minSwipeDistance: 0.2
+    maxSwipeDuration: 2
+  twoFingerPanGestureConfig:
+    maxDistance: 0.5
+  pinchSpreadGestureConfig:
+    minChange: 0.1
+  rotateGestureConfig:
+    minDistance: 0.7
+    minDelta: 1

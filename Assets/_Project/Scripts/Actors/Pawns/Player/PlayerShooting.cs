@@ -8,8 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerShooting : MonoBehaviour
 {
-    [Header("References")] [SerializeField]
-    private Transform bulletSpawnPoint = null;
+    [Header("References")]
+    [SerializeField] private Transform bulletSpawnPoint = null;
 
     [SerializeField] private LayerMask projectileLayer = new LayerMask();
 

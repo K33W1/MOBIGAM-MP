@@ -7,6 +7,7 @@ public class PlayerInput : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Joystick joystick = null;
+    [SerializeField] private PlayerSwipeButton swipeButton = null;
 
     [Header("Settings")]
     [SerializeField] private float moveSmoothing = 1.0f;
@@ -23,6 +24,12 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         health = GetComponent<Health>();
+    }
+
+    private void OnEnable()
+    {
+        swipeButton.SwipeLeft += () => SwitchWeaponDown?.Invoke();
+        swipeButton.SwipeRight += () => SwitchWeaponUp?.Invoke();
     }
 
     private void Update()
@@ -79,5 +86,11 @@ public class PlayerInput : MonoBehaviour
 
         float smoothing = moveSmoothing * Time.deltaTime;
         Move = Vector2.Lerp(Move, normalizedMove, smoothing);
+    }
+
+    private void OnDisable()
+    {
+        swipeButton.SwipeLeft -= SwitchWeaponDown;
+        swipeButton.SwipeRight -= SwitchWeaponUp;
     }
 }
