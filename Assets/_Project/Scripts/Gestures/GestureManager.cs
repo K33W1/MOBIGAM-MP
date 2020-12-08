@@ -1,10 +1,11 @@
 ﻿using System;
+using Kiwi.Common;
 using Kiwi.Extensions;
 using UnityEngine;
 
 [DefaultExecutionOrder(-1000)]
 [DisallowMultipleComponent]
-public class GestureManager : MonoBehaviour
+public class GestureManager : MonoBehaviourSingleton<GestureManager>
 {
     [Header("Gesture Configs")]
     [SerializeField] private TapGestureConfig tapGestureConfig = null;
@@ -21,24 +22,15 @@ public class GestureManager : MonoBehaviour
     public event EventHandler<PinchSpreadEventArgs> OnPinchSpread;
     public event EventHandler<RotateEventArgs> OnRotate;
 
-    public static GestureManager Instance { get; private set; }
-
     private Touch gestureFinger1;
     private Touch gestureFinger2;
     private Vector2 startPos;
     private Vector2 endPos;
     private float gestureTime;
 
-    private void Awake()
+    protected override void SingletonAwake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     private void Update()
@@ -264,8 +256,8 @@ public class GestureManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    protected override void SingletonOnDestroy()
     {
-        Instance = null;
+        
     }
 }

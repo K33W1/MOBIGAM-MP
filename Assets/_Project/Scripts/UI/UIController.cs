@@ -7,8 +7,9 @@ public class UIController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private View startingView = null;
 
+    public View CurrentView { get; private set; }
+    
     private List<View> views = new List<View>();
-    private View currentView = null;
 
     private void Awake()
     {
@@ -35,13 +36,13 @@ public class UIController : MonoBehaviour
         if (startingView == null)
             return;
 
-        currentView = startingView;
-        currentView.Show();
+        CurrentView = startingView;
+        CurrentView.Show();
     }
 
     private void OnViewShow(View showedView)
     {
-        if (showedView == currentView)
+        if (showedView == CurrentView)
             return;
 
         foreach (View view in views)
@@ -52,6 +53,6 @@ public class UIController : MonoBehaviour
             }
         }
 
-        currentView = showedView;
+        CurrentView = showedView;
     }
 }

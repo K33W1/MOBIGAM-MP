@@ -16,7 +16,6 @@ namespace Kiwi.Common
             if (Instance == null)
             {
                 Instance = thisInstance;
-                DontDestroyOnLoad(Instance.gameObject);
             }
 
             else if (thisInstance != Instance)

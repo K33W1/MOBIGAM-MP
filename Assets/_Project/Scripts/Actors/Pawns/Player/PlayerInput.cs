@@ -7,7 +7,6 @@ using UnityEngine.iOS;
 public class PlayerInput : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Joystick joystick = null;
     [SerializeField] private PlayerSwipeButton swipeButton = null;
 
     [Header("Settings")]
@@ -24,11 +23,14 @@ public class PlayerInput : MonoBehaviour
 
     public Vector2 Move { get; private set; }
 
+    private Joystick joystick = null;
+
     private Health health = null;
 
     private void Awake()
     {
         health = GetComponent<Health>();
+        joystick = UIServiceLocator.Instance.PlayerJoystick;
     }
 
     private void OnEnable()
@@ -83,27 +85,33 @@ public class PlayerInput : MonoBehaviour
 
     private void MoveCheck()
     {
-        float xAngle = Vector3.SignedAngle(DeviceRotation.ReferenceAcceleration, DeviceRotation.GetAcceleration(), Vector3.forward);
-        float yAngle = -Vector3.SignedAngle(DeviceRotation.ReferenceAcceleration, DeviceRotation.GetAcceleration(), Vector3.right);
+        float xAngle = 0f;
+        float yAngle = 0f;
 
-        if (Mathf.Abs(xAngle) > xMinMoveAngle)
+        if (ControlsManager.Instance.CurrentControls == Controls.Gyroscope)
         {
-            xAngle /= xMaxMoveAngle;
-        }
-        else
-        {
-            xAngle = 0f;
-        }
+            xAngle = Vector3.SignedAngle(DeviceRotation.ReferenceAcceleration, DeviceRotation.GetAcceleration(), Vector3.forward);
+            yAngle = -Vector3.SignedAngle(DeviceRotation.ReferenceAcceleration, DeviceRotation.GetAcceleration(), Vector3.right);
 
-        if (Mathf.Abs(yAngle) > yMinMoveAngle)
-        {
-            yAngle /= yMaxMoveAngle;
-        }
-        else
-        {
-            yAngle = 0f;
-        }
+            if (Mathf.Abs(xAngle) > xMinMoveAngle)
+            {
+                xAngle /= xMaxMoveAngle;
+            }
+            else
+            {
+                xAngle = 0f;
+            }
 
+            if (Mathf.Abs(yAngle) > yMinMoveAngle)
+            {
+                yAngle /= yMaxMoveAngle;
+            }
+            else
+            {
+                yAngle = 0f;
+            }
+        }
+        
         float rawX = Input.GetAxisRaw("Horizontal") + joystick.Horizontal + xAngle;
         float rawY = Input.GetAxisRaw("Vertical") + joystick.Vertical + yAngle;
 

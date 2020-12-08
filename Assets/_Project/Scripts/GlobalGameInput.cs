@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class GlobalInput : MonoBehaviourSingleton<GlobalInput>
+public class GlobalGameInput : MonoBehaviourSingleton<GlobalGameInput>
 {
     protected override void SingletonAwake()
     {

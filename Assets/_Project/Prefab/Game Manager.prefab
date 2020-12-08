@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4900135033325619070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6967166861513329794}
+  - component: {fileID: 978457292999570050}
+  - component: {fileID: 5646991001196880337}
+  - component: {fileID: 8702514437399674459}
+  - component: {fileID: 2542703652713930354}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6967166861513329794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900135033325619070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &978457292999570050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900135033325619070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358a6e9f60dd8884fa07f7f288381407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveSystem: {fileID: 11400000, guid: e6bdd366ff03c264a8ed4e16138e1e38, type: 2}
+  gameView: {fileID: 0}
+  pauseView: {fileID: 0}
+--- !u!114 &5646991001196880337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900135033325619070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59146a6668da9d54587fcc4a3b6cb201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8702514437399674459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900135033325619070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874a663b7d6a8d742aa60c2ff3f9af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapGestureConfig:
+    minTapDuration: 0.7
+    maxTapDistance: 0.1
+  dragGestureSettings:
+    minDuration: 0.5
+  swipeGestureConfig:
+    minSwipeDistance: 0.2
+    maxSwipeDuration: 2
+  twoFingerPanGestureConfig:
+    maxDistance: 0.5
+  pinchSpreadGestureConfig:
+    minChange: 0.1
+  rotateGestureConfig:
+    minDistance: 0.7
+    minDelta: 1
+--- !u!114 &2542703652713930354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900135033325619070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d354019bd84889c489e29ecf0b2de984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
