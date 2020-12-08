@@ -5,7 +5,7 @@
 public class EnemyWaypointFollower : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField, Min(0)] private float speed = 0.1f;
+    [SerializeField, Min(0)] private float speed = 3f;
 
     private Enemy enemy = null;
 
@@ -20,7 +20,7 @@ public class EnemyWaypointFollower : MonoBehaviour
 
         if (waypoint != null)
         {
-            transform.position = Vector3.Lerp(transform.position, waypoint.position, speed);
+            transform.position = Vector3.Lerp(transform.position, waypoint.position, speed * Time.deltaTime);
         }
     }
 }
