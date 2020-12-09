@@ -4,9 +4,6 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class GameManager : MonoBehaviourSingleton<GameManager>
 {
-    [Header("Managers")]
-    [SerializeField] private SaveSystem saveSystem = null;
-
     private View lastView = null;
     private View pauseView = null;
 
@@ -15,8 +12,6 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     protected override void SingletonAwake()
     {
         pauseView = UIServiceLocator.Instance.PauseView;
-
-        saveSystem.Load();
     }
 
     public void TogglePause()
@@ -40,10 +35,5 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     protected override void SingletonOnDestroy()
     {
 
-    }
-
-    private void OnApplicationQuit()
-    {
-        saveSystem.Save();
     }
 }
