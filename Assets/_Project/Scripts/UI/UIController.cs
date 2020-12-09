@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
+using Kiwi.Common;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class UIController : MonoBehaviour
+public class UIController : MonoBehaviourSingleton<UIController>
 {
     [Header("Settings")]
     [SerializeField] private View startingView = null;
 
     public View CurrentView { get; private set; }
+    public View LastView { get; private set; }
     
     private List<View> views = new List<View>();
 
-    private void Awake()
+    protected override void SingletonAwake()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -53,6 +55,26 @@ public class UIController : MonoBehaviour
             }
         }
 
+        LastView = CurrentView;
         CurrentView = showedView;
+    }
+
+    public void ShowLastView()
+    {
+        if (LastView == null)
+            return;
+
+        foreach (View view in views)
+        {
+            view.Hide();
+        }
+
+        LastView.Show();
+        LastView = null;
+    }
+
+    protected override void SingletonOnDestroy()
+    {
+
     }
 }

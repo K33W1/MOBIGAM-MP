@@ -4,7 +4,6 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class GameManager : MonoBehaviourSingleton<GameManager>
 {
-    private View lastView = null;
     private View pauseView = null;
 
     private bool isPaused = false;
@@ -21,14 +20,12 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         if (isPaused)
         {
             Time.timeScale = 0f;
-            lastView = UIServiceLocator.Instance.CurrentView;
             pauseView.Show();
         }
         else
         {
             Time.timeScale = 1f;
-            lastView.Show();
-            lastView = null;
+            UIController.Instance.ShowLastView();
         }
     }
 

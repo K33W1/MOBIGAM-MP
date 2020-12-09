@@ -13,7 +13,6 @@ public class UIServiceLocator : MonoBehaviourSingleton<UIServiceLocator>
     [SerializeField] private ScoreText scoreText = null;
     [SerializeField] private Joystick playerJoystick = null;
 
-    public View CurrentView => uiController.CurrentView;
     public PlayerDeathView LoseView => loseView;
     public View WinView => winView;
     public View PauseView => pauseView;
@@ -21,11 +20,9 @@ public class UIServiceLocator : MonoBehaviourSingleton<UIServiceLocator>
     public ScoreText ScoreText => scoreText;
     public Joystick PlayerJoystick => playerJoystick;
 
-    private UIController uiController = null;
-
     protected override void SingletonAwake()
     {
-        uiController = GetComponent<UIController>();
+        
     }
 
     protected override void SingletonOnDestroy()
