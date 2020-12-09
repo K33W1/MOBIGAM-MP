@@ -25,7 +25,7 @@ public class PlayerHealthUI : MonoBehaviour
         for (int i = 0; i < healthImages.Length; i++)
         {
             Color color = healthImages[i].color;
-            color.a = i < value ? 1f : 0.5f;
+            color.a = i < value ? 1f : 0.25f;
             healthImages[i].color = color;
         }
     }

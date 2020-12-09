@@ -3,10 +3,16 @@
 [DisallowMultipleComponent]
 public class PlayerUIController : MonoBehaviour
 {
-    [Header("UI Elements")]
-    [SerializeField] private PlayerDeathView deathView = null;
-    [SerializeField] private PlayerHealthUI healthUI = null;
-    [SerializeField] private ScoreText scoreText = null;
+    private PlayerDeathView deathView = null;
+    private PlayerHealthUI healthUI = null;
+    private ScoreText scoreText = null;
+
+    private void Awake()
+    {
+        deathView = UIServiceLocator.Instance.LoseView;
+        healthUI = UIServiceLocator.Instance.HealthUI;
+        scoreText = UIServiceLocator.Instance.ScoreText;
+    }
 
     private void Start()
     {
