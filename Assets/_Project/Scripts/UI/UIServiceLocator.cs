@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-[DefaultExecutionOrder(-1000)]
+[DefaultExecutionOrder(-1001)]
 public class UIServiceLocator : MonoBehaviourSingleton<UIServiceLocator>
 {
     [Header("References")]

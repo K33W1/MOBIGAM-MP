@@ -241,21 +241,6 @@ public class GestureManager : MonoBehaviourSingleton<GestureManager>
         return null;
     }
 
-    private void OnDrawGizmos()
-    {
-        if (Input.touchCount > 0)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(gestureFinger1.position);
-            Gizmos.DrawIcon(ray.GetPoint(5f), "HarunaChibi");
-
-            if (Input.touchCount > 1)
-            {
-                ray = Camera.main.ScreenPointToRay(gestureFinger2.position);
-                Gizmos.DrawIcon(ray.GetPoint(5f), "KirishimaChibi");
-            }
-        }
-    }
-
     protected override void SingletonOnDestroy()
     {
         

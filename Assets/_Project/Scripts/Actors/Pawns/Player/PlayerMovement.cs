@@ -7,7 +7,7 @@
 public class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private new Camera camera = null;
+    [SerializeField] private Camera playerCamera = null;
     [SerializeField] private Transform playerTransform = null;
     [SerializeField] private Transform playerVisual = null;
 
@@ -83,10 +83,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void ClampPosition()
     {
-        Vector3 pos = camera.WorldToViewportPoint(playerTransform.position);
+        Vector3 pos = playerCamera.WorldToViewportPoint(playerTransform.position);
         pos.x = Mathf.Clamp01(pos.x);
         pos.y = Mathf.Clamp01(pos.y);
-        playerTransform.position = camera.ViewportToWorldPoint(pos);
+        playerTransform.position = playerCamera.ViewportToWorldPoint(pos);
     }
 
     private void AimRotation(Vector2 move)

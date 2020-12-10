@@ -2,6 +2,8 @@
 
 namespace Kiwi.Common
 {
+    [DisallowMultipleComponent]
+    [DefaultExecutionOrder(-1000)]
     public abstract class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         public static T Instance { get; private set; }
