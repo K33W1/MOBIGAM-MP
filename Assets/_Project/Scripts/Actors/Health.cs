@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [Header("Settings")]
     [SerializeField, Min(0)] private int maxHealth = 3;
     [SerializeField, Min(0)] private int health = 3;
+    [SerializeField] private bool isDebugInvincible = false;
 
     public event Action Died;
     public event Action<int> ValueChanged;
@@ -28,6 +29,11 @@ public class Health : MonoBehaviour
 
         if (!IsVulnerable)
             return;
+
+#if UNITY_EDITOR
+        if (isDebugInvincible)
+            return;
+#endif
 
         health -= damage;
         ValueChanged?.Invoke(health);
