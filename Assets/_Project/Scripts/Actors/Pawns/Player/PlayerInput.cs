@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.iOS;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Health))]
@@ -15,11 +14,14 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private float yMinMoveAngle = 10f;
     [SerializeField] private float xMaxMoveAngle = 45f;
     [SerializeField] private float yMaxMoveAngle = 45f;
+    [SerializeField] private float dodgeAccelerationThreshold = 1f;
 
     public event Action StartFire;
     public event Action StopFire;
     public event Action SwitchWeaponUp;
     public event Action SwitchWeaponDown;
+    public event Action DodgeLeft;
+    public event Action DodgeRight;
 
     public Vector2 Move { get; private set; }
 
@@ -47,6 +49,7 @@ public class PlayerInput : MonoBehaviour
         FireCheck();
         SwitchWeaponCheck();
         MoveCheck();
+        DodgeCheck();
     }
 
     public void StartFiring()
@@ -123,6 +126,23 @@ public class PlayerInput : MonoBehaviour
 
         float smoothing = moveSmoothing * Time.deltaTime;
         Move = Vector2.Lerp(Move, normalizedMove, smoothing);
+    }
+
+    private void DodgeCheck()
+    {
+        Vector3 deviceAccel = Input.acceleration;
+
+        if (Mathf.Abs(deviceAccel.x) < dodgeAccelerationThreshold)
+            return;
+        
+        if (deviceAccel.x > 0)
+        {
+            DodgeRight?.Invoke();
+        }
+        else
+        {
+            DodgeLeft?.Invoke();
+        }
     }
 
     private void OnDisable()

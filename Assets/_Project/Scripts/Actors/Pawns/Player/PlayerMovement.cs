@@ -14,13 +14,19 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private PlayerConfig _playerConfig = null;
     [SerializeField, Range(0, 90)] private float leanLimit = 75f;
-    [SerializeField, Min(0)] private float leanSmoothing = 0.1f;
+    [SerializeField, Min(0)] private float leanSmoothing = 3f;
     [SerializeField, Min(0)] private float lookSpeed = 100f;
+    [SerializeField] private AnimationCurve dodgeSpeedCurve = null;
+    [SerializeField, Min(0)] private float dodgeDuration = 1f;
+    [SerializeField, Min(0)] private float dodgeSpeedMult = 2f;
 
     private Health health = null;
     private PlayerInput input = null;
 
     private bool canControl = true;
+    private bool isDodging = false;
+    private float dodgeDirection = 0f;
+    private float dodgeTimer = 0f;
 
     private void Awake()
     {
@@ -28,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         input = GetComponent<PlayerInput>();
 
         health.Died += OnDeath;
+        input.DodgeLeft += () => StartDodge(-1f);
+        input.DodgeRight += () => StartDodge(1f);
     }
 
     private void Start()
@@ -39,7 +47,27 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canControl)
         {
-            Vector2 rawMove = input.Move;
+            Vector2 rawMove = Vector2.zero;
+
+            if (isDodging)
+            {
+                dodgeTimer += Time.deltaTime;
+                
+                float dodgePercent = dodgeTimer / dodgeDuration;
+                float xMove = dodgeSpeedCurve.Evaluate(dodgePercent) * dodgeDirection;
+
+                rawMove = new Vector2(xMove, 0f) * dodgeSpeedMult;
+                
+                if (dodgeTimer >= dodgeDuration)
+                {
+                    isDodging = false;
+                }
+            }
+            else
+            {
+                rawMove = input.Move;
+            }
+
             Vector3 move = new Vector3
             (
                 rawMove.x * _playerConfig.MoveSpeed * Time.deltaTime,
@@ -73,14 +101,22 @@ public class PlayerMovement : MonoBehaviour
 
     void HorizontalLean(float moveX)
     {
+        float smoothing = leanSmoothing * Time.deltaTime;
         Vector3 currentAngle = playerVisual.localEulerAngles;
         Vector3 targetAngle = new Vector3
         (
             currentAngle.x,
             currentAngle.y,
-            Mathf.LerpAngle(currentAngle.z, -moveX * leanLimit, leanSmoothing)
+            Mathf.LerpAngle(currentAngle.z, -moveX * leanLimit, smoothing)
         );
         playerVisual.localEulerAngles = targetAngle;
+    }
+
+    private void StartDodge(float direction)
+    {
+        isDodging = true;
+        dodgeTimer = 0f;
+        dodgeDirection = direction;
     }
 
     private void OnDeath()

@@ -2523,7 +2523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &653260036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6689,6 +6689,11 @@ PrefabInstance:
       propertyPath: joystickUI
       value: 
       objectReference: {fileID: 1104500044}
+    - target: {fileID: 2542703652713930354, guid: 6a2a451dc660efd41afccb1766ef886d,
+        type: 3}
+      propertyPath: defaultControls
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4900135033325619070, guid: 6a2a451dc660efd41afccb1766ef886d,
         type: 3}
       propertyPath: m_Name

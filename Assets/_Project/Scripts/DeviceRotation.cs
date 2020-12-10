@@ -7,6 +7,13 @@ public static class DeviceRotation
 
     private static bool isGyroscopeInitialized = false;
 
+    [RuntimeInitializeOnLoadMethod]
+    private static void Awake()
+    {
+        ReferenceOrientation = Quaternion.identity;
+        isGyroscopeInitialized = false;
+    }
+
     public static Quaternion GetRotation()
     {
         if (!isGyroscopeInitialized)

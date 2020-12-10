@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   health: 3
+  isDebugInvincible: 0
 --- !u!114 &3869998583666728245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,13 +198,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccf99ed2d904ea40b87a1b1e65dbaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
   swipeButton: {fileID: 0}
   moveSmoothing: 10
   xMinMoveAngle: 5
   yMinMoveAngle: 5
   xMaxMoveAngle: 45
   yMaxMoveAngle: 45
+  dodgeAccelerationThreshold: 1
 --- !u!114 &2896057287672012748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +224,41 @@ MonoBehaviour:
   leanLimit: 45
   leanSmoothing: 0.1
   lookSpeed: 200
+  dodgeSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 2.2783697
+      outSlope: 2.2783697
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.049531456
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -3.1589046
+      outSlope: -3.1589046
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04351323
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dodgeDuration: 0.75
+  dodgeSpeedMult: 1.5
 --- !u!114 &5332278129975079733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,9 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f1e3564bb09b34383180dc9518850b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathView: {fileID: 0}
-  healthUI: {fileID: 0}
-  scoreText: {fileID: 0}
 --- !u!114 &740751620836880983
 MonoBehaviour:
   m_ObjectHideFlags: 0
