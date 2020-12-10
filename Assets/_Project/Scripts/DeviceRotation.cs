@@ -2,21 +2,10 @@
 
 public static class DeviceRotation
 {
+    public static Quaternion ReferenceOrientation { get; private set; }
     public static bool HasGyroscope => SystemInfo.supportsGyroscope;
-    public static Vector3 ReferenceAcceleration = Vector3.forward;
 
     private static bool isGyroscopeInitialized = false;
-    private static bool isAccelerometerInitialized = false;
-
-    public static Vector3 GetAcceleration()
-    {
-        if (!isAccelerometerInitialized)
-        {
-            InitializeAccelerometer();
-        }
-
-        return HasGyroscope ? Input.acceleration : Vector3.forward;
-    }
 
     public static Quaternion GetRotation()
     {
@@ -35,22 +24,7 @@ public static class DeviceRotation
 
         Input.gyro.enabled = true;
         isGyroscopeInitialized = true;
-    }
-
-    private static void InitializeAccelerometer()
-    {
-        if (!isGyroscopeInitialized)
-        {
-            InitializeGyroscope();
-            if (!isGyroscopeInitialized)
-                return;
-        }
-
-        if (Input.acceleration == Vector3.zero)
-            return;
-
-        ReferenceAcceleration = Input.acceleration;
-        isAccelerometerInitialized = true;
+        ReferenceOrientation = ReadGyroscopeRotation();
     }
 
     private static Quaternion ReadGyroscopeRotation()

@@ -90,8 +90,11 @@ public class PlayerInput : MonoBehaviour
 
         if (ControlsManager.Instance.CurrentControls == Controls.Gyroscope)
         {
-            xAngle = Vector3.SignedAngle(DeviceRotation.ReferenceAcceleration, DeviceRotation.GetAcceleration(), Vector3.forward);
-            yAngle = -Vector3.SignedAngle(DeviceRotation.ReferenceAcceleration, DeviceRotation.GetAcceleration(), Vector3.right);
+            Vector3 referenceRotation = DeviceRotation.ReferenceOrientation * Vector3.forward;
+            Vector3 currentRotation = DeviceRotation.GetRotation() * Vector3.forward;
+
+            xAngle = -Vector3.SignedAngle(referenceRotation, currentRotation, Vector3.forward);
+            yAngle = -Vector3.SignedAngle(referenceRotation, currentRotation, Vector3.right);
 
             if (Mathf.Abs(xAngle) > xMinMoveAngle)
             {
@@ -111,7 +114,7 @@ public class PlayerInput : MonoBehaviour
                 yAngle = 0f;
             }
         }
-        
+
         float rawX = Input.GetAxisRaw("Horizontal") + joystick.Horizontal + xAngle;
         float rawY = Input.GetAxisRaw("Vertical") + joystick.Vertical + yAngle;
 
