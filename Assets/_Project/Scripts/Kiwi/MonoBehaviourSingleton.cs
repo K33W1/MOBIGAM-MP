@@ -11,18 +11,19 @@ namespace Kiwi.Common
         protected abstract void SingletonAwake();
         protected abstract void SingletonOnDestroy();
 
+        private T thisInstance = null;
+
         private void Awake()
         {
-            T thisInstance = GetComponent<T>();
+            thisInstance = GetComponent<T>();
 
             if (Instance == null)
             {
                 Instance = thisInstance;
             }
-
             else if (thisInstance != Instance)
             {
-                Destroy(thisInstance);
+                Destroy(gameObject);
                 return;
             }
 
@@ -31,8 +32,10 @@ namespace Kiwi.Common
 
         private void OnDestroy()
         {
-            Instance = null;
+            if (Instance != thisInstance)
+                return;
 
+            Instance = null;
             SingletonOnDestroy();
         }
     }

@@ -23,22 +23,6 @@ public class ScreenOrientationManager : MonoBehaviourSingleton<ScreenOrientation
         
     }
 
-    private void Start()
-    {
-        currOrientation = Screen.orientation;
-
-        if (currOrientation == ScreenOrientation.LandscapeLeft ||
-            currOrientation == ScreenOrientation.LandscapeRight)
-        {
-            CurrentGeneralOrientation = GeneralOrientation.Landscape;
-        }
-        else if (currOrientation == ScreenOrientation.Portrait ||
-                 currOrientation == ScreenOrientation.PortraitUpsideDown)
-        {
-            CurrentGeneralOrientation = GeneralOrientation.Portrait;
-        }
-    }
-
     private void Update()
     {
         currOrientation = Screen.orientation;
@@ -63,6 +47,7 @@ public class ScreenOrientationManager : MonoBehaviourSingleton<ScreenOrientation
 
         prevOrientation = currOrientation;
     }
+
 
     protected override void SingletonOnDestroy()
     {
