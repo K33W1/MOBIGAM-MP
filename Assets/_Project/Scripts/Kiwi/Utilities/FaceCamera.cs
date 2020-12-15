@@ -9,19 +9,19 @@ namespace Kiwi.Common.Utility
 		[SerializeField] private Axis axis = Axis.up;
 		[SerializeField] private bool reverseFace = false;
 
-		private new Camera camera;
+		private Camera cameraToFace;
 
 		private void Awake()
 		{
-			if (!camera)
-				camera = Camera.main;
+			if (!cameraToFace)
+				cameraToFace = Camera.main;
 		}
 
 		private void LateUpdate()
 		{
 			Vector3 faceDirection = reverseFace ? Vector3.back : Vector3.forward;
-			Vector3 targetPos = transform.position + camera.transform.rotation * faceDirection;
-			Vector3 targetOrientation = camera.transform.rotation * GetAxis(axis);
+			Vector3 targetPos = transform.position + cameraToFace.transform.rotation * faceDirection;
+			Vector3 targetOrientation = cameraToFace.transform.rotation * GetAxis(axis);
 			transform.LookAt(targetPos, targetOrientation);
 		}
 

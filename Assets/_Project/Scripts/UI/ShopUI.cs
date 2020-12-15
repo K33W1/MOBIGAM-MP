@@ -8,6 +8,7 @@ public class ShopUI : MonoBehaviour
 {
     [Header("Scriptable Objects")]
     [SerializeField] private Shop shop = null;
+    [SerializeField] private SaveSystem saveSystem = null;
     [SerializeField] private IntValue money = null;
 
     [Header("References")]
@@ -46,6 +47,8 @@ public class ShopUI : MonoBehaviour
 
             data.PerformUpgrade();
             money.Value -= data.Price;
+
+            saveSystem.Save();
         }
         else
         {

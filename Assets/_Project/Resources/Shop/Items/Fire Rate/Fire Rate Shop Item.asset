@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9db6d4b4a38d6a4190c609905f28811, type: 3}
   m_Name: Fire Rate Shop Item
   m_EditorClassIdentifier: 
+  saveSytem: {fileID: 11400000, guid: e6bdd366ff03c264a8ed4e16138e1e38, type: 2}
   shopUpgrades:
   - {fileID: 11400000, guid: 60c7c40c561e5a94ebf888b631f250aa, type: 2}
   - {fileID: 11400000, guid: 9ba6167c0dd06374bb8b1325f9250bb5, type: 2}

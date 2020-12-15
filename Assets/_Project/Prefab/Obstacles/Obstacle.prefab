@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshFilter: {fileID: 2494991754159470004}
   meshRenderer: {fileID: 2494991754159470007}
-  collider: {fileID: 4336276223519735722}
+  sphereCollider: {fileID: 4336276223519735722}
 --- !u!114 &7188393420536707275
 MonoBehaviour:
   m_ObjectHideFlags: 0

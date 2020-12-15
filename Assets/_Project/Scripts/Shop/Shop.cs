@@ -13,7 +13,7 @@ public class Shop : ScriptableObject
     {
         foreach (ShopItem item in items)
         {
-            item.Initialize();
+            item.ApplyUpgrade();
         }
     }
 }

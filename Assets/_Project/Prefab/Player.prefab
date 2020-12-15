@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfbaac433620c94a96fa3541117d0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathGameEvent: {fileID: 11400000, guid: 7993ae514be65d442b134352de8f43ee, type: 2}
   maxHealth: 3
   health: 3
   isDebugInvincible: 0

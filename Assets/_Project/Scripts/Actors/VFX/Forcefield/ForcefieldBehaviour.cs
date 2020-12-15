@@ -8,7 +8,7 @@ public class ForcefieldBehaviour : MonoBehaviour
     [SerializeField] private MeshRenderer forcefieldRenderer = null;
 
     [Header("Settings")]
-    [SerializeField] private new AnimationCurveConfig animation = null;
+    [SerializeField] private AnimationCurveConfig animationCurve = null;
 
     private static readonly int ForcefieldAlpha = Shader.PropertyToID("Vector1_A293667E");
 
@@ -35,13 +35,13 @@ public class ForcefieldBehaviour : MonoBehaviour
 
     private IEnumerator ForcefieldAnimation()
     {
-        AnimationCurve animationCurve = animation.Curve;
+        AnimationCurve animationCurve = this.animationCurve.Curve;
         float timer = 0;
 
-        while (timer < animation.Duration)
+        while (timer < this.animationCurve.Duration)
         {
             timer += Time.deltaTime;
-            timer = Mathf.Min(timer, animation.Duration);
+            timer = Mathf.Min(timer, this.animationCurve.Duration);
             float value = animationCurve.Evaluate(timer);
             forcefieldRenderer.material.SetFloat(ForcefieldAlpha, value);
             

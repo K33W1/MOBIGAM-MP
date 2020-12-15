@@ -21,7 +21,7 @@ public class ShopItem : ScriptableObject
         ? NextUpgrade.Price
         : 0;
 
-    public void Initialize()
+    public void ApplyUpgrade()
     {
         CurrentUpgrade.ApplyUpgrade();
     }

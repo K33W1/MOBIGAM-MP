@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     [Header("References")]
     [SerializeField] private MeshFilter meshFilter = null;
     [SerializeField] private MeshRenderer meshRenderer = null;
-    [SerializeField] private new SphereCollider collider = null;
+    [SerializeField] private SphereCollider sphereCollider = null;
 
     private ObstacleMovement movement = null;
     private ObstacleConfig config = null;
@@ -42,7 +42,7 @@ public class Obstacle : MonoBehaviour
     {
         meshFilter.mesh = config.Mesh;
         meshRenderer.material = config.Material;
-        collider.radius = config.Radius;
+        sphereCollider.radius = config.Radius;
     }
 
     private void OnCollisionEnter(Collision _)

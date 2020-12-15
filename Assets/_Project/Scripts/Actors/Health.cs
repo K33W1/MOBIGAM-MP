@@ -1,9 +1,13 @@
 ﻿using System;
+using Kiwi.Events;
 using UnityEngine;
 
 [DisallowMultipleComponent]
 public class Health : MonoBehaviour
 {
+    [Header("Game Events")]
+    [SerializeField] private GameEvent deathGameEvent = null;
+
     [Header("Settings")]
     [SerializeField, Min(0)] private int maxHealth = 3;
     [SerializeField, Min(0)] private int health = 3;
@@ -37,9 +41,12 @@ public class Health : MonoBehaviour
 
         health -= damage;
         ValueChanged?.Invoke(health);
-        
+
         if (health <= 0)
+        {
             Died?.Invoke();
+            deathGameEvent.Raise();
+        }
     }
 
     public void Heal(int heal)
@@ -56,5 +63,6 @@ public class Health : MonoBehaviour
         health = 0;
         ValueChanged?.Invoke(health);
         Died?.Invoke();
+        deathGameEvent.Raise();
     }
 }
