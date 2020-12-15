@@ -14,6 +14,11 @@ public static class DeviceRotation
         isGyroscopeInitialized = false;
     }
 
+    public static void ResetReferenceRotation()
+    {
+        ReferenceOrientation = ReadGyroscopeRotation();
+    }
+
     public static Quaternion GetRotation()
     {
         if (!isGyroscopeInitialized)

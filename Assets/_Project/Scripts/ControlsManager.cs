@@ -29,6 +29,7 @@ public class ControlsManager : MonoBehaviourSingleton<ControlsManager>
         else if (controls == Controls.Gyroscope)
         {
             UIServiceLocator.Instance.PlayerJoystick.gameObject.SetActive(false);
+            DeviceRotation.ResetReferenceRotation();
         }
     }
 
