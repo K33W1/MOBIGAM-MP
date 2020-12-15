@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8fc39aae993c4f542a903b8d6fdc4947, type: 2}
   - {fileID: 11400000, guid: a2e5ce97799655740acb146bf2959c87, type: 2}
   itemName: Bullet Speed
-  currentLevel: 0
+  currentLevel: {fileID: 11400000, guid: 623dd1a3b43e8b04db02cf31f32d31b7, type: 2}

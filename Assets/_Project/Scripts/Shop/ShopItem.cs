@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using Kiwi.DataObject;
 using UnityEngine;
 
-[DisallowMultipleComponent]
 [CreateAssetMenu(fileName = "New Shop Item Data", menuName = "Shop/Item Data")]
 public class ShopItem : ScriptableObject
 {
@@ -10,14 +10,14 @@ public class ShopItem : ScriptableObject
 
     [Header("Settings")]
     [SerializeField] private string itemName = "Placeholder Name";
-    [SerializeField, Min(0)] private int currentLevel = 0;
+    [SerializeField] private IntValue currentLevel = null;
 
-    public ShopUpgrade CurrentUpgrade => shopUpgrades[currentLevel];
-    public ShopUpgrade NextUpgrade => shopUpgrades[currentLevel + 1];
+    public ShopUpgrade CurrentUpgrade => shopUpgrades[currentLevel.Value];
+    public ShopUpgrade NextUpgrade => shopUpgrades[currentLevel.Value + 1];
     public string ItemName => itemName;
-    public int CurrentLevel => currentLevel;
+    public int CurrentLevel => currentLevel.Value;
 
-    public int Price => currentLevel + 1 < shopUpgrades.Count
+    public int Price => currentLevel.Value + 1 < shopUpgrades.Count
         ? NextUpgrade.Price
         : 0;
 
@@ -28,9 +28,9 @@ public class ShopItem : ScriptableObject
 
     public void PerformUpgrade()
     {
-        if (currentLevel + 1 < shopUpgrades.Count)
+        if (currentLevel.Value + 1 < shopUpgrades.Count)
         {
-            currentLevel++;
+            currentLevel.Value++;
             CurrentUpgrade.ApplyUpgrade();
         }
         else

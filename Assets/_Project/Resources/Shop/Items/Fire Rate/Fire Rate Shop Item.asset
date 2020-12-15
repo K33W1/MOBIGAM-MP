@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9ba6167c0dd06374bb8b1325f9250bb5, type: 2}
   - {fileID: 11400000, guid: c1ee3edc31a61c34c8745d07d6c623f0, type: 2}
   itemName: Fire Rate
-  currentLevel: 0
+  currentLevel: {fileID: 11400000, guid: 53ed8514e3ea2e846ac341547348c47f, type: 2}

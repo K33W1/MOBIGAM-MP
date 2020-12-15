@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 52001e155decb3646af3f8d66986bda2, type: 2}
   - {fileID: 11400000, guid: 71f63699e6a056045a630c7e083f1e86, type: 2}
   itemName: Move Speed
-  currentLevel: 0
+  currentLevel: {fileID: 11400000, guid: 3d8bf845b3fc535408c7503b08d3f7ed, type: 2}
