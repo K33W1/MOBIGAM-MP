@@ -4,11 +4,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New FloatValue Shop Upgrade", menuName = "Shop/FloatValue Upgrade")]
 public class FloatValueShopUpgrade : ShopUpgrade
 {
-    [SerializeField] private FloatValue floatValueToUpgrade = null;
-    [SerializeField] private float upgradeAmount = 1f;
+    [SerializeField] private FloatValue toUpgrade = null;
+    [SerializeField] private int price = 0;
+    [SerializeField] private float upgradeValue = 0f;
 
-    public override void PerformUpgrade()
+    public override int Price => price;
+    public float UpgradeValue => upgradeValue;
+
+    public override void ApplyUpgrade()
     {
-        floatValueToUpgrade.Value += upgradeAmount;
+        toUpgrade.Value = upgradeValue;
     }
 }

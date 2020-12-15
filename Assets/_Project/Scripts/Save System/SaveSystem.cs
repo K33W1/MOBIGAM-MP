@@ -5,14 +5,14 @@ using UnityEngine;
 public class SaveSystem : ScriptableObject
 {
     [Header("Data To Save")]
-    [SerializeField] private SaveData[] saveDataList = null;
+    [SerializeField] private ScriptableObject[] saveList = null;
 
     [ContextMenu("Clear Saves")]
     public void ClearSaveFiles()
     {
-        for (int i = 0; i < saveDataList.Length; i++)
+        for (int i = 0; i < saveList.Length; i++)
         {
-            ScriptableObject objectToSave = saveDataList[i].RuntimeObject;
+            ScriptableObject objectToSave = saveList[i];
             string saveDataPath = GetObjectName(objectToSave);
 
             if (File.Exists(saveDataPath))
@@ -25,9 +25,9 @@ public class SaveSystem : ScriptableObject
     [ContextMenu("Save")]
     public void Save()
     {
-        for (int i = 0; i < saveDataList.Length; i++)
+        for (int i = 0; i < saveList.Length; i++)
         {
-            ScriptableObject objectToSave = saveDataList[i].RuntimeObject;
+            ScriptableObject objectToSave = saveList[i];
             string saveDataPath = GetObjectName(objectToSave);
 
             // Save file
@@ -41,9 +41,9 @@ public class SaveSystem : ScriptableObject
     [ContextMenu("Load")]
     public void Load()
     {
-        for (int i = 0; i < saveDataList.Length; i++)
+        for (int i = 0; i < saveList.Length; i++)
         {
-            ScriptableObject objectToOverwrite = saveDataList[i].RuntimeObject;
+            ScriptableObject objectToOverwrite = saveList[i];
             string saveDataPath = GetObjectName(objectToOverwrite);
 
             // Load file
@@ -52,16 +52,6 @@ public class SaveSystem : ScriptableObject
                 string jsonContents = File.ReadAllText(saveDataPath);
                 JsonUtility.FromJsonOverwrite(jsonContents, objectToOverwrite);
             }
-            else
-            {
-                ScriptableObject defaultObject = saveDataList[i].DefaultObject;
-
-                if (defaultObject != null)
-                {
-                    string json = JsonUtility.ToJson(defaultObject);
-                    JsonUtility.FromJsonOverwrite(json, saveDataList[i].RuntimeObject);
-                }
-            }
         }
 
         Debug.Log("Successfully loaded!");
@@ -69,7 +59,8 @@ public class SaveSystem : ScriptableObject
 
     private string GetObjectName(ScriptableObject scriptableObject)
     {
-        string objectName = scriptableObject
+        string objectName =
+            scriptableObject
             .name
             .ToLower()
             .Replace(' ', '_');

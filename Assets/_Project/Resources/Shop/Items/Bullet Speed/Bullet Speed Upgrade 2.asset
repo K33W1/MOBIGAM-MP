@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45f49a1e9260c0d4db3a02a043a81914, type: 3}
-  m_Name: Bullet Speed Upgrade
+  m_Name: Bullet Speed Upgrade 2
   m_EditorClassIdentifier: 
-  floatValueToUpgrade: {fileID: 11400000, guid: 6761ac76dcc25a942921bf82693a8e06,
-    type: 2}
-  upgradeAmount: 1
+  toUpgrade: {fileID: 11400000, guid: 6761ac76dcc25a942921bf82693a8e06, type: 2}
+  price: 25
+  upgradeValue: 70

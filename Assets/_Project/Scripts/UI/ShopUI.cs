@@ -7,44 +7,43 @@ using UnityEngine;
 public class ShopUI : MonoBehaviour
 {
     [Header("Scriptable Objects")]
+    [SerializeField] private Shop shop = null;
     [SerializeField] private IntValue money = null;
 
     [Header("References")]
     [SerializeField] private ShopItemUI shopItemUIPrefab = null;
     [SerializeField] private RectTransform shopItemsTransform = null;
 
-    [Header("Settings")]
-    [SerializeField] private List<ShopItemData> shopItemSettings = null;
-
     private void Awake()
     {
-        List<ShopItemUI> shopItems =
+        List<ShopItemUI> shopItemUI =
             shopItemsTransform.GetComponentsInChildren<ShopItemUI>().ToList();
 
-        while (shopItems.Count < shopItemSettings.Count)
+        while (shopItemUI.Count < shop.Items.Count)
         {
             ShopItemUI newShopItemUI = Instantiate(shopItemUIPrefab, shopItemsTransform);
-            shopItems.Add(newShopItemUI);
+            shopItemUI.Add(newShopItemUI);
         }
 
-        while (shopItems.Count > shopItemSettings.Count)
+        while (shopItemUI.Count > shop.Items.Count)
         {
-            int index = shopItems.Count - 1;
-            Destroy(shopItems[index].gameObject);
-            shopItems.RemoveAt(index);
+            int index = shopItemUI.Count - 1;
+            Destroy(shopItemUI[index].gameObject);
+            shopItemUI.RemoveAt(index);
         }
 
-        for (int i = 0; i < shopItemSettings.Count; i++)
+        for (int i = 0; i < shop.Items.Count; i++)
         {
-            shopItems[i].Initialize(this, shopItemSettings[i]);
+            shopItemUI[i].Initialize(this, shop.Items[i]);
         }
     }
 
-    public void BuyShopItem(ShopItemData data)
+    public void BuyShopItem(ShopItem data)
     {
         if (money.Value >= data.Price)
         {
             Debug.Log("Buying " + data.ItemName);
+
             data.PerformUpgrade();
             money.Value -= data.Price;
         }
@@ -54,7 +53,7 @@ public class ShopUI : MonoBehaviour
         }
     }
 
-    private void OnNotEnoughMoney(ShopItemData data)
+    private void OnNotEnoughMoney(ShopItem data)
     {
         Debug.Log("Not enough money! " +
                   "Money: " + money.Value +

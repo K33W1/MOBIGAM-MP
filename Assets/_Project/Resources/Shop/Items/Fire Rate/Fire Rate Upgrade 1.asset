@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc08752fbd7baf4e8573e6dcf17b38f, type: 3}
-  m_Name: Default Bullet Speed
+  m_Script: {fileID: 11500000, guid: 45f49a1e9260c0d4db3a02a043a81914, type: 3}
+  m_Name: Fire Rate Upgrade 1
   m_EditorClassIdentifier: 
-  value: 60
+  toUpgrade: {fileID: 11400000, guid: 1d4636e31bd8da64ea8f2c622994e41b, type: 2}
+  price: 10
+  upgradeValue: 0.25

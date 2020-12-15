@@ -9,19 +9,26 @@ public class ShopItemUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI priceText = null;
 
     private ShopUI shopUI = null;
-    private ShopItemData data = null;
+    private ShopItem shopItem = null;
 
-    public void Initialize(ShopUI shopUI, ShopItemData data)
+    public void Initialize(ShopUI shopUI, ShopItem shopItem)
     {
         this.shopUI = shopUI;
-        this.data = data;
+        this.shopItem = shopItem;
 
-        itemNameText.text = data.ItemName;
-        priceText.text = data.Price.ToString();
+        UpdateUI();
     }
 
     public void Buy()
     {
-        shopUI.BuyShopItem(data);
+        shopUI.BuyShopItem(shopItem);
+
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        itemNameText.text = shopItem.ItemName + " Lv. " + shopItem.CurrentLevel;
+        priceText.text = shopItem.Price.ToString();
     }
 }

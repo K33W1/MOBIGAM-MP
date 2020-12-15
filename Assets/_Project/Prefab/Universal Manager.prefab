@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveSystem: {fileID: 11400000, guid: e6bdd366ff03c264a8ed4e16138e1e38, type: 2}
+  shop: {fileID: 11400000, guid: cfc15f42a42717d47afe05f0485a7b9b, type: 2}
 --- !u!114 &1548043626280273286
 MonoBehaviour:
   m_ObjectHideFlags: 0
