@@ -294,8 +294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfbaac433620c94a96fa3541117d0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathGameEvent: {fileID: 0}
   maxHealth: 3
   health: 3
+  isDebugInvincible: 0
 --- !u!114 &1268708042022163113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forcefieldRenderer: {fileID: 1243849291359154097}
-  animation: {fileID: 11400000, guid: 9a063dc3a62bb2d4f819d4a019a6ed01, type: 2}
+  animationCurve: {fileID: 11400000, guid: 9a063dc3a62bb2d4f819d4a019a6ed01, type: 2}
 --- !u!1001 &3148394632792447885
 PrefabInstance:
   m_ObjectHideFlags: 0

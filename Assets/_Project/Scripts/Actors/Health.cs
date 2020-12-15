@@ -45,7 +45,10 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             Died?.Invoke();
-            deathGameEvent.Raise();
+            if (deathGameEvent)
+            {
+                deathGameEvent.Raise();
+            }
         }
     }
 
@@ -63,6 +66,9 @@ public class Health : MonoBehaviour
         health = 0;
         ValueChanged?.Invoke(health);
         Died?.Invoke();
-        deathGameEvent.Raise();
+        if (deathGameEvent)
+        {
+            deathGameEvent.Raise();
+        }
     }
 }

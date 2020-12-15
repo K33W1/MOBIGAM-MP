@@ -1399,6 +1399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 11400000, guid: cfc15f42a42717d47afe05f0485a7b9b, type: 2}
+  saveSystem: {fileID: 11400000, guid: e6bdd366ff03c264a8ed4e16138e1e38, type: 2}
   money: {fileID: 11400000, guid: 0e677dee375d2f64eaebc4d15e920967, type: 2}
   shopItemUIPrefab: {fileID: 5323830249831400274, guid: dff651e164146714c976d0d65d203fae,
     type: 3}

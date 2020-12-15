@@ -115,7 +115,7 @@ MonoBehaviour:
   maxEnemiesAlive: 4
   enemiesUntilBoss: 10
   startDelay: 2
-  spawnRate: 1
+  spawnRate: 3
 --- !u!1001 &5360941589560598399
 PrefabInstance:
   m_ObjectHideFlags: 0
