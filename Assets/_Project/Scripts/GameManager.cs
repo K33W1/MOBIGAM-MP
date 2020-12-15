@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     protected override void SingletonAwake()
     {
         pauseView = UIServiceLocator.Instance.PauseView;
+        Time.timeScale = 1f;
     }
 
     public void TogglePause()
