@@ -118,8 +118,9 @@ public class PlayerInput : MonoBehaviour
             }
         }
 
-        float rawX = Input.GetAxisRaw("Horizontal") + joystick.Horizontal + xAngle;
-        float rawY = Input.GetAxisRaw("Vertical") + joystick.Vertical + yAngle;
+        Vector2 joystickDir = joystick.Direction;
+        float rawX = Input.GetAxisRaw("Horizontal") + joystickDir.x + xAngle;
+        float rawY = Input.GetAxisRaw("Vertical") + joystickDir.y + yAngle;
 
         Vector2 rawMove = new Vector2(rawX, rawY);
         Vector2 normalizedMove = rawMove.sqrMagnitude > 1f ? rawMove.normalized : rawMove;
