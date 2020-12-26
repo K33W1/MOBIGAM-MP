@@ -4,9 +4,9 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class ControlsManager : MonoBehaviourSingleton<ControlsManager>
 {
-    [SerializeField] private Controls defaultControls = Controls.Joystick;
+    [SerializeField] private MobileControls defaultMobileControls = MobileControls.Joystick;
 
-    public Controls CurrentControls { get; private set; } = Controls.Joystick;
+    public MobileControls CurrentMobileControls { get; private set; } = MobileControls.Joystick;
 
     protected override void SingletonAwake()
     {
@@ -15,18 +15,18 @@ public class ControlsManager : MonoBehaviourSingleton<ControlsManager>
 
     private void Start()
     {
-        ChangeControls(defaultControls);
+        ChangeControls(defaultMobileControls);
     }
 
-    public void ChangeControls(Controls controls)
+    public void ChangeControls(MobileControls mobileControls)
     {
-        CurrentControls = controls;
+        CurrentMobileControls = mobileControls;
         
-        if (controls == Controls.Joystick)
+        if (mobileControls == MobileControls.Joystick)
         {
             UIServiceLocator.Instance.PlayerJoystick.gameObject.SetActive(true);
         }
-        else if (controls == Controls.Gyroscope)
+        else if (mobileControls == MobileControls.Gyroscope)
         {
             UIServiceLocator.Instance.PlayerJoystick.gameObject.SetActive(false);
             DeviceRotation.ResetReferenceRotation();

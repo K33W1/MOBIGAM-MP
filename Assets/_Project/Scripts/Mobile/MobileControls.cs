@@ -1,4 +1,4 @@
-﻿public enum Controls
+﻿public enum MobileControls
 {
     Joystick = 0,
     Gyroscope

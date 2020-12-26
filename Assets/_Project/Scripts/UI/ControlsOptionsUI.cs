@@ -15,6 +15,6 @@ public class ControlsOptionsUI : MonoBehaviour
 
     private void OnOptionChanged(int index)
     {
-        ControlsManager.Instance.ChangeControls((Controls)index);
+        ControlsManager.Instance.ChangeControls((MobileControls)index);
     }
 }

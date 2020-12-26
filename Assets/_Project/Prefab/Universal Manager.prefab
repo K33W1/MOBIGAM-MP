@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9194475895024482639}
   - component: {fileID: 2468152159615271027}
   - component: {fileID: 1548043626280273286}
+  - component: {fileID: 7228498040082980085}
   - component: {fileID: 2965892569787924271}
   m_Layer: 0
   m_Name: Universal Manager
@@ -73,6 +74,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTestBuild: 1
+--- !u!114 &7228498040082980085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633953091355826175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15c423633226c64db50b9a5b104ee1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allRepeatNotifications:
+  - {fileID: 11400000, guid: 3c7017a5da639a74c8025fc0de688d1d, type: 2}
+  - {fileID: 11400000, guid: 92d86b0f567b19f439dd3c5fffbecca4, type: 2}
+  - {fileID: 11400000, guid: 857aba02d2620c946b565194d7885303, type: 2}
+  - {fileID: 11400000, guid: 707964f30109e5f46b319654ecef8796, type: 2}
+  - {fileID: 11400000, guid: 9fcfb44396889f443bca49ee33b5678e, type: 2}
+  - {fileID: 11400000, guid: 4b75c9d02fd440e44ad64d4dd47dda90, type: 2}
+  startingRepeatNotifications:
+  - {fileID: 11400000, guid: 3c7017a5da639a74c8025fc0de688d1d, type: 2}
 --- !u!114 &2965892569787924271
 MonoBehaviour:
   m_ObjectHideFlags: 0

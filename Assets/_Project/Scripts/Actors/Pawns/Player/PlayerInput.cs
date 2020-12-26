@@ -91,7 +91,7 @@ public class PlayerInput : MonoBehaviour
         float xAngle = 0f;
         float yAngle = 0f;
 
-        if (ControlsManager.Instance.CurrentControls == Controls.Gyroscope)
+        if (ControlsManager.Instance.CurrentMobileControls == MobileControls.Gyroscope)
         {
             Vector3 referenceRotation = DeviceRotation.ReferenceOrientation * Vector3.forward;
             Vector3 currentRotation = DeviceRotation.GetRotation() * Vector3.forward;

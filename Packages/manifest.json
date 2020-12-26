@@ -2,6 +2,7 @@
   "dependencies": {
     "com.unity.ads": "3.4.9",
     "com.unity.device-simulator": "2.2.3-preview",
+    "com.unity.mobile.notifications": "1.0.3",
     "com.unity.probuilder": "4.4.0",
     "com.unity.progrids": "3.0.3-preview.6",
     "com.unity.render-pipelines.universal": "7.3.1",
