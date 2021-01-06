@@ -2,17 +2,16 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class ObstacleManager : MonoBehaviour
+public class TowerManager : MonoBehaviour
 {
     [Header("Game Events")]
     [SerializeField] private GameEvent bossSpawned = null;
 
     [Header("References")]
     [SerializeField] private Cube cube = null;
-    [SerializeField] private ObstacleConfig[] allSettings = null;
 
     [Header("Settings")]
-    [SerializeField, Min(0)] private float spawnRate = 4f;
+    [SerializeField, Min(0)] private float spawnRate = 0f;
 
     private bool isSpawning = true;
     private float timer = 0f;
@@ -32,25 +31,19 @@ public class ObstacleManager : MonoBehaviour
         if (timer >= spawnRate)
         {
             timer -= spawnRate;
-            SpawnObstacle();
+            SpawnTower();
         }
     }
 
-    private void SpawnObstacle()
+    private void SpawnTower()
     {
-        Obstacle obstacle = ObstaclePooler.Instance.GetPooledObject();
-        Vector3 randomSpawnPoint = cube.GetRandomPointInside();
+        Tower tower = TowerPooler.Instance.GetPooledObject();
+        Vector3 spawnPoint = cube.GetRandomPointInside();
 
-        obstacle.transform.position = randomSpawnPoint;
-        obstacle.Spawn(allSettings.GetRandom(), Vector3.back);
+        tower.Initialize(spawnPoint);
     }
 
-    public void StartSpawning()
-    {
-        isSpawning = true;
-    }
-
-    public void StopSpawning()
+    private void StopSpawning()
     {
         isSpawning = false;
     }

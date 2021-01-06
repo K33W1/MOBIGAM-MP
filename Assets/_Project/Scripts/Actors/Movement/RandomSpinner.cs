@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-public class ObstacleInPlaceRotation : MonoBehaviour
+public class RandomSpinner : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform objectToRotate = null;

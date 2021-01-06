@@ -3,7 +3,7 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(ObstacleMovement))]
-public class Obstacle : MonoBehaviour
+public class Asteroid : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private MeshFilter meshFilter = null;
@@ -25,7 +25,7 @@ public class Obstacle : MonoBehaviour
         {
             if (config != null)
             {
-                UpdateSettings();;
+                UpdateSettings(config);;
             }
         }
     }
@@ -33,13 +33,13 @@ public class Obstacle : MonoBehaviour
 
     public void Spawn(ObstacleConfig config, Vector3 direction)
     {
-        this.config = config;
-        UpdateSettings();
+        UpdateSettings(config);
         movement.Launch(direction);
     }
 
-    private void UpdateSettings()
+    private void UpdateSettings(ObstacleConfig config)
     {
+        this.config = config;
         meshFilter.mesh = config.Mesh;
         meshRenderer.material = config.Material;
         sphereCollider.radius = config.Radius;
@@ -53,6 +53,6 @@ public class Obstacle : MonoBehaviour
 
     private void OnDisable()
     {
-        ObstaclePooler.Instance.ReturnToPool(this);
+        AsteroidPooler.Instance.ReturnToPool(this);
     }
 }

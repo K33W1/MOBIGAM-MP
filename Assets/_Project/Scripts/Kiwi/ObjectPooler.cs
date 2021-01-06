@@ -10,7 +10,7 @@ namespace Kiwi.Common
 
         [Header("Settings")]
         [SerializeField] private int amountToPool = 4;
-        [SerializeField] private bool isExpandable = false;
+        [SerializeField] private bool isExpandable = true;
 
         public static ObjectPooler<T> Instance { get; private set; }
         
@@ -68,9 +68,12 @@ namespace Kiwi.Common
 
         private T CreateObject()
         {
+#if UNITY_EDITOR
+            T obj = Instantiate(objToPoolPrefab, transform);
+#else
             T obj = Instantiate(objToPoolPrefab);
+#endif
             InitializeObject(obj);
-            obj.transform.parent = transform;
             return obj;
         }
 

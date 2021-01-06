@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7958434826850367974}
   - component: {fileID: 7958434826850367993}
   - component: {fileID: 7958434826850367992}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1182863856942235705}
   - component: {fileID: 7844354050008176812}
   - component: {fileID: 5357701670773138745}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875b017f03ab31f4ca090ccd9a528dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
 --- !u!114 &3232813380924628810
 MonoBehaviour:
   m_ObjectHideFlags: 0
