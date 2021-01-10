@@ -25,7 +25,7 @@ public class ScreenOrientationManager : MonoBehaviourSingleton<ScreenOrientation
 
     private void Update()
     {
-        currOrientation = Screen.orientation;
+        UpdateCurrentOrientation();
 
         if (prevOrientation != currOrientation)
         {
@@ -46,6 +46,25 @@ public class ScreenOrientationManager : MonoBehaviourSingleton<ScreenOrientation
         }
 
         prevOrientation = currOrientation;
+    }
+
+    private void UpdateCurrentOrientation()
+    {
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            currOrientation = Screen.orientation;
+        }
+        else if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            if (Screen.width > Screen.height)
+            {
+                currOrientation = ScreenOrientation.LandscapeLeft;
+            }
+            else
+            {
+                currOrientation = ScreenOrientation.Portrait;
+            }
+        }
     }
 
 
