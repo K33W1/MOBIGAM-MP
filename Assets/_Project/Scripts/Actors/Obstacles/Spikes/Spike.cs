@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(TowerMovement))]
-public class Tower : MonoBehaviour
+[RequireComponent(typeof(SpikeMovement))]
+public class Spike : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField, Min(0)] private float xRotationRange = 10f;
     [SerializeField, Min(0)] private float yRotationRange = 10f;
     [SerializeField, Min(0)] private float zRotationRange = 10f;
 
-    private TowerMovement towerMovement = null;
+    private SpikeMovement spikeMovement = null;
 
     private Collider[] colliders = null;
 
     private void Awake()
     {
-        towerMovement = GetComponent<TowerMovement>();
+        spikeMovement = GetComponent<SpikeMovement>();
         colliders = GetComponentsInChildren<Collider>();
     }
 
@@ -35,7 +35,7 @@ public class Tower : MonoBehaviour
             Random.Range(-zRotationRange, zRotationRange));
         transform.SetPositionAndRotation(spawnPoint, rotation);
 
-        towerMovement.Initialize(Vector3.back);
+        spikeMovement.Initialize(Vector3.back);
 
         foreach (Collider collider in colliders)
         {
@@ -45,6 +45,6 @@ public class Tower : MonoBehaviour
 
     private void OnDisable()
     {
-        TowerPooler.Instance.ReturnToPool(this);
+        SpikePooler.Instance.ReturnToPool(this);
     }
 }

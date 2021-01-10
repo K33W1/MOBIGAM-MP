@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [DisallowMultipleComponent]
-public class TowerMovement : MonoBehaviour
+public class SpikeMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform visualsTransform = null;

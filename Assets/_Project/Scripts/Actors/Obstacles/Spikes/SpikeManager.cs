@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class TowerManager : MonoBehaviour
+public class SpikeManager : MonoBehaviour
 {
     [Header("Game Events")]
     [SerializeField] private GameEvent bossSpawned = null;
@@ -37,10 +37,10 @@ public class TowerManager : MonoBehaviour
 
     private void SpawnTower()
     {
-        Tower tower = TowerPooler.Instance.GetPooledObject();
+        Spike spike = SpikePooler.Instance.GetPooledObject();
         Vector3 spawnPoint = cube.GetRandomPointInside();
 
-        tower.Initialize(spawnPoint);
+        spike.Initialize(spawnPoint);
     }
 
     private void StopSpawning()
