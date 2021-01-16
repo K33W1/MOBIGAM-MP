@@ -11,12 +11,13 @@ TrueTypeFontImporter:
   fontName: Dogica Pixel
   fontNames:
   - Dogica Pixel
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {instanceID: 0}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
   userData: 
-  assetBundleName: 
+  assetBundleName: fonts
   assetBundleVariant: 

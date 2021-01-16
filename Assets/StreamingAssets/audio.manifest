@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1116537227
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ab177183b89d038d176af7d2d7e04232
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Project/Audio/SFX/explosionCrunch_001.ogg
+- Assets/_Project/Audio/SFX/laserSmall_003.ogg
+- Assets/_Project/Audio/SFX/explosionCrunch_000.ogg
+- Assets/_Project/Audio/SFX/explosionCrunch_002.ogg
+- Assets/_Project/Audio/Music/music.wav
+- Assets/_Project/Audio/SFX/explosionCrunch_004.ogg
+- Assets/_Project/Audio/Music/main_menu_music.ogg
+- Assets/_Project/Audio/SFX/explosionCrunch_003.ogg
+Dependencies: []

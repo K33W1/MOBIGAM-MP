@@ -14,19 +14,20 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private EnemyPooler enemyCPooler = null;
     [SerializeField] private Boss boss = null;
 
-    [Header("References")]
-    [SerializeField] private Transform[] spawnLocations = null;
-
     [Header("Settings")]
     [SerializeField, Min(0)] private int maxEnemiesAlive = 4;
     [SerializeField, Min(0)] private int enemiesUntilBoss = 10;
     [SerializeField, Min(0)] private float startDelay = 2f;
     [SerializeField, Min(0)] private float spawnRate = 1f;
 
+    public Boss Boss => boss;
+
     private bool hasBossSpawned = false;
     private int totalEnemiesSpawned = 0;
     private int totalEnemiesDied = 0;
     private int enemiesAlive = 0;
+
+    private Transform[] spawnLocations = null;
 
     private void Start()
     {
@@ -53,6 +54,11 @@ public class EnemyManager : MonoBehaviour
             hasBossSpawned = true;
             bossSpawned.Raise();
         }
+    }
+
+    public void Initialize(Transform[] spawnLocations)
+    {
+        this.spawnLocations = spawnLocations;
     }
 
     private void OnEnemyDeath()

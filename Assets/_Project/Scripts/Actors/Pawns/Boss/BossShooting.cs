@@ -6,7 +6,6 @@ using UnityEngine;
 public class BossShooting : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Transform target = null;
     [SerializeField] private Transform projectileSpawnPoint = null;
     [SerializeField] private LayerMask projectileLayer = new LayerMask();
 
@@ -15,9 +14,16 @@ public class BossShooting : MonoBehaviour
     [SerializeField] private float burstShotRate = 0.25f;
     [SerializeField] private int burstShotCount = 10;
 
+    private Transform target = null;
+
     private void OnEnable()
     {
         StartCoroutine(FiringLoop());
+    }
+
+    public void Initialize(Transform target)
+    {
+        this.target = target;
     }
 
     private IEnumerator FiringLoop()

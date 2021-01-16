@@ -1,0 +1,45 @@
+ManifestFileVersion: 0
+CRC: 1517997007
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: images
+      Dependencies: {}
+    Info_1:
+      Name: audio
+      Dependencies: {}
+    Info_2:
+      Name: prefabs
+      Dependencies:
+        Dependency_0: images
+        Dependency_1: audio
+        Dependency_2: materials
+        Dependency_3: models
+        Dependency_4: configs
+        Dependency_5: animations
+        Dependency_6: fonts
+    Info_3:
+      Name: materials
+      Dependencies:
+        Dependency_0: images
+        Dependency_1: shaders
+    Info_4:
+      Name: shaders
+      Dependencies:
+        Dependency_0: images
+    Info_5:
+      Name: models
+      Dependencies: {}
+    Info_6:
+      Name: configs
+      Dependencies:
+        Dependency_0: audio
+        Dependency_1: materials
+        Dependency_2: models
+    Info_7:
+      Name: animations
+      Dependencies: {}
+    Info_8:
+      Name: fonts
+      Dependencies:
+        Dependency_0: shaders

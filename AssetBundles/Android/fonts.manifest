@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 2849481358
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a14e472cca421f32b533a075cd54eb9c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: bea6064424b73fa1cf04d36e83abf3e2
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Project/Fonts/dogica.otf
+- Assets/_Project/Fonts/dogicabold SDF.asset
+- Assets/_Project/Fonts/dogicapixelbold.otf
+- Assets/_Project/Fonts/dogicabold.otf
+- Assets/_Project/Fonts/dogicapixelbold SDF.asset
+- Assets/_Project/Fonts/dogicapixel.otf
+- Assets/_Project/Fonts/dogica SDF.asset
+- Assets/_Project/Fonts/dogicapixel SDF.asset
+Dependencies:
+- D:/School Projects/MOBIGAM/AssetBundles/Android/shaders

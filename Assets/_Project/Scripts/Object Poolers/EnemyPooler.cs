@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class EnemyPooler : ObjectPooler<Enemy>
 {
-    [Header("Enemy Dependencies")]
-    [SerializeField] private EnemyWaypoints waypoints = null;
-    [SerializeField] private Transform player = null;
+    private EnemyWaypoints waypoints = null;
+    private Transform player = null;
+
+    public void Initialize(EnemyWaypoints waypoints, Transform player)
+    {
+        this.waypoints = waypoints;
+        this.player = player;
+    }
 
     protected override void InitializeObject(Enemy enemy)
     {

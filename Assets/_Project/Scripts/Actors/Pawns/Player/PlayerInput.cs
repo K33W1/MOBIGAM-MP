@@ -5,9 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class PlayerInput : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private PlayerSwipeButton swipeButton = null;
-
     [Header("Settings")]
     [SerializeField] private float moveSmoothing = 1.0f;
     [SerializeField] private float xMinMoveAngle = 10f;
@@ -26,6 +23,7 @@ public class PlayerInput : MonoBehaviour
     public Vector2 Move { get; private set; }
 
     private Joystick joystick = null;
+    private PlayerSwipeButton playerSwipeButton = null;
 
     private Health health = null;
 
@@ -33,12 +31,13 @@ public class PlayerInput : MonoBehaviour
     {
         health = GetComponent<Health>();
         joystick = UIServiceLocator.Instance.PlayerJoystick;
+        playerSwipeButton = UIServiceLocator.Instance.PlayerSwipeButton;
     }
 
     private void OnEnable()
     {
-        swipeButton.SwipeLeft += () => SwitchWeaponDown?.Invoke();
-        swipeButton.SwipeRight += () => SwitchWeaponUp?.Invoke();
+        playerSwipeButton.SwipeLeft += () => SwitchWeaponDown?.Invoke();
+        playerSwipeButton.SwipeRight += () => SwitchWeaponUp?.Invoke();
     }
 
     private void Update()
@@ -148,7 +147,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnDisable()
     {
-        swipeButton.SwipeLeft -= SwitchWeaponDown;
-        swipeButton.SwipeRight -= SwitchWeaponUp;
+        playerSwipeButton.SwipeLeft -= SwitchWeaponDown;
+        playerSwipeButton.SwipeRight -= SwitchWeaponUp;
     }
 }

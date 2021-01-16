@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 3192011460
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 22a7c21ac1a9b8f5567d83bd20b3478e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ae2cf77de671e115b4e55d2b65767202
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/Autarca/AlienShipsPack/Meshes/BioTorpedo.fbx
+- Assets/_Project/Models/spike.fbx
+- Assets/StarSparrow/Meshes/StarSparrowExamples1.FBX
+- Assets/StarSparrow/Meshes/BonusContent/AsteroidsSample.FBX
+- Assets/StarSparrow/Meshes/StarSparrowExamples2.FBX
+- Assets/Autarca/AlienShipsPack/Meshes/AlienDestroyer.fbx
+- Assets/Autarca/AlienShipsPack/Meshes/AlienFighter.fbx
+Dependencies: []

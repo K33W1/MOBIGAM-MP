@@ -1,0 +1,53 @@
+ManifestFileVersion: 0
+CRC: 1594689297
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2481e7c50ac22e9631189f99822c4b26
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 22357172b8cea85847937e8f62d0c077
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Project/Materials/Enemies/AlienFighter.mat
+- Assets/StarSparrow/Materials/StarSparrow Orange.mat
+- Assets/_Project/Materials/Enemies/AlienFighterWhite.mat
+- Assets/StarSparrow/Materials/Unified/StarSparrow Blue.mat
+- Assets/_Project/Materials/VFX/Explosion.mat
+- Assets/_Project/Materials/Plain Colors/Red.mat
+- Assets/_Project/Materials/Plain Colors/Bright Red.mat
+- Assets/_Project/Materials/Obstacles/Spikes/Spike 1.mat
+- Assets/_Project/Materials/VFX/Forcefield.mat
+- Assets/_Project/Materials/VFX/Dust Particle.mat
+- Assets/_Project/Materials/Enemies/AlienDestroyer.mat
+- Assets/_Project/Materials/Obstacles/Asteroids/AsteroidsLava_Blue 1.mat
+- Assets/_Project/Materials/Plain Colors/Bright Blue.mat
+- Assets/_Project/Materials/Plain Colors/White.mat
+- Assets/StarSparrow/Materials/StarSparrow Green.mat
+- Assets/_Project/Materials/Enemies/AlienFighterGreen.mat
+- Assets/_Project/Materials/Obstacles/Asteroids/AsteroidsLava_Red 1.mat
+- Assets/_Project/Materials/Plain Colors/Bright Green.mat
+- Assets/StarSparrow/Materials/Unified/StarSparrow Red.mat
+- Assets/StarSparrow/Materials/StarSparrow Yellow.mat
+- Assets/Autarca/AlienShipsPack/Materials/BioTorpedo.mat
+- Assets/_Project/Materials/Player Spaceships/StarSparrow Blue 1.mat
+- Assets/_Project/Materials/Player Spaceships/StarSparrow Red 1.mat
+- Assets/_Project/Materials/VFX/Debris Trail.mat
+- Assets/StarSparrow/Materials/BonusContent/AsteroidsLava_Red.mat
+- Assets/StarSparrow/Materials/StarSparrow Purple.mat
+- Assets/StarSparrow/Materials/Unified/StarSparrow Green.mat
+- Assets/StarSparrow/Materials/Unified/StarSparrow White.mat
+- Assets/StarSparrow/Materials/Unified/StarSparrow Grey.mat
+- Assets/Autarca/AlienShipsPack/Materials/BioTorpedoGreen.mat
+- Assets/StarSparrow/Materials/StarSparrow Black.mat
+- Assets/Autarca/AlienShipsPack/Materials/BioTorpedoWhite.mat
+Dependencies:
+- D:/School Projects/MOBIGAM/AssetBundles/Android/images
+- D:/School Projects/MOBIGAM/AssetBundles/Android/shaders

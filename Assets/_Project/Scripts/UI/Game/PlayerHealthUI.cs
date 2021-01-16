@@ -2,17 +2,15 @@
 using UnityEngine.UI;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(Health))]
 public class PlayerHealthUI : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Health health = null;
-
-    private Image[] healthImages = null;
+    private Health health = null;
 
     private void Awake()
     {
+        health = GetComponent<Health>();
         health.ValueChanged += OnHealthChanged;
-        healthImages = GetComponentsInChildren<Image>();
     }
 
     private void Start()
@@ -22,11 +20,13 @@ public class PlayerHealthUI : MonoBehaviour
 
     private void OnHealthChanged(int value)
     {
-        for (int i = 0; i < healthImages.Length; i++)
+        Image[] hearts = UIServiceLocator.Instance.PlayerHearts;
+
+        for (int i = 0; i < hearts.Length; i++)
         {
-            Color color = healthImages[i].color;
+            Color color = hearts[i].color;
             color.a = i < value ? 1f : 0.25f;
-            healthImages[i].color = color;
+            hearts[i].color = color;
         }
     }
 }

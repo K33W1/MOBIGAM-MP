@@ -51,8 +51,6 @@ MonoBehaviour:
     type: 3}
   amountToPool: 4
   isExpandable: 1
-  waypoints: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &6365562530293539873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +67,6 @@ MonoBehaviour:
     type: 3}
   amountToPool: 4
   isExpandable: 1
-  waypoints: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &4581620806658550577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,8 +83,6 @@ MonoBehaviour:
     type: 3}
   amountToPool: 4
   isExpandable: 1
-  waypoints: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &7326598808974414554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,14 +100,8 @@ MonoBehaviour:
   enemyBPooler: {fileID: 6365562530293539873}
   enemyCPooler: {fileID: 4581620806658550577}
   boss: {fileID: 1524010223264762462}
-  spawnLocations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   maxEnemiesAlive: 4
-  enemiesUntilBoss: 10
+  enemiesUntilBoss: 0
   startDelay: 2
   spawnRate: 3
 --- !u!1001 &5360941589560598399

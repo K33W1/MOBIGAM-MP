@@ -410,11 +410,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseView: {fileID: 4030457611749573421}
+  bossHealthBar: {fileID: 4030457611838947106}
   winView: {fileID: 4030457611481625136}
   pauseView: {fileID: 4030457611390079237}
-  healthUI: {fileID: 4030457610387795486}
+  healthUI: {fileID: 4030457610387795487}
+  playerSwipeButton: {fileID: 4030457610790180501}
   scoreText: {fileID: 4030457610753837663}
   playerJoystick: {fileID: 4030457610098589664}
+  closePlayerReticle: {fileID: 4030457611855215226}
+  farPlayerReticle: {fileID: 4030457611540557308}
+  playerHearts:
+  - {fileID: 4030457611163194886}
+  - {fileID: 4030457610705103451}
+  - {fileID: 4030457610299683429}
+  - {fileID: 4030457610808498182}
 --- !u!1 &4030457610208225526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,7 +1489,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4030457610387795487}
-  - component: {fileID: 4030457610387795486}
   - component: {fileID: 4030457610387795473}
   m_Layer: 5
   m_Name: Player Health
@@ -1512,19 +1520,6 @@ RectTransform:
   m_AnchoredPosition: {x: 30, y: -99.99999}
   m_SizeDelta: {x: -60, y: -200.00002}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4030457610387795486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4030457610387795484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba428da6708c704f9590c34c7a7ac04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 0}
 --- !u!114 &4030457610387795473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4349,7 +4344,6 @@ GameObject:
   - component: {fileID: 4030457611540557308}
   - component: {fileID: 4030457611540557310}
   - component: {fileID: 4030457611540557311}
-  - component: {fileID: 4030457611540557297}
   - component: {fileID: 4030457611540557296}
   m_Layer: 5
   m_Name: Far Reticle
@@ -4414,20 +4408,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4030457611540557297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4030457611540557309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dca49de63ccdaa40817a32983de993d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
-  target: {fileID: 0}
 --- !u!114 &4030457611540557296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5404,7 +5384,6 @@ GameObject:
   - component: {fileID: 4030457611855215226}
   - component: {fileID: 4030457611855215228}
   - component: {fileID: 4030457611855215229}
-  - component: {fileID: 4030457611855215231}
   - component: {fileID: 4030457611855215230}
   m_Layer: 5
   m_Name: Close Reticle
@@ -5469,20 +5448,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4030457611855215231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4030457611855215227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dca49de63ccdaa40817a32983de993d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
-  target: {fileID: 0}
 --- !u!114 &4030457611855215230
 MonoBehaviour:
   m_ObjectHideFlags: 0

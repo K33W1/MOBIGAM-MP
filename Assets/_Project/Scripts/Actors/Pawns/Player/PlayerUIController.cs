@@ -4,7 +4,7 @@
 public class PlayerUIController : MonoBehaviour
 {
     private PlayerDeathView deathView = null;
-    private PlayerHealthUI healthUI = null;
+    private RectTransform healthUI = null;
     private ScoreText scoreText = null;
 
     private void Awake()

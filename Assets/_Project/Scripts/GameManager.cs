@@ -4,13 +4,10 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class GameManager : MonoBehaviourSingleton<GameManager>
 {
-    private View pauseView = null;
-
     private bool isPaused = false;
 
     protected override void SingletonAwake()
     {
-        pauseView = UIServiceLocator.Instance.PauseView;
         Time.timeScale = 1f;
     }
 
@@ -21,7 +18,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         if (isPaused)
         {
             Time.timeScale = 0f;
-            pauseView.Show();
+            UIServiceLocator.Instance.PauseView.Show();
         }
         else
         {

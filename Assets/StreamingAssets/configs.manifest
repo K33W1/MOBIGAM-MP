@@ -1,0 +1,86 @@
+ManifestFileVersion: 0
+CRC: 482402132
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2ce616e8ac888a6ee72f3f6590d7734a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f1e4caa198b870d5e11e52c721dfd382
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4cc08752fbd7baf4e8573e6dcf17b38f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3ec1043386b7e8642b91c79be82ad06a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6f304c631692d7e41b22514fad5b233d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e0d82cb620dafe845871f7d90a92c0d0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 840a2437603606f4e94658c5362b77ad, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7116675871a1b034ba0ea70b2b8031d9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e3fce3688a6c5234a95cf19985329e64, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d9db6d4b4a38d6a4190c609905f28811, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: af349f9b99ddbce4f99f86c5724fa2bf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3ea4193ccc6e8274787b9d24083c20f2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: db1fb29c20cef6d4faf12d8be1284816, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 45f49a1e9260c0d4db3a02a043a81914, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6c151b8e851ac0147a98a59fb35a1c36, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c828294f30196e5468fee0fc61cd991a, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Project/Resources/Delegate Objects/Audio Events/Laser SFX.asset
+- Assets/_Project/Resources/Shop/Items/Bullet Speed/Bullet Speed Shop Item.asset
+- Assets/_Project/Resources/Game Events/Player Death.asset
+- Assets/_Project/Resources/Configs/Enemies/Enemy Shooting Config.asset
+- Assets/_Project/Resources/Shop/Shop.asset
+- Assets/_Project/Resources/Shop/Items/Bullet Speed/Bullet Speed Level.asset
+- Assets/_Project/Resources/Configs/VFX/Forcefield Animation Curve.asset
+- Assets/_Project/Resources/Configs/Player/Fire Rate.asset
+- Assets/_Project/Resources/Shop/Items/Fire Rate/Fire Rate Level.asset
+- Assets/_Project/Resources/Configs/Obstacles/Obstacle 1.asset
+- Assets/_Project/Resources/Shop/Items/Move Speed/Move Speed Upgrade 2.asset
+- Assets/_Project/Resources/Shop/Items/Move Speed/Move Speed Level.asset
+- Assets/_Project/Resources/Save System.asset
+- Assets/_Project/Resources/Configs/Player/Bullet Speed.asset
+- Assets/_Project/Resources/Delegate Objects/Audio Events/Explosion SFX.asset
+- Assets/_Project/Resources/Shop/Items/Bullet Speed/Bullet Speed Upgrade 3.asset
+- Assets/_Project/Resources/Shop/Items/Move Speed/Move Speed Upgrade 1.asset
+- Assets/_Project/Resources/Game Events/Boss Death.asset
+- Assets/_Project/Resources/Runtime Data Objects/Level/Level Score.asset
+- Assets/_Project/Resources/Configs/Player/Move Speed.asset
+- Assets/_Project/Resources/Shop/Items/Move Speed/Move Speed Upgrade 3.asset
+- Assets/_Project/Resources/Shop/Items/Move Speed/Move Speed Shop Item.asset
+- Assets/_Project/Resources/Mobile Notifications/Simple Notification 1.asset
+- Assets/_Project/Resources/Shop/Items/Fire Rate/Fire Rate Upgrade 1.asset
+- Assets/_Project/Resources/Shop/Items/Bullet Speed/Bullet Speed Upgrade 1.asset
+- Assets/_Project/Resources/Shop/Items/Fire Rate/Fire Rate Upgrade 2.asset
+- Assets/_Project/Resources/Configs/Obstacles/Obstacle 2.asset
+- Assets/_Project/Resources/Shop/Items/Fire Rate/Fire Rate Upgrade 3.asset
+- Assets/_Project/Resources/Runtime Data Objects/Current Player Element.asset
+- Assets/_Project/Resources/Game Events/Boss Spawned.asset
+- Assets/_Project/Resources/Shop/Items/Bullet Speed/Bullet Speed Upgrade 2.asset
+- Assets/_Project/Resources/Runtime Data Objects/Money.asset
+- Assets/_Project/Resources/Shop/Items/Fire Rate/Fire Rate Shop Item.asset
+- Assets/_Project/Resources/Configs/Player/Player Config.asset
+Dependencies:
+- D:/School Projects/MOBIGAM/AssetBundles/Android/audio
+- D:/School Projects/MOBIGAM/AssetBundles/Android/materials
+- D:/School Projects/MOBIGAM/AssetBundles/Android/models

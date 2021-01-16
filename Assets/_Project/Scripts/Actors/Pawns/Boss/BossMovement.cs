@@ -3,13 +3,17 @@
 [DisallowMultipleComponent]
 public class BossMovement : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Transform waypoint = null;
-
     [Header("Settings")]
     [SerializeField] private float maxSpeed = 1f;
     [SerializeField] private float smoothing = 3f;
 
+    private Transform waypoint = null;
+
+    public void Initialize(Transform waypoint)
+    {
+        this.waypoint = waypoint;
+    }
+ 
     private void Update()
     {
         Vector3 diff = waypoint.position - transform.position;

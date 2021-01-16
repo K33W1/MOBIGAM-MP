@@ -939,7 +939,9 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1468179092}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4030457611855215231, guid: 2606d4f9e7b04ca469bf850fbbc9d0c1, type: 3}
+    - {fileID: 4030457611540557297, guid: 2606d4f9e7b04ca469bf850fbbc9d0c1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2606d4f9e7b04ca469bf850fbbc9d0c1, type: 3}
 --- !u!114 &1651532111 stripped
 MonoBehaviour:

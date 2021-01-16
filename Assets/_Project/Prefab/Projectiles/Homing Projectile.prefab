@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
-  rotationSpeed: 0.89
+  rotationSpeed: 1
   maxSpeed: 75
   startingSpeed: 2
   startHomingDelay: 1.5
