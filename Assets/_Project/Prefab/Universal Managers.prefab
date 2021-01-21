@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2468152159615271027}
   - component: {fileID: 1548043626280273286}
   - component: {fileID: 7228498040082980085}
-  - component: {fileID: 2965892569787924271}
   - component: {fileID: 8100916127690541248}
+  - component: {fileID: 2965892569787924271}
   m_Layer: 0
   m_Name: Universal Managers
   m_TagString: Untagged
@@ -95,18 +95,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9fcfb44396889f443bca49ee33b5678e, type: 2}
   - {fileID: 11400000, guid: 4b75c9d02fd440e44ad64d4dd47dda90, type: 2}
   startingRepeatNotifications: 00000000
---- !u!114 &2965892569787924271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633953091355826175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4530e71a840d21a4e929f93a5fffbf98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8100916127690541248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,5 +105,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d600470f25af74d488b31c239d5f13ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2965892569787924271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633953091355826175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4530e71a840d21a4e929f93a5fffbf98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

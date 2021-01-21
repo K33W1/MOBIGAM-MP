@@ -11,6 +11,7 @@ public class MainMenuLoader : MonoBehaviour
         AssetBundle configsBundle = AssetBundleManager.GetAssetBundle("configs");
         AssetBundle shadersBundle = AssetBundleManager.GetAssetBundle("shaders");
         AssetBundle fontsBundle = AssetBundleManager.GetAssetBundle("fonts");
+        AssetBundle imagesBundle = AssetBundleManager.GetAssetBundle("images");
         AssetBundle materialsBundle = AssetBundleManager.GetAssetBundle("materials");
         AssetBundle prefabsBundle = AssetBundleManager.GetAssetBundle("prefabs");
 

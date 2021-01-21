@@ -13,10 +13,34 @@ public class AssetBundleManager : MonoBehaviourSingleton<AssetBundleManager>
 
     private Dictionary<string, AssetBundle> loadedAssetBundles =
         new Dictionary<string, AssetBundle>();
+    private Dictionary<AssetBundle, Dictionary<string, Object>> loadedAssets =
+        new Dictionary<AssetBundle, Dictionary<string, Object>>();
 
     protected override void SingletonAwake()
     {
         
+    }
+
+    public T GetAsset<T>(string bundleName, string assetName) where T : Object
+    {
+        AssetBundle assetBundle = GetAssetBundle(bundleName);
+
+        if (loadedAssets.TryGetValue(assetBundle, out var assets))
+        {
+            if (assets.TryGetValue(assetName, out var asset))
+            {
+                return (T) asset;
+            }
+        }
+        else
+        {
+            assets = new Dictionary<string, Object>();
+            loadedAssets.Add(assetBundle, assets);
+        }
+
+        T loadedAsset = assetBundle.LoadAsset<T>(assetName);
+        assets.Add(assetName, loadedAsset);
+        return loadedAsset;
     }
 
     public AssetBundle GetAssetBundle(string assetBundleName)
@@ -35,12 +59,6 @@ public class AssetBundleManager : MonoBehaviourSingleton<AssetBundleManager>
 
         loadedAssetBundles.Add(assetBundleName, newAssetBundle);
         return newAssetBundle;
-    }
-
-    public T GetAsset<T>(string bundleName, string assetName) where T : Object
-    {
-        AssetBundle assetBundle = GetAssetBundle(bundleName);
-        return assetBundle != null ? assetBundle.LoadAsset<T>(assetName) : null;
     }
 
     protected override void SingletonOnDestroy()

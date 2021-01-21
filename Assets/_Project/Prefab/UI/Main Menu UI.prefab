@@ -162,9 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e40387b91c992e4285c7ea0d36ecba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelToLoadDataObject: {fileID: 11400000, guid: 3724d36bad9e08247a5d82678a2fdb48,
+    type: 2}
   levelSelectButtonPrefab: {fileID: 8181404741332992675, guid: fc2144b72dab6e54f9dde39bddf87257,
     type: 3}
-  levelNamePrefix: 'Level '
+  levelName: Level
   levelsCount: 3
 --- !u!1 &6998221531230139046
 GameObject:

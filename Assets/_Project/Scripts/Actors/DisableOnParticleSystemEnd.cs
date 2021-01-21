@@ -3,7 +3,7 @@
 [DisallowMultipleComponent]
 public class DisableOnParticleSystemEnd : MonoBehaviour
 {
-    private new ParticleSystem particleSystem = null;
+    private ParticleSystem particleSystem = null;
 
     private float timer = 0;
 

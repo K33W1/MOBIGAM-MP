@@ -270,6 +270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5357757dbfc16e042ae0a7361a2a140c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: {fileID: 11400000, guid: 3724d36bad9e08247a5d82678a2fdb48, type: 2}
+  levelSpawns:
+  - {fileID: 11400000, guid: ae0b31846e5af054f8416d4d939dd4dc, type: 2}
+  - {fileID: 11400000, guid: 0cb8582005fccc24e9659ce73d0f6cfc, type: 2}
+  - {fileID: 11400000, guid: e3229a1bcdb1a464a8b1000d6b5f7292, type: 2}
   bossWaypoint: {fileID: 650246649}
   enemySpawnLocations:
   - {fileID: 2074100001}

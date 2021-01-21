@@ -1,10 +1,14 @@
-﻿using TMPro;
+﻿using Kiwi.DataObject;
+using TMPro;
 using UnityEngine;
 
 [DisallowMultipleComponent]
 [DefaultExecutionOrder(-2000)]
 public class LevelLoader : MonoBehaviour
 {
+    [Header("Data Objects")]
+    [SerializeField] private PrefabArray[] levelSpawns = null;
+
     [Header("References")]
     [SerializeField] private Transform bossWaypoint = null;
     [SerializeField] private Transform[] enemySpawnLocations = null;
@@ -14,28 +18,36 @@ public class LevelLoader : MonoBehaviour
 
     private void Start()
     {
-        // Get bundles
-        AssetBundle animationsBundle = AssetBundleManager.GetAssetBundle("animations");
-        AssetBundle audioBundle = AssetBundleManager.GetAssetBundle("audio");
-        AssetBundle configsBundle = AssetBundleManager.GetAssetBundle("configs");
-        AssetBundle imagesBundle = AssetBundleManager.GetAssetBundle("images");
+        // Load bundles
+        AssetBundleManager.GetAssetBundle("animations");
+        AssetBundleManager.GetAssetBundle("audio");
+        AssetBundleManager.GetAssetBundle("configs");
+        AssetBundleManager.GetAssetBundle("images");
         AssetBundle materialsBundle = AssetBundleManager.GetAssetBundle("materials");
-        AssetBundle modelsBundle = AssetBundleManager.GetAssetBundle("models");
-        AssetBundle prefabsBundle = AssetBundleManager.GetAssetBundle("prefabs");
-        AssetBundle shadersBundle = AssetBundleManager.GetAssetBundle("shaders");
+        AssetBundleManager.GetAssetBundle("models");
+        AssetBundleManager.GetAssetBundle("prefabs");
+        AssetBundleManager.GetAssetBundle("shaders");
         AssetBundle fontsBundle = AssetBundleManager.GetAssetBundle("fonts");
 
         // Instantiate prefab assets
-        GameObject gameUI = InstantiateAsset(prefabsBundle, "Game UI");
-        GameObject musicPlayer = InstantiateAsset(prefabsBundle, "Music Player");
-        GameObject vfx = InstantiateAsset(prefabsBundle, "VFX");
-        Player player = InstantiateAsset<Player>(prefabsBundle, "Player");
-        EnemyManager enemyManager = InstantiateAsset<EnemyManager>(prefabsBundle, "Enemy Manager");
-        GameObject asteroidManager = InstantiateAsset(prefabsBundle, "Asteroid Manager");
-        GameObject bulletPooler = InstantiateAsset(prefabsBundle, "Bullet Pooler");
-        GameObject homingProjectilePooler = InstantiateAsset(prefabsBundle, "Homing Projectile Pooler");
-        GameObject debrisPooler = InstantiateAsset(prefabsBundle, "Debris Pooler");
-        ExplosionPooler explosionPooler = InstantiateAsset<ExplosionPooler>(prefabsBundle, "Explosion Pooler");
+        GameObject gameUI = InstantiateAsset("prefabs", "Game UI");
+        GameObject musicPlayer = InstantiateAsset("prefabs", "Music Player");
+        GameObject vfx = InstantiateAsset("prefabs", "VFX");
+        Player player = InstantiateAsset<Player>("prefabs", "Player");
+        EnemyManager enemyManager = InstantiateAsset<EnemyManager>("prefabs", "Enemy Manager");
+        GameObject asteroidManager = InstantiateAsset("prefabs", "Asteroid Manager");
+        GameObject bulletPooler = InstantiateAsset("prefabs", "Bullet Pooler");
+        GameObject homingProjectilePooler = InstantiateAsset("prefabs", "Homing Projectile Pooler");
+        GameObject debrisPooler = InstantiateAsset("prefabs", "Debris Pooler");
+        ExplosionPooler explosionPooler = InstantiateAsset<ExplosionPooler>("prefabs", "Explosion Pooler");
+
+        IntValue levelAsset = AssetBundleManager.Instance.GetAsset<IntValue>("configs", "Level To Load");
+        PrefabArray allToSpawn = levelSpawns[levelAsset.Value];
+
+        foreach (GameObject toSpawn in allToSpawn.Value)
+        {
+            InstantiateAsset("prefabs", toSpawn.name);
+        }
 
 #if UNITY_EDITOR
         // Reconnect shaders of all materials when in editor
@@ -63,17 +75,17 @@ public class LevelLoader : MonoBehaviour
         enemyManager.Initialize(enemySpawnLocations);
         playerFiringButton.Initialize(playerInput);
         foreach (EnemyPooler enemyPooler in enemyPoolers)
-            enemyPooler.Initialize(enemyWaypoints, player.transform);
+            enemyPooler.Initialize(enemyWaypoints, player.ModelTransform);
     }
 
-    private GameObject InstantiateAsset(AssetBundle assetBundle, string assetName)
+    private GameObject InstantiateAsset(string assetBundleName, string assetName)
     {
-        GameObject asset = assetBundle.LoadAsset<GameObject>(assetName);
+        GameObject asset = AssetBundleManager.GetAsset<GameObject>(assetBundleName, assetName);
         return Instantiate(asset);
     }
 
-    private T InstantiateAsset<T>(AssetBundle assetBundle, string assetName) where T : Component
+    private T InstantiateAsset<T>(string assetBundleName, string assetName) where T : Component
     {
-        return InstantiateAsset(assetBundle, assetName).GetComponent<T>();
+        return InstantiateAsset(assetBundleName, assetName).GetComponent<T>();
     }
 }
