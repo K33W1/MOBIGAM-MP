@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f1e3564bb09b34383180dc9518850b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: {fileID: 11400000, guid: 6afd0a88d693bcb40bebc9f4f80d5a95, type: 2}
 --- !u!114 &740751620836880983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac507069e307b34ba56dd9f80ef82c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: {fileID: 11400000, guid: 6afd0a88d693bcb40bebc9f4f80d5a95, type: 2}
 --- !u!114 &6951644797799367997
 MonoBehaviour:
   m_ObjectHideFlags: 0

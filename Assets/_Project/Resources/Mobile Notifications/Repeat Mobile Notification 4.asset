@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Repeat Mobile Notification 4
   m_EditorClassIdentifier: 
   title: I Repeat kek
-  text: 1 minuts
+  text: too loooong!
   smallIcon: small_icon_0
   largeIcon: large_icon_0
   delayDays: 0
   delayHours: 0
   delayMinutes: 0
   delaySeconds: 0
-  intervalDays: 0
+  intervalDays: 1
   intervalHours: 0
-  intervalMinutes: 10
+  intervalMinutes: 0
   intervalSeconds: 0

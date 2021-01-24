@@ -154,8 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfbaac433620c94a96fa3541117d0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathGameEvent: {fileID: 0}
   maxHealth: 100
   health: 100
+  isDebugInvincible: 0
 --- !u!114 &6221231120079789875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,8 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb68fb6d548b08e438957cec6dc9e52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarUI: {fileID: 0}
-  winView: {fileID: 0}
+  gameOver: {fileID: 11400000, guid: 6afd0a88d693bcb40bebc9f4f80d5a95, type: 2}
 --- !u!114 &1193008608287610512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3748c00c496856c4ba55f5ab53302d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoint: {fileID: 0}
   maxSpeed: 0.25
   smoothing: 3
 --- !u!114 &1038298206575892779
@@ -221,8 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8ad27b43b811c47a60dd35761b03b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   projectileSpawnPoint: {fileID: 930386624541514558}
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 0
   startDelayDuration: 8
   cooldownDuration: 8
   burstShotRate: 1

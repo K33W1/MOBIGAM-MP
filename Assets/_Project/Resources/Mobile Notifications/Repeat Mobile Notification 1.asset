@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Repeat Mobile Notification 1
   m_EditorClassIdentifier: 
   title: I Repeat kek
-  text: i am 10 secs
+  text: one minute baby
   smallIcon: small_icon_0
   largeIcon: large_icon_0
   delayDays: 0
@@ -22,5 +22,5 @@ MonoBehaviour:
   delaySeconds: 0
   intervalDays: 0
   intervalHours: 0
-  intervalMinutes: 0
-  intervalSeconds: 10
+  intervalMinutes: 1
+  intervalSeconds: 0

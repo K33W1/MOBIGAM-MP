@@ -88,8 +88,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allRepeatNotifications:
-  - {fileID: 11400000, guid: 3c7017a5da639a74c8025fc0de688d1d, type: 2}
-  - {fileID: 11400000, guid: 92d86b0f567b19f439dd3c5fffbecca4, type: 2}
   - {fileID: 11400000, guid: 857aba02d2620c946b565194d7885303, type: 2}
   - {fileID: 11400000, guid: 707964f30109e5f46b319654ecef8796, type: 2}
   - {fileID: 11400000, guid: 9fcfb44396889f443bca49ee33b5678e, type: 2}

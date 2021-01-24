@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using Kiwi.Events;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 public class PlayerUIController : MonoBehaviour
 {
+    [Header("Game Event")]
+    [SerializeField] private GameEvent gameOver = null;
+
     private PlayerDeathView deathView = null;
     private RectTransform healthUI = null;
     private ScoreText scoreText = null;
@@ -22,6 +26,8 @@ public class PlayerUIController : MonoBehaviour
 
     public void OnAfterDeath()
     {
+        gameOver.Raise();
+
         healthUI.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);
         deathView.Show();

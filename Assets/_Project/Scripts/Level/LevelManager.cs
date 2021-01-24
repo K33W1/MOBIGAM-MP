@@ -4,8 +4,12 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class LevelManager : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private IntValue levelScore = null;
+    private IntValue levelScore = null;
+
+    private void Awake()
+    {
+        levelScore = AssetBundleManager.Instance.GetAsset<IntValue>("configs", "Level Score");
+    }
 
     private void Start()
     {

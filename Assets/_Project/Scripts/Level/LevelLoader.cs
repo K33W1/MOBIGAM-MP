@@ -66,7 +66,7 @@ public class LevelLoader : MonoBehaviour
 #endif
 
         // Get components
-        PlayerFiringButton playerFiringButton = gameUI.GetComponentInChildren<PlayerFiringButton>();
+        PlayerFiringButton playerFiringButton = gameUI.GetComponentInChildren<PlayerFiringButton>(true);
         PlayerInput playerInput = player.GetComponent<PlayerInput>();
         EnemyPooler[] enemyPoolers = enemyManager.GetComponents<EnemyPooler>();
 

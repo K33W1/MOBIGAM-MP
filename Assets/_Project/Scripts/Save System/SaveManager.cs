@@ -4,12 +4,14 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class SaveManager : MonoBehaviourSingleton<SaveManager>
 {
-    [Header("Managers")]
-    [SerializeField] private SaveSystem saveSystem = null;
-    [SerializeField] private Shop shop = null;
+    private SaveSystem saveSystem = null;
+    private Shop shop = null;
 
     protected override void SingletonAwake()
     {
+        saveSystem = AssetBundleManager.Instance.GetAsset<SaveSystem>("configs", "Save System");
+        shop = AssetBundleManager.Instance.GetAsset<Shop>("configs", "Shop");
+
         saveSystem.Load();
         shop.Initialize();
     }

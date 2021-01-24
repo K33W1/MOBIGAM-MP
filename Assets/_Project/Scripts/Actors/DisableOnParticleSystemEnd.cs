@@ -3,13 +3,13 @@
 [DisallowMultipleComponent]
 public class DisableOnParticleSystemEnd : MonoBehaviour
 {
-    private ParticleSystem particleSystem = null;
+    private ParticleSystem particles = null;
 
     private float timer = 0;
 
     private void Awake()
     {
-        particleSystem = GetComponent<ParticleSystem>();
+        particles = GetComponent<ParticleSystem>();
     }
 
     private void OnEnable()
@@ -21,7 +21,7 @@ public class DisableOnParticleSystemEnd : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > particleSystem.main.duration)
+        if (timer > particles.main.duration)
         {
             gameObject.SetActive(false);
         }

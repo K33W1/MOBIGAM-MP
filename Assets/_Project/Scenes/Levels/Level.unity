@@ -270,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5357757dbfc16e042ae0a7361a2a140c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: 3724d36bad9e08247a5d82678a2fdb48, type: 2}
   levelSpawns:
   - {fileID: 11400000, guid: ae0b31846e5af054f8416d4d939dd4dc, type: 2}
   - {fileID: 11400000, guid: 0cb8582005fccc24e9659ce73d0f6cfc, type: 2}
@@ -540,10 +539,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 6828294907236622169, guid: 6a2a451dc660efd41afccb1766ef886d,
+        type: 3}
+      propertyPath: money
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e677dee375d2f64eaebc4d15e920967,
+        type: 2}
     - target: {fileID: 6967166861513329794, guid: 6a2a451dc660efd41afccb1766ef886d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6967166861513329794, guid: 6a2a451dc660efd41afccb1766ef886d,
         type: 3}
@@ -595,7 +600,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6828294907236622169, guid: 6a2a451dc660efd41afccb1766ef886d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a2a451dc660efd41afccb1766ef886d, type: 3}
 --- !u!1 &1138641648
 GameObject:
@@ -764,7 +770,7 @@ PrefabInstance:
     - target: {fileID: 3042215751249991160, guid: 1a51479455391a74d802ac22729092f1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3042215751249991160, guid: 1a51479455391a74d802ac22729092f1,
         type: 3}

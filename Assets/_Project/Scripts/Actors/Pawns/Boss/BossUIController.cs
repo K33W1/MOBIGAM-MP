@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using Kiwi.Events;
+using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(Boss))]
 public class BossUIController : MonoBehaviour
 {
+    [Header("Game Events")]
+    [SerializeField] private GameEvent gameOver = null;
+
     private UIServiceLocator UIServiceLocator => UIServiceLocator.Instance;
 
     private Health health = null;
@@ -28,6 +32,8 @@ public class BossUIController : MonoBehaviour
 
     private void OnDeath()
     {
+        gameOver.Raise();
+
         UIServiceLocator.BossHealthBar.gameObject.SetActive(false);
         UIServiceLocator.WinView.Show();
     }
