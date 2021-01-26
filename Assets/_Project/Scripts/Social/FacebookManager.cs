@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using Facebook.Unity;
 using Kiwi.Core;
 using UnityEngine;
@@ -45,6 +47,19 @@ public class FacebookManager : MonoBehaviourSingleton<FacebookManager>
         {
             Debug.LogWarning("Facebook user already logged in!");
             IsLoggedIn = true;
+        }
+    }
+
+    public void ScreenshotAndUpload()
+    {
+        if (FB.IsLoggedIn)
+        {
+            StartCoroutine(ScreenshotAndUploadCoroutine());
+        }
+        else
+        {
+            Debug.LogWarning("Tried to screenshot and upload but " +
+                             "user is not logged in!");
         }
     }
 
@@ -104,6 +119,33 @@ public class FacebookManager : MonoBehaviourSingleton<FacebookManager>
         else
         {
             Debug.LogError("Error getting Facebook user data!");
+        }
+    }
+
+    private IEnumerator ScreenshotAndUploadCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+
+        Texture2D screenshot = ScreenCapture.CaptureScreenshotAsTexture();
+        byte[] screenshotPNG = screenshot.EncodeToPNG();
+
+        WWWForm form = new WWWForm();
+        form.AddBinaryData("image", screenshotPNG, "screenshot.png");
+        form.AddField("caption", "Screenshot");
+        FB.API("me/photos", HttpMethod.POST, OnUploadPhotoFinished, form);
+
+        Debug.Log("Uploading image...");
+    }
+
+    private void OnUploadPhotoFinished(IGraphResult result)
+    {
+        if (string.IsNullOrEmpty(result.Error))
+        {
+            Debug.Log($"Uploaded photo with id: {result.ResultDictionary["id"]}");
+        }
+        else
+        {
+            Debug.Log($"Error uploading photo. {result.Error}");
         }
     }
 
