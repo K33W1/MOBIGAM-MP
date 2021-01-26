@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Kiwi.Common.Utility
+namespace Kiwi.Utility
 {
 	public class FaceCamera : MonoBehaviour
 	{

@@ -1,4 +1,4 @@
-﻿using Kiwi.Common;
+﻿using Kiwi.Core;
 
 public class BulletPooler : ObjectPooler<Bullet>
 {

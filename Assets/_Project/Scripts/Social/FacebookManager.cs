@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Facebook.Unity;
-using Kiwi.Common;
+using Kiwi.Core;
 using UnityEngine;
 
 public class FacebookManager : MonoBehaviourSingleton<FacebookManager>

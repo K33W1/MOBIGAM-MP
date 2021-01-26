@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using Kiwi.Common;
+using Kiwi.Core;
 using UnityEngine;
 using UnityEngine.Advertisements;
 

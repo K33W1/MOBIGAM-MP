@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Kiwi.Common
+namespace Kiwi.Core
 {
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(-1000)]

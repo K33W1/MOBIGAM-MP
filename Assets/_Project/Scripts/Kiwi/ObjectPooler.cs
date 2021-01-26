@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Kiwi.Common
+namespace Kiwi.Core
 {
     public abstract class ObjectPooler<T> : MonoBehaviour where T : Component
     {

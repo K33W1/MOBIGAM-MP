@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Collections.Generic;
-using Kiwi.Common;
+using Kiwi.Core;
 using UnityEngine;
 
 public class AssetBundleManager : MonoBehaviourSingleton<AssetBundleManager>

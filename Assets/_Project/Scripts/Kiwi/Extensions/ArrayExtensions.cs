@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 
-public static class ArrayExtensions
+namespace Kiwi.Extensions
 {
-    public static T GetRandom<T>(this T[] array)
+    public static class ArrayExtensions
     {
-        return array[Random.Range(0, array.Length)];
+        public static T GetRandom<T>(this T[] array)
+        {
+            return array[Random.Range(0, array.Length)];
+        }
     }
 }

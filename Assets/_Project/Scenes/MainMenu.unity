@@ -538,11 +538,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7228498040082980085, guid: 1a51479455391a74d802ac22729092f1,
-        type: 3}
-      propertyPath: startingRepeatNotifications.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a51479455391a74d802ac22729092f1, type: 3}
 --- !u!1 &1854994321

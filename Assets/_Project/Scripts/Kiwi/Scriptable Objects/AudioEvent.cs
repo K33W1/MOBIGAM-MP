@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Kiwi.Audio
+namespace Kiwi.Events
 {
     [CreateAssetMenu(fileName = "New Audio Event", menuName = "Audio Event")]
     public class AudioEvent : ScriptableObject

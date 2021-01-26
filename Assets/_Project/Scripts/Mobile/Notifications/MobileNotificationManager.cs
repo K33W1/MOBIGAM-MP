@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Kiwi.Common;
+using Kiwi.Core;
 using Unity.Notifications.Android;
 using UnityEngine;
 

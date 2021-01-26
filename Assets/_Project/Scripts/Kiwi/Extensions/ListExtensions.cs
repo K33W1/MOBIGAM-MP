@@ -2,55 +2,58 @@
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 
-public static class ListExtensions
+namespace Kiwi.Extensions
 {
-    public static void Shuffle<T>(this List<T> list)
+    public static class ListExtensions
     {
-        int count = list.Count;
-
-        for (var i = 0; i < list.Count; i++)
+        public static void Shuffle<T>(this List<T> list)
         {
-            int randomNumber = Random.Range(i, count);
-            var temp = list[i];
-            list[i] = list[randomNumber];
-            list[randomNumber] = temp;
+            int count = list.Count;
+
+            for (var i = 0; i < list.Count; i++)
+            {
+                int randomNumber = Random.Range(i, count);
+                var temp = list[i];
+                list[i] = list[randomNumber];
+                list[randomNumber] = temp;
+            }
         }
-    }
 
-    public static T PopAt<T>(this List<T> list, int index)
-    {
-        var r = list[index];
-        list.RemoveAt(index);
-        return r;
-    }
-
-    public static T PopFirst<T>(this List<T> list, Predicate<T> predicate)
-    {
-        var index = list.FindIndex(predicate);
-        var r = list[index];
-        list.RemoveAt(index);
-        return r;
-    }
-
-    public static T PopFirstOrDefault<T>(this List<T> list, Predicate<T> predicate) where T : class
-    {
-        var index = list.FindIndex(predicate);
-
-        if (index > -1)
+        public static T PopAt<T>(this List<T> list, int index)
         {
             var r = list[index];
             list.RemoveAt(index);
             return r;
         }
 
-        return null;
-    }
+        public static T PopFirst<T>(this List<T> list, Predicate<T> predicate)
+        {
+            var index = list.FindIndex(predicate);
+            var r = list[index];
+            list.RemoveAt(index);
+            return r;
+        }
 
-    public static T GetRandomExcept<T>(this List<T> list, int exemptIndex)
-    {
-        int index = Random.Range(0, list.Count - 1);
-        if (index >= exemptIndex)
-            index = (index + 1) % list.Count;
-        return list[index];
+        public static T PopFirstOrDefault<T>(this List<T> list, Predicate<T> predicate) where T : class
+        {
+            var index = list.FindIndex(predicate);
+
+            if (index > -1)
+            {
+                var r = list[index];
+                list.RemoveAt(index);
+                return r;
+            }
+
+            return null;
+        }
+
+        public static T GetRandomExcept<T>(this List<T> list, int exemptIndex)
+        {
+            int index = Random.Range(0, list.Count - 1);
+            if (index >= exemptIndex)
+                index = (index + 1) % list.Count;
+            return list[index];
+        }
     }
 }
