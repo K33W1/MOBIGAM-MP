@@ -21,7 +21,7 @@ public class Spike : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.z <= -15f)
+        if (transform.position.z <= -15f || transform.position.y <= -30f)
         {
             gameObject.SetActive(false);
         }

@@ -52,15 +52,7 @@ public class FacebookManager : MonoBehaviourSingleton<FacebookManager>
 
     public void ScreenshotAndUpload()
     {
-        if (FB.IsLoggedIn)
-        {
-            StartCoroutine(ScreenshotAndUploadCoroutine());
-        }
-        else
-        {
-            Debug.LogWarning("Tried to screenshot and upload but " +
-                             "user is not logged in!");
-        }
+        StartCoroutine(ScreenshotAndUploadCoroutine());
     }
 
     private void OnFacebookInitialized()
@@ -100,6 +92,8 @@ public class FacebookManager : MonoBehaviourSingleton<FacebookManager>
         else
         {
             Debug.LogError("User failed to login!");
+
+            StopAllCoroutines();
         }
     }
 
@@ -124,6 +118,15 @@ public class FacebookManager : MonoBehaviourSingleton<FacebookManager>
 
     private IEnumerator ScreenshotAndUploadCoroutine()
     {
+        if (!FB.IsLoggedIn)
+        {
+            Login();
+            while (!FB.IsLoggedIn)
+            {
+                yield return 0;
+            }
+        }
+
         yield return new WaitForEndOfFrame();
 
         Texture2D screenshot = ScreenCapture.CaptureScreenshotAsTexture();
