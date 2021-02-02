@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
 
@@ -6,10 +7,12 @@ using UnityEngine.UI;
 public class WatchAdButton : MonoBehaviour
 {
     private Button button;
+    private TextMeshProUGUI text = null;
 
     private void Awake()
     {
         button = GetComponent<Button>();
+        text = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     private void OnEnable()
@@ -22,11 +25,31 @@ public class WatchAdButton : MonoBehaviour
         AdManager.Instance.PlayRewardedAd();
     }
 
+    public void Enable()
+    {
+        button.interactable = true;
+        text.text = "Watch a Video for + 10 Money";
+    }
+
+    public void Disable()
+    {
+        button.interactable = false;
+        text.text = "No internet for a bonus video!";
+    }
+
     private void OnAdFinished(object sender, AdFinishEventArgs e)
     {
         if (e.ShowResult == ShowResult.Finished)
         {
             button.interactable = false;
         }
+    }
+
+    private void OnDisable()
+    {
+        if (AdManager.Instance == null)
+            return;
+
+        AdManager.Instance.AdFinished -= OnAdFinished;
     }
 }

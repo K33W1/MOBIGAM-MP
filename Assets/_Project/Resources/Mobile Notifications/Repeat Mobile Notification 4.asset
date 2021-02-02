@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c71ea14ee702d4da3da326f7ff2eac, type: 3}
   m_Name: Repeat Mobile Notification 4
   m_EditorClassIdentifier: 
-  title: I Repeat kek
-  text: too loooong!
+  title: Go kill some aliens!
+  text: It's been 1 day since killing aliens!
   smallIcon: small_icon_0
   largeIcon: large_icon_0
   delayDays: 0

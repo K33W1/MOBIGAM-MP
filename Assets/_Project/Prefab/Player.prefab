@@ -203,6 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848bf5e8a39aa0743810adabe446ee46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerDebugInvulnerable: {fileID: 11400000, guid: 0b83da5d33b97894385fa39b92c06a96,
+    type: 2}
   modelTransform: {fileID: 1923863677911590746}
 --- !u!114 &3869998583666728245
 MonoBehaviour:

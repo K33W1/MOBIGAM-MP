@@ -71,11 +71,7 @@ namespace Kiwi.Core
 
         private T CreateObject()
         {
-#if UNITY_EDITOR
             T obj = Instantiate(objToPoolPrefab, transform);
-#else
-            T obj = Instantiate(objToPoolPrefab);
-#endif
             InitializeObject(obj);
             return obj;
         }

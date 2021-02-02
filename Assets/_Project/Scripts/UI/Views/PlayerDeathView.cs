@@ -12,6 +12,8 @@ public class PlayerDeathView : View
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private TextMeshProUGUI moneyText = null;
+    [SerializeField] private WatchAdButton watchAdButton = null;
+    [SerializeField] private PostToFacebookButton fbButton = null;
 
     private void OnEnable()
     {
@@ -26,6 +28,16 @@ public class PlayerDeathView : View
     protected override void OnShow()
     {
         Refresh();
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            watchAdButton.Disable();
+            fbButton.Disable();
+        }
+        else
+        {
+            watchAdButton.Enable();
+            fbButton.Enable();
+        }
     }
 
     public void Refresh()

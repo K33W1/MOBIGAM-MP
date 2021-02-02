@@ -10,6 +10,7 @@ public class LevelAdManager : MonoBehaviour
     [Tooltip("In seconds")]
     [SerializeField, Min(0)] private float timeBeforeAd = 180f;
     [SerializeField, Min(0)] private int reward = 10;
+    [SerializeField] private bool forceShowAdOnGameOver = false;
 
     private static AdManager AdManager => AdManager.Instance;
 
@@ -35,7 +36,7 @@ public class LevelAdManager : MonoBehaviour
     {
         AdManager.HideBannerAd();
 
-        if (IsEnoughTimePassed())
+        if (forceShowAdOnGameOver || (IsEnoughTimePassed() && Application.internetReachability != NetworkReachability.NotReachable))
         {
             AdManager.PlayInterstitialAd();
         }

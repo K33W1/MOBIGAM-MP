@@ -16,8 +16,7 @@ public class NotificationIntervalDropdown : MonoBehaviour
     private void Start()
     {
         var notificationManager = MobileNotificationManager.Instance;
-        var repeatNotifications =
-            notificationManager.AllRepeatNotifications;
+        var repeatNotifications = notificationManager.AllRepeatNotifications;
 
         List<string> intervals = new List<string>(repeatNotifications.Count);
         foreach (RepeatNotificationConfig notif in repeatNotifications)

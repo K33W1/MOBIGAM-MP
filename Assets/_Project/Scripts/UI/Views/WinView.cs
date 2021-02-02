@@ -1,6 +1,7 @@
 ﻿using Kiwi.DataObject;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public class WinView : View
@@ -12,6 +13,8 @@ public class WinView : View
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private TextMeshProUGUI moneyText = null;
+    [SerializeField] private WatchAdButton watchAdButton = null;
+    [SerializeField] private PostToFacebookButton fbButton = null;
 
     private void OnEnable()
     {
@@ -26,6 +29,16 @@ public class WinView : View
     protected override void OnShow()
     {
         Refresh();
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            watchAdButton.Disable();
+            fbButton.Disable();
+        }
+        else
+        {
+            watchAdButton.Enable();
+            fbButton.Enable();
+        }
     }
 
     public void Refresh()

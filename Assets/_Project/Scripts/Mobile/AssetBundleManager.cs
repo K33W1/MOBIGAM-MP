@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using Kiwi.Core;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
+[DefaultExecutionOrder(-1001)]
 public class AssetBundleManager : MonoBehaviourSingleton<AssetBundleManager>
 {
 #if UNITY_EDITOR
@@ -39,7 +41,16 @@ public class AssetBundleManager : MonoBehaviourSingleton<AssetBundleManager>
         }
 
         T loadedAsset = assetBundle.LoadAsset<T>(assetName);
-        assets.Add(assetName, loadedAsset);
+
+        if (loadedAsset != null)
+        {
+            assets.Add(assetName, loadedAsset);
+        }
+        else
+        {
+            Debug.LogError($"Asset not found! {assetName}");
+        }
+
         return loadedAsset;
     }
 

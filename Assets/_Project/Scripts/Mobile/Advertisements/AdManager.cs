@@ -3,13 +3,15 @@ using System.Collections;
 using Kiwi.Core;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using ShowResult = UnityEngine.Advertisements.ShowResult;
 
-[DisallowMultipleComponent]
 public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
 {
     [Header("Settings")]
     [SerializeField] private bool isTestBuild = false;
 
+    public event Action AdStarted;
+    public event Action<string> AdErrored;
     public event EventHandler<AdFinishEventArgs> AdFinished;
 
     public const string InterstitialAd = "video";
@@ -17,9 +19,9 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
     public const string BannerAd = "banner";
 
 #if UNITY_ANDROID || UNITY_EDITOR
-    private const string StoreID = "3910932";
-#elif UNITY_IOS
     private const string StoreID = "3910933";
+#elif UNITY_IOS
+    private const string StoreID = "3910932";
 #endif
 
     public float LastTimeAdPlayed { get; private set; }
@@ -45,21 +47,36 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
 
     public void ShowBannerAd(BannerPosition bannerPosition)
     {
-        StartCoroutine(ShowBannerAdCoroutine(bannerPosition));
+        if (!Advertisement.Banner.isLoaded)
+        {
+            BannerLoadOptions loadOptions = new BannerLoadOptions
+            {
+                loadCallback = OnBannerLoaded,
+                errorCallback = OnBannerError
+            };
+
+            Advertisement.Banner.SetPosition(bannerPosition);
+            Advertisement.Banner.Load(BannerAd, loadOptions);
+        }
+        else
+        {
+            Advertisement.Banner.Show(BannerAd);
+        }
+    }
+
+    private void OnBannerLoaded()
+    {
+        Advertisement.Banner.Show(BannerAd);
+    }
+
+    private void OnBannerError(string error)
+    {
+        Debug.Log("Banner Error: " + error);
     }
 
     public void HideBannerAd()
     {
-        StopAllCoroutines();
-
-        if (Advertisement.Banner.isLoaded)
-        {
-            Advertisement.Banner.Hide();
-        }
-        else
-        {
-            Debug.LogWarning("Banner ad is already hidden!");
-        }
+        Advertisement.Banner.Hide();
     }
 
     private IEnumerator PlayInterstitialAdCoroutine()
@@ -67,6 +84,7 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
         while (!Advertisement.IsReady(InterstitialAd))
             yield return 0;
 
+        HideBannerAd();
         Advertisement.Show(InterstitialAd);
         LastTimeAdPlayed = Time.time;
     }
@@ -76,32 +94,24 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
         while (!Advertisement.IsReady(RewardedVideoAd))
             yield return 0;
 
+        HideBannerAd();
         Advertisement.Show(RewardedVideoAd);
         LastTimeAdPlayed = Time.time;
     }
 
-    private IEnumerator ShowBannerAdCoroutine(BannerPosition bannerPosition)
-    {
-        while (!Advertisement.IsReady(BannerAd))
-            yield return 0;
-
-        Advertisement.Banner.SetPosition(bannerPosition);
-        Advertisement.Banner.Show();
-    }
-
     public void OnUnityAdsReady(string placementId)
     {
-        
-    }
 
-    public void OnUnityAdsDidError(string message)
-    {
-         Debug.LogError($"Advertisement error: {message}");
     }
 
     public void OnUnityAdsDidStart(string placementId)
     {
-         
+        AdStarted?.Invoke();
+    }
+
+    public void OnUnityAdsDidError(string message)
+    {
+        AdErrored?.Invoke(message);
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
@@ -111,6 +121,6 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
 
     protected override void SingletonOnDestroy()
     {
-        
+
     }
 }
