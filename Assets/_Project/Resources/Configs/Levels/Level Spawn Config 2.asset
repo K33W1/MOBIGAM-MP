@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb8558f6c299d847ac9348bf081d665, type: 3}
   m_Name: Level Spawn Config 2
   m_EditorClassIdentifier: 
-  value:
+  list:
   - {fileID: 8372174517682316677, guid: 9b222ad0a70d39e4b9d1c1e6f8c8f8ac, type: 3}
   - {fileID: 3237026584369307109, guid: 43a1dbdc9d88cbd4cbf563acbc9b9b1b, type: 3}

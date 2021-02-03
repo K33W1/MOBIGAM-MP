@@ -6,9 +6,6 @@ using UnityEngine;
 [DefaultExecutionOrder(-2000)]
 public class LevelLoader : MonoBehaviour
 {
-    [Header("Data Objects")]
-    [SerializeField] private PrefabArray[] levelSpawns = null;
-
     [Header("References")]
     [SerializeField] private Transform bossWaypoint = null;
     [SerializeField] private Transform[] enemySpawnLocations = null;
@@ -41,10 +38,9 @@ public class LevelLoader : MonoBehaviour
         GameObject debrisPooler = InstantiateAsset("prefabs", "Debris Pooler");
         ExplosionPooler explosionPooler = InstantiateAsset<ExplosionPooler>("prefabs", "Explosion Pooler");
 
-        IntValue levelAsset = AssetBundleManager.Instance.GetAsset<IntValue>("configs", "Level To Load");
-        PrefabArray allToSpawn = levelSpawns[levelAsset.Value];
-
-        foreach (GameObject toSpawn in allToSpawn.Value)
+        IntValue levelToLoad = AssetBundleManager.GetAsset<IntValue>("configs", "Level To Load");
+        GameObjectList objToSpawn = AssetBundleManager.GetAsset<GameObjectList>("configs", "Level Spawn Config " + (levelToLoad.Value + 1));
+        foreach (GameObject toSpawn in objToSpawn)
         {
             InstantiateAsset("prefabs", toSpawn.name);
         }

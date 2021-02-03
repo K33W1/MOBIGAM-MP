@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 [DisallowMultipleComponent]
 public class LevelSelectMenu : MonoBehaviour
 {
-    [Header("Data Objects")]
-    // [SerializeField] private IntValue levelToLoadDataObject = null;
-
     [Header("Spawned Buttons")]
     [SerializeField] private LevelSelectButton levelSelectButtonPrefab = null;
 
@@ -15,10 +12,36 @@ public class LevelSelectMenu : MonoBehaviour
     [SerializeField] private string levelName = "Level ";
     [SerializeField, Min(0)] private int levelsCount = 0;
 
-    private void Start()
+    private IntList unlockedLevels = null;
+    private IntValue levelToLoad = null;
+
+    private void Awake()
     {
-        LevelSelectButton[] existingButtons =
-            GetComponentsInChildren<LevelSelectButton>();
+        unlockedLevels = AssetBundleManager.Instance.GetAsset<IntList>("configs", "Unlocked Levels");
+        levelToLoad = AssetBundleManager.Instance.GetAsset<IntValue>("configs", "Level To Load");
+    }
+
+    public void Refresh()
+    {
+        InitLevelSelectButtons();
+    }
+
+    public void LoadLevel(int index)
+    {
+        if (unlockedLevels.Contains(index))
+        {
+            levelToLoad.Value = index;
+            SceneManager.LoadScene(levelName);
+        }
+        else
+        {
+            Debug.LogError("Tried to load locked level!");
+        }
+    }
+
+    private void InitLevelSelectButtons()
+    {
+        LevelSelectButton[] existingButtons = GetComponentsInChildren<LevelSelectButton>();
         foreach (LevelSelectButton button in existingButtons)
         {
             Destroy(button.gameObject);
@@ -28,14 +51,7 @@ public class LevelSelectMenu : MonoBehaviour
         {
             LevelSelectButton levelSelectButton =
                 Instantiate(levelSelectButtonPrefab, transform);
-            levelSelectButton.Initialize(this, i);
+            levelSelectButton.Initialize(this, i, unlockedLevels.Contains(i));
         }
-    }
-
-    public void LoadLevel(int index)
-    {
-        IntValue levelAsset = AssetBundleManager.Instance.GetAsset<IntValue>("configs", "Level To Load");
-        levelAsset.Value = index;
-        SceneManager.LoadScene(levelName);
     }
 }

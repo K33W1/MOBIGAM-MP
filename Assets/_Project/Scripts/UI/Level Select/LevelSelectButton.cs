@@ -19,11 +19,13 @@ public class LevelSelectButton : MonoBehaviour
         button.onClick.AddListener(OnButtonClick);
     }
 
-    public void Initialize(LevelSelectMenu levelSelectMenu, int index)
+    public void Initialize(LevelSelectMenu levelSelectMenu, int index, bool isUnlocked)
     {
         this.levelSelectMenu = levelSelectMenu;
         this.index = index;
+        
         levelText.text = (index + 1).ToString();
+        button.interactable = isUnlocked;
     }
 
     private void OnButtonClick()

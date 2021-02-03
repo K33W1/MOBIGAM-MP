@@ -22,5 +22,9 @@ public class TakeAnyDamageHandler : MonoBehaviour, IDamageHandler
             health.Damage(damage.Damage);
             Damaged?.Invoke();
         }
+        else
+        {
+            UndamagedHit?.Invoke();
+        }
     }
 }
