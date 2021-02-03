@@ -15,10 +15,12 @@ public class LevelAdManager : MonoBehaviour
     private static AdManager AdManager => AdManager.Instance;
 
     private GameEvent gameOver = null;
+    private BoolValue displayAds = null;
 
     private void Awake()
     {
         gameOver = AssetBundleManager.Instance.GetAsset<GameEvent>("configs", "Game Over");
+        displayAds = AssetBundleManager.Instance.GetAsset<BoolValue>("configs", "Display Ads");
     }
 
     private void OnEnable()
@@ -27,13 +29,20 @@ public class LevelAdManager : MonoBehaviour
         gameOver.RegisterListener(OnGameOver);
     }
 
+
     private void Start()
     {
+        if (!displayAds.Value)
+            return;
+
         AdManager.ShowBannerAd(BannerPosition.BOTTOM_CENTER);
     }
 
     private void OnGameOver()
     {
+        if (!displayAds.Value)
+            return;
+
         AdManager.HideBannerAd();
 
         if (forceShowAdOnGameOver || (IsEnoughTimePassed() && Application.internetReachability != NetworkReachability.NotReachable))

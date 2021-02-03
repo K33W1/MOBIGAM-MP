@@ -1,7 +1,6 @@
 ﻿using Kiwi.DataObject;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public class WinView : View

@@ -139,4 +139,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBeforeAd: 150
   reward: 10
-  forceShowAdOnGameOver: 1
+  forceShowAdOnGameOver: 0

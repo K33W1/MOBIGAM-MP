@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Kiwi.DataObject;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class WatchAdButton : MonoBehaviour
 {
+    private BoolValue displayAds = null;
+
     private Button button;
     private TextMeshProUGUI text = null;
 
@@ -13,11 +16,17 @@ public class WatchAdButton : MonoBehaviour
     {
         button = GetComponent<Button>();
         text = GetComponentInChildren<TextMeshProUGUI>();
+        displayAds = AssetBundleManager.Instance.GetAsset<BoolValue>("configs", "Display Ads");
     }
 
     private void OnEnable()
     {
         AdManager.Instance.AdFinished += OnAdFinished;
+    }
+
+    private void Start()
+    {
+        button.interactable = false;
     }
 
     public void OnButtonClick()
@@ -27,6 +36,9 @@ public class WatchAdButton : MonoBehaviour
 
     public void Enable()
     {
+        if (!displayAds.Value)
+            return;
+
         button.interactable = true;
         text.text = "Watch a Video for + 10 Money";
     }
