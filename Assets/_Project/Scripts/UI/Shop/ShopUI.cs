@@ -45,8 +45,8 @@ public class ShopUI : MonoBehaviour
         {
             Debug.Log("Buying " + data.ItemName);
 
-            data.PerformUpgrade();
             money.Value -= data.Price;
+            data.PerformUpgrade();
 
             saveSystem.Save();
         }
