@@ -36,9 +36,6 @@ public class WatchAdButton : MonoBehaviour
 
     public void Enable()
     {
-        if (!displayAds.Value)
-            return;
-
         button.interactable = true;
         text.text = "Watch a Video for + 10 Money";
     }
@@ -51,7 +48,7 @@ public class WatchAdButton : MonoBehaviour
 
     private void OnAdFinished(object sender, AdFinishEventArgs e)
     {
-        if (e.ShowResult == ShowResult.Finished)
+        if (e.PlacementID == AdManager.RewardedVideoAd && e.ShowResult == ShowResult.Finished)
         {
             button.interactable = false;
         }

@@ -101,9 +101,9 @@ MonoBehaviour:
   enemyCPooler: {fileID: 4581620806658550577}
   boss: {fileID: 1524010223264762462}
   maxEnemiesAlive: 4
-  enemiesUntilBoss: 7
-  startDelay: 2
-  spawnRate: 3
+  enemiesUntilBoss: 12
+  startDelay: 5
+  spawnRate: 5
 --- !u!1001 &5360941589560598399
 PrefabInstance:
   m_ObjectHideFlags: 0

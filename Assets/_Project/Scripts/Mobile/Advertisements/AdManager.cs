@@ -18,6 +18,8 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
     public const string RewardedVideoAd = "rewardedVideo";
     public const string BannerAd = "banner";
 
+    public bool IsBannerShow { get; private set; }
+
 #if UNITY_ANDROID || UNITY_EDITOR
     private const string StoreID = "3910933";
 #elif UNITY_IOS
@@ -29,6 +31,11 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
     protected override void SingletonAwake()
     {
         LastTimeAdPlayed = Time.time;
+        InitializeAds();
+    }
+
+    private void InitializeAds()
+    {
         Advertisement.AddListener(this);
         Advertisement.Initialize(StoreID, isTestBuild);
     }
@@ -36,17 +43,26 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
     [ContextMenu("Play Interstitial Advertisement")]
     public void PlayInterstitialAd()
     {
+        if (!Advertisement.isInitialized)
+            InitializeAds();
+
         StartCoroutine(PlayInterstitialAdCoroutine());
     }
 
     [ContextMenu("Play Rewarded Video Advertisement")]
     public void PlayRewardedAd()
     {
+        if (!Advertisement.isInitialized)
+            InitializeAds();
+
         StartCoroutine(PlayRewardedAdCoroutine());
     }
 
     public void ShowBannerAd(BannerPosition bannerPosition)
     {
+        if (!Advertisement.isInitialized)
+            InitializeAds();
+
         if (!Advertisement.Banner.isLoaded)
         {
             BannerLoadOptions loadOptions = new BannerLoadOptions
@@ -60,13 +76,14 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
         }
         else
         {
-            Advertisement.Banner.Show(BannerAd);
+            OnBannerLoaded();
         }
     }
 
     private void OnBannerLoaded()
     {
         Advertisement.Banner.Show(BannerAd);
+        IsBannerShow = true;
     }
 
     private void OnBannerError(string error)
@@ -77,6 +94,7 @@ public class AdManager : MonoBehaviourSingleton<AdManager>, IUnityAdsListener
     public void HideBannerAd()
     {
         Advertisement.Banner.Hide();
+        IsBannerShow = false;
     }
 
     private IEnumerator PlayInterstitialAdCoroutine()

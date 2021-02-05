@@ -137,6 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c375fdaf2a51f345a9dc7a3dea97ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeAd: 150
+  timeBeforeAd: 30
   reward: 10
   forceShowAdOnGameOver: 0

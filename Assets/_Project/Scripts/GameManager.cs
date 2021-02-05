@@ -1,10 +1,13 @@
 ﻿using Kiwi.Core;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 [DisallowMultipleComponent]
 public class GameManager : MonoBehaviourSingleton<GameManager>
 {
     private bool isPaused = false;
+
+    private bool wasBannerShownBeforePause = false;
 
     protected override void SingletonAwake()
     {
@@ -19,11 +22,19 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         {
             Time.timeScale = 0f;
             UIServiceLocator.Instance.PauseView.Show();
+
+            wasBannerShownBeforePause = AdManager.Instance.IsBannerShow;
+            AdManager.Instance.HideBannerAd();
         }
         else
         {
             Time.timeScale = 1f;
             UIController.Instance.ShowLastView();
+
+            if (wasBannerShownBeforePause)
+            {
+                AdManager.Instance.ShowBannerAd(BannerPosition.TOP_CENTER);
+            }
         }
     }
 

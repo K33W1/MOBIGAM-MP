@@ -15,17 +15,20 @@ public class LevelAdManager : MonoBehaviour
     private static AdManager AdManager => AdManager.Instance;
 
     private GameEvent gameOver = null;
+    private GameEvent bossSpawned = null;
     private BoolValue displayAds = null;
 
     private void Awake()
     {
         gameOver = AssetBundleManager.Instance.GetAsset<GameEvent>("configs", "Game Over");
+        bossSpawned = AssetBundleManager.Instance.GetAsset<GameEvent>("configs", "Boss Spawned");
         displayAds = AssetBundleManager.Instance.GetAsset<BoolValue>("configs", "Display Ads");
     }
 
     private void OnEnable()
     {
         AdManager.AdFinished += OnAdFinished;
+        bossSpawned.RegisterListener(OnGameOver);
         gameOver.RegisterListener(OnGameOver);
     }
 
@@ -35,15 +38,15 @@ public class LevelAdManager : MonoBehaviour
         if (!displayAds.Value)
             return;
 
-        AdManager.ShowBannerAd(BannerPosition.BOTTOM_CENTER);
+        AdManager.ShowBannerAd(BannerPosition.TOP_CENTER);
     }
 
     private void OnGameOver()
     {
+        AdManager.HideBannerAd();
+
         if (!displayAds.Value)
             return;
-
-        AdManager.HideBannerAd();
 
         if (forceShowAdOnGameOver || (IsEnoughTimePassed() && Application.internetReachability != NetworkReachability.NotReachable))
         {
@@ -70,6 +73,7 @@ public class LevelAdManager : MonoBehaviour
         if (AdManager != null)
             AdManager.AdFinished -= OnAdFinished;
 
+        bossSpawned.UnregisterListener(OnGameOver);
         gameOver.UnregisterListener(OnGameOver);
     }
 }
